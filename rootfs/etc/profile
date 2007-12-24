@@ -20,6 +20,10 @@ fi
 DISPLAY=:0.0
 G_FILENAME_ENCODING=iso8859-1
 
+# ldd fake
+#
+which ldd > /dev/null || alias ldd=LD_TRACE_LOADED_OBJECTS=1
+
 # Export all variables definied above and set mask.
 #
 export PATH LD_LIBRARY_PATH PS1 DISPLAY G_FILENAME_ENCODING ignoreeof
