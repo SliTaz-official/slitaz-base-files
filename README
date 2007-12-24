@@ -1,0 +1,13 @@
+README for slitaz-base-files                                               2007
+===============================================================================
+
+
+Ce paquet fournit les fichiers et répertoires de base du système, il est
+construit via la recette du wok et Tazwok. Les fichiers sont décrits dans
+le Cookbook de SliTaz :
+
+    http://www.slitaz.org/doc/cookbook/
+
+
+===============================================================================
+                                                         http://www.slitaz.org/

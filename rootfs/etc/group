@@ -1,0 +1,4 @@
+root:x:0:
+audio:x:20:
+nogroup:x:99:
+www:x:80:

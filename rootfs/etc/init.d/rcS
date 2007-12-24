@@ -1,0 +1,15 @@
+#! /bin/sh
+# /etc/init.d/rcS: rcS initial script.
+#
+
+KMAP=fr_CH
+
+echo "Processing /etc/init.d/rcS... "
+
+/bin/mount proc
+/bin/mount -a
+/bin/hostname -F /etc/hostname
+/sbin/ifconfig lo 127.0.0.1 up
+/sbin/loadkmap < /usr/share/kmap/$KMAP.kmap
+
+echo ""
