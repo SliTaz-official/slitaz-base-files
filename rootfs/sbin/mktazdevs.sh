@@ -71,6 +71,8 @@ mknod beep c 10 128
 mknod ptmx c 5 2
 mknod nvram c 10 144
 ln -s /proc/kcore core
+# DSP
+mknod -m 0666 dsp c 14 3
 # PPP dev.
 mknod ppp c 108 0
 
