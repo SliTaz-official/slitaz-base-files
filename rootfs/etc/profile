@@ -17,7 +17,7 @@ fi
 
 # Screen display for X and encoding for GTK+ apps.
 #
-DISPLAY=:0.0
+[ -n "$DISPLAY" ] || DISPLAY=:0.0
 G_FILENAME_ENCODING=iso8859-1
 
 # ldd fake
