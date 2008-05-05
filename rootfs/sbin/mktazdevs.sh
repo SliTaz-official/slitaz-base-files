@@ -190,7 +190,7 @@ done
 # Virtual console screen devs.
 #
 for i in `seq 0 7`; do
-	mknod vcs$i b 7 $i
+	mknod vcs$i c 7 $i
 done
 ln -s vcs0 vcs
 
