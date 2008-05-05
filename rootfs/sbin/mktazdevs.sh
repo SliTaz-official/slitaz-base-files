@@ -197,7 +197,7 @@ ln -s vcs0 vcs
 # Virtual console screen w/ attributes devs.
 #
 for i in `seq 0 7`; do
-	mknod vcsa$i b 7 $i
+	mknod vcsa$i c 7 $(($i + 128))
 done
 ln -s vcsa0 vcsa
 
