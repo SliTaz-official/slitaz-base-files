@@ -31,11 +31,11 @@ umask 022
 
 # Locale and timezone settings.
 #
-if [ -f "/etc/locale.conf" ]; then
+if [ -s "/etc/locale.conf" ]; then
 	. /etc/locale.conf
 	export LANG LC_ALL
 fi
-if [ -f "/etc/TZ" ]; then
+if [ -s "/etc/TZ" ]; then
 	TZ=`cat /etc/TZ`
 	export TZ
 fi
