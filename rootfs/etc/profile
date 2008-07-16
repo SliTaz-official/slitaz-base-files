@@ -65,7 +65,7 @@ for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
 		esac
 		return
 	fi
-	if [ -f $i/$TOPIC.html]; then
+	if [ -f $i/$TOPIC.html ]; then
 		retawq --dump=file://$i/$TOPIC.html | less -M
 		return
 	fi
