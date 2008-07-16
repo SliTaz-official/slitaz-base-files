@@ -60,7 +60,7 @@ for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
 	if [ -f $i/raw-$TOPIC.* ]; then
 		i=$(ls $i/raw-$TOPIC.*)
 		case "$i" in
-		*gz) (zcat $i || || unlzma -c $i 2> /dev/null) | less -M;;
+		*gz) (zcat $i || unlzma -c $i 2> /dev/null) | less -M;;
 		*) less -M $i;;
 		esac
 		return
