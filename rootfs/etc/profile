@@ -52,7 +52,7 @@ if [ -n "$2" ]; then
 	shift
 fi
 TOPIC=$1
-if [ -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
+if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
 	return
 fi
@@ -65,7 +65,7 @@ for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
 		esac
 		return
 	fi
-	if [ -f $i/$TOPIC.html ]; then
+	if [ -x /usr/bin/retawq -a -f $i/$TOPIC.html ]; then
 		retawq --dump=file://$i/$TOPIC.html | less -M
 		return
 	fi
