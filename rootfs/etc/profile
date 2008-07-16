@@ -24,6 +24,52 @@ G_FILENAME_ENCODING=iso8859-1
 #
 which ldd > /dev/null || alias ldd='/lib/ld*.so --list'
 
+# man fake
+#
+if [ ! -x /usr/bin/man ]; then
+
+man()
+{
+local i
+local SECTION
+local MSG
+local TOPIC
+local MAN_SECTION
+case "$1" in
+''|-*)
+	cat <<EOT
+	Usage: man [section] command
+EOT
+	return;;
+esac
+SECTION=all
+MAN_SECTION='*'
+MSG=""
+if [ -n "$2" ]; then
+	SECTION=$1
+	MAN_SECTION=$1
+	MSG=" in section $SECTION"
+	shift
+fi
+TOPIC=$1
+if [ -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
+	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
+	return
+fi
+for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
+	if [ -f $i/$TOPIC.* ]; then
+		(zcat $i/$TOPIC.* || unlzma -c $i/$TOPIC.* 2>/dev/null)|less -M
+		return
+	fi
+done
+wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION" 2> /dev/null | \
+	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"No manual entry for $TOPIC$MSG\" }" | \
+	sed -e 's/<[^>]*>//g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&amp;/\&/g' | less -M
+}
+
+fi
+
+
 # Export all variables definied above and set mask.
 #
 export PATH LD_LIBRARY_PATH PS1 DISPLAY G_FILENAME_ENCODING ignoreeof
