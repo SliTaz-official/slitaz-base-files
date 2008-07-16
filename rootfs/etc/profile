@@ -70,7 +70,8 @@ for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
 		return
 	fi
 done
-wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION" 2> /dev/null | \
+(wget -O - "http://mirror.slitaz.org/man/$SECTION/$TOPIC.html" || \
+ wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION") 2> /dev/null | \
 	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"No manual entry for $TOPIC$MSG\" }" | \
 	sed -e 's/<[^>]*>//g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&amp;/\&/g' | less -M
 }
