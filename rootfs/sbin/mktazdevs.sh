@@ -27,16 +27,16 @@ echo -n "Moving to $1... "
 cd $1
 status
 
-# mMake usfull directories.
+# Make useful directories.
 echo -n "Starting to build directories... "
 mkdir pts input net usb shm
 status
 
-# script start.
+# Script start.
 #
 echo -n "Starting to build devices... "
 
-# input devs.
+# Input devs.
 #
 mknod input/event0 c 13 64
 mknod input/event1 c 13 65

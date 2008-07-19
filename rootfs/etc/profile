@@ -79,7 +79,7 @@ done
 fi
 
 
-# Export all variables definied above and set mask.
+# Export all variables defined above and set mask.
 #
 export PATH LD_LIBRARY_PATH PS1 DISPLAY G_FILENAME_ENCODING ignoreeof
 umask 022
