@@ -17,6 +17,9 @@ fi
 
 # Max 64M for programs (prevent memory leak crashs)
 ulimit -d 65536
+ulimit -s 65536
+ulimit -m 65536
+ulimit -v 65536
 
 # Screen display for X and encoding for GTK+ apps.
 #
