@@ -19,8 +19,7 @@ fi
 ulimit -d 65536
 ulimit -s 65536
 ulimit -m 65536
-ulimit -v 65536
-
+ulimit -v 262144
 # Screen display for X and encoding for GTK+ apps.
 #
 [ -n "$DISPLAY" ] || DISPLAY=:0.0
