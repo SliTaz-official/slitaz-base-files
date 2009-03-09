@@ -26,7 +26,7 @@ G_FILENAME_ENCODING=iso8859-1
 
 # ldd fake
 #
-which ldd > /dev/null || alias ldd='/lib/ld*.so --list'
+which ldd > /dev/null || alias ldd='LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so'
 
 # man fake
 #
