@@ -101,7 +101,7 @@ mknod usb/hiddev5 c 180 101
 mknod usb/hiddev6 c 180 102
 
 # IDE HD devs.
-# With a fiew concievable partitions, you can do
+# With a few conceivable partitions, you can do
 # more of them yourself as you need 'em.
 #
 
@@ -220,6 +220,6 @@ chmod 0666 tty*
 status
 
 # Script end.
-echo -n "All devices are build..."
+echo -n "All devices are built..."
 status
 
