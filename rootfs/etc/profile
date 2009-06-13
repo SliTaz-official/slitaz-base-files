@@ -11,8 +11,8 @@ if [ "`id -u`" -eq 0 ]; then
 	PS1='\u@\h:\w\$ '
 else
 	# Light green and blue colored prompt.
-	PS1="\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
-	#PS1='\u@\h:\w\$ '
+	#PS1="\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+	PS1='\u@\h:\w\$ '
 fi
 
 # Max 64M for programs (prevent memory leak crashs)
@@ -27,61 +27,6 @@ G_FILENAME_ENCODING=iso8859-1
 # ldd fake
 #
 which ldd > /dev/null || alias ldd='LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so'
-
-# man fake
-#
-if [ ! -x /usr/bin/man ]; then
-
-man()
-{
-local i
-local SECTION
-local MSG
-local TOPIC
-local MAN_SECTION
-case "$1" in
-''|-*)
-	cat <<EOT
-	Usage: man [section] command
-EOT
-	return;;
-esac
-SECTION=all
-MAN_SECTION='*'
-MSG=""
-if [ -n "$2" ]; then
-	SECTION=$1
-	MAN_SECTION=$1
-	MSG=" in section $SECTION"
-	shift
-fi
-TOPIC=$1
-if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
-	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
-	return
-fi
-for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
-	if [ -f $i/raw-$TOPIC.* ]; then
-		i=$(ls $i/raw-$TOPIC.*)
-		case "$i" in
-		*gz) (zcat $i || unlzma -c $i 2> /dev/null) | less -M;;
-		*) less -M $i;;
-		esac
-		return
-	fi
-	if [ -x /usr/bin/retawq -a -f $i/$TOPIC.html ]; then
-		retawq --dump=file://$i/$TOPIC.html | less -M
-		return
-	fi
-done
-(wget -O - "http://mirror.slitaz.org/man/$SECTION/$TOPIC.html" || \
- wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION") 2> /dev/null | \
-	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"No manual entry for $TOPIC$MSG\" }" | \
-	sed -e 's/<[^>]*>//g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&amp;/\&/g' | less -M
-}
-
-fi
-
 
 # Export all variables defined above and set mask.
 #
