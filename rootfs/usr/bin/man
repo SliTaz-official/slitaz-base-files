@@ -5,7 +5,7 @@
 #
 
 if [ ! -x /usr/bin/retawq ]; then
-	echo -e "\nMissing Retawq webbrouwser..."
+	echo -e "\nMissing Retawq web browser..."
 	echo -e "Please run: su -c 'tazpkg get-install retawq'\n"
 	exit 0
 fi

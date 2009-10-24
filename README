@@ -9,5 +9,15 @@ le Cookbook de SliTaz :
     http://www.slitaz.org/doc/cookbook/
 
 
+English
+-------
+
+This package provides the base system files and directories, it is built
+using a wok receipt and Tazwok. The files are described in the SliTaz
+Cookbook :
+
+
 ===============================================================================
                                                          http://www.slitaz.org/
+
+

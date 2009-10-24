@@ -1,4 +1,4 @@
-# /etc/profile: system-wide .profile file for the Bourne shells
+# /etc/profile: System-wide .profile file for the Bourne shells
 
 PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 LD_LIBRARY_PATH="/usr/lib:/lib"
