@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Tiny ldd fake using online manuals.
+# (c) 2010 SliTaz GNU/Linux.
+#
+
+echo ""
+LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so $@
+echo ""

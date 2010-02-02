@@ -25,9 +25,6 @@ G_FILENAME_ENCODING=UTF-8
 # Make OpenOffice look better.
 OOO_FORCE_DESKTOP=gnome
 
-# ldd fake
-which ldd > /dev/null || alias ldd='LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so'
-
 # Export all variables defined above and set mask.
 #
 export PATH LD_LIBRARY_PATH PS1 DISPLAY G_FILENAME_ENCODING 
