@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Tiny ldd fake using online manuals.
+# Tiny ldd fake.
 # (c) 2010 SliTaz GNU/Linux.
 #
 
