@@ -20,7 +20,7 @@ ulimit -m 65536
 
 # Screen display for X and encoding for GTK+ apps.
 [ -n "$DISPLAY" ] || DISPLAY=:0.0
-G_FILENAME_ENCODING=iso8859-1
+G_FILENAME_ENCODING=UTF-8
 
 # Make OpenOffice look better.
 OOO_FORCE_DESKTOP=gnome
