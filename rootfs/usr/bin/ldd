@@ -5,5 +5,15 @@
 #
 
 echo ""
-LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so $@
-echo ""
+file="$@"
+for file do
+	case $file in
+  		*/*) :
+       		;;
+  		*) file=./$file
+     		;;
+  	esac
+	echo "$file:" | sed 's%^./%%'
+	LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so "$file"
+	echo ""
+done
