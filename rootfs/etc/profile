@@ -1,7 +1,7 @@
 # /etc/profile: System-wide .profile file for the Bourne shells
 
-PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-LD_LIBRARY_PATH="/usr/lib:/lib"
+PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
+LD_LIBRARY_PATH="/usr/lib:/lib:/usr/local/lib"
 
 # Prompt format for Ash (Bash use /etc/bashrc).
 if [ "`id -u`" -eq 0 ]; then
