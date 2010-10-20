@@ -64,7 +64,6 @@ mknod rtc c 10 135
 mknod sr0 b 11 0
 mknod sr1 b 11 1
 mknod agpgart c 10 175
-mknod dri c 10 63
 mknod ttyS0 c 4 64
 mknod audio c 14 4
 mknod beep c 10 128
