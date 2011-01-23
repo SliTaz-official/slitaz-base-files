@@ -14,11 +14,7 @@ cdrom:x:19:
 audio:x:20:
 tape:x:26:
 www:x:80:
-messagebus:x:81:
-haldaemon:x:82:
 plugdev:x:83:
 dialout:x:95:
-scanner:x:96:
-camera:x:97:
 nogroup:x:99:
 users:x:100:
