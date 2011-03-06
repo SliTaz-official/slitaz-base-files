@@ -14,7 +14,7 @@ else
 	PS1='\u@\h:\w\$ '
 fi
 
-# Max 64M for programs (prevent memory leak crashs)
+# Max 64M for programs (prevent memory leak crashes)
 ulimit -d 65536
 ulimit -m 65536
 
