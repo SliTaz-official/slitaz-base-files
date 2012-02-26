@@ -42,6 +42,9 @@ TOPIC=$1
 if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
 	return
+elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
+	retawq --dump=file:///usr/share/doc/slitaz-tools/$TOPIC.html | less -M
+	return
 fi
 
 for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
