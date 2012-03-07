@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Tiny man fake using online manuals.
-# (c) 2009 SliTaz GNU/Linux.
+# Copyright (C) 2009-2012 SliTaz GNU/Linux.
 #
 
 if [ ! -x /usr/bin/retawq ]; then
