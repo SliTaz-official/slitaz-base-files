@@ -2,12 +2,12 @@
 #
 # SliTaz Helper for SHell CGI scripts - See httphelper function
 #
-# The initial script was found in Busybox 1.18.4 but was removed upstream
-# it is used in TazPanel, Pizza and other SliTaz CGI tools and services.
-# The goal is to maintain it according to the needs of the project and 
-# Busybox httpd server applet since it is used for URL [en|de]coding
+# This helper is used in TazPanel, Pizza and other SliTaz CGI tools and 
+# services. The goal is to maintain it according to the needs of the 
+# project and Busybox httpd server applet since it is used for URL 
+# [en|de]coding.
 #
-# Copyright (C) SliTaz/Busybox 2012 - GNU gpl v2
+# Copyright (C) SliTaz 2012 - GNU gpl v2
 #
 
 alias urlencode='httpd -e'
