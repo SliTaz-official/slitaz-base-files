@@ -35,7 +35,7 @@ Example:
   header "Content-type: text/html" "Set-Cookie: name=value; HttpOnly"
   
   if [ "\$(GET name)" ]; then
-      echo "Input name have a value from HTML form"
+      echo "Input name has a value from HTML form"
   fi
 
 EOT
