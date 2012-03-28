@@ -153,8 +153,8 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 	post=$prefix$$/post
 	n=1
 	cat > ${post}0
-	read delim < ${post}0
-	delim=${delim%?}
+	read args < ${post}0
+	delim="${args%?}"
 	case "$delim" in
 	-*)	awk "/$delim/ { o+=index(\$0,\"$delim\")-1; print o }
 	   		  { o+=1+length() }" < ${post}0 | while read offset; do
@@ -214,7 +214,7 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 		done
 		rmdir $(dirname $post) ;;
 	*)	rm -rf $(dirname $post)
-		read_query_string POST "$delim" ;;
+		read_query_string POST "$args" ;;
 	esac
 fi
 
