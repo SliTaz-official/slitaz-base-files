@@ -26,6 +26,7 @@ Functions:
   COOKIE [var [index]]
   FILE [var {name|tmpname|size|type}]
   header [strings]
+  http_urlencode string
   urlencode string
   urldecode string
   htmlentities string
@@ -49,6 +50,13 @@ header() {
 	do 
 		echo -e "$i\r"
 	done
+}
+
+http_urlencode() {
+	sed	-e "s|%|%25|g;s|!|%21|g;s|\*|%2A|g;s|'|%27|g;s|(|%28|g" \
+		-e "s|)|%29|g;s|;|%3B|g;s|:|%3A|g;s|@|%40|g;s|&|%26|g" \
+		-e "s|=|%3D|g;s|+|%2B|g;s|\$|%24|g;s|,|%2C|g;s|/|%2F|g" \
+		-e "s|\?|%3F|g;s|#|%25|g;s|\[|%5B|g;s|\]|%5D|g;s| |+|g"
 }
 
 htmlentities() {
