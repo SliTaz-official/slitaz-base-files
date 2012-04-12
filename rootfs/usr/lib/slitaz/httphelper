@@ -10,8 +10,8 @@
 # Copyright (C) SliTaz 2012 - GNU gpl v2
 #
 
-alias urlencode='httpd -e'
-alias urldecode='httpd -d'
+alias urlencode='busybox httpd -e'
+alias urldecode='busybox httpd -d'
 
 # Help and usage.
 httphelper() {
@@ -135,7 +135,7 @@ for i in $2 ; do
 			names="$names $var" ;;
 	esac
 	eval ${1}_${var}_count=$((++cnt))
-	eval ${1}_${var}_$cnt=\'$(httpd -d "${i#*=}" | sed "s/'/\'\\\\\'\'/g")\'
+	eval ${1}_${var}_$cnt=\'$(busybox httpd -d "${i#*=}" | sed "s/'/\'\\\\\'\'/g")\'
 done
 unset IFS
 eval ${1}__NAMES=\'${names# }\'
