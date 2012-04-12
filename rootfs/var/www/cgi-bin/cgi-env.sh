@@ -1,5 +1,5 @@
 #!/bin/sh
-. /usr/bin/httpd_helper.sh
+. /usr/lib/slitaz/httphelper.sh
 header
 
 cat << EOT
@@ -8,7 +8,7 @@ cat << EOT
 <head>
 	<title>CGI SHell Environment</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
 
@@ -26,7 +26,7 @@ cat << EOT
 	requests. 
 </p>
 <p>
-	Including /usr/bin/httpd_helper.sh in your scripts lets you
+	Including /usr/lib/slitaz/httphelper.sh in your scripts lets you
 	use PHP-like syntax such as: \$(GET var)
 </p>
 <p>
@@ -37,6 +37,11 @@ cat << EOT
 <h2>HTTP Info</h2>
 <pre>
 $(httpinfo)
+</pre>
+
+<h2>HTTP Helper</h2>
+<pre>
+$(httphelper)
 </pre>
 
 <!-- End content -->
