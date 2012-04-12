@@ -231,8 +231,3 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 		read_query_string POST "$args" ;;
 	esac
 fi
-
-case "$1" in
-	usage|help)
-		httphelper ;;
-esac
