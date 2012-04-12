@@ -47,7 +47,7 @@ libtaz() {
 	cat << EOT
 
 Include this library in a script:
-  . /usr/lib/slitaz/libtaz.sh
+  . /lib/libtaz.sh
 
 Functions:
   status
