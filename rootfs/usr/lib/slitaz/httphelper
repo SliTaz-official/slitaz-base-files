@@ -30,8 +30,10 @@ Functions:
   urlencode string
   urldecode string
   htmlentities string
-  md5crypt
+  md5crypt string
+  sha512crypt string
   httpinfo
+  httphelper
 
 Example:
   header "Content-type: text/html" "Set-Cookie: name=value; HttpOnly"
@@ -67,6 +69,11 @@ htmlentities() {
 # MD5 crypt a string such as password (httpd -m dont give same result ?)
 md5crypt() {
 	echo -n "$1" | md5sum | awk '{print $1}'
+}
+
+# MD5 crypt a string. Stronger crypto than MD5
+sha512crypt() {
+	echo -n "$1" | sha512sum | awk '{print $1}'
 }
 
 _ARRAY()
