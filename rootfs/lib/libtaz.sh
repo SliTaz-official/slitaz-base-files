@@ -27,20 +27,14 @@ for opt in "$@"
 do
 	case "$opt" in
 		--raw-out)
-			output="raw"
-			done=" $okmsg" 
-			error=" $ermsg" ;;
+			output="raw" ;;
 		--gtk-out)
-			# Yad/GTK TextView bold or colored text ?
-			output="gtk" 
-			done=" $okmsg" 
-			error=" $ermsg" ;;
+			output="gtk" ;;
 		--html-out)
-			output="html" 
-			done=" <span class='done'>$okmsg</span>" 
-			error=" <span class='error'>$ermsg</span>" ;;
+			output="html" ;;
 	esac
 done
+[ "$HTTP_REFERER" ] && output="html"
 
 # Help and usage.
 libtaz() {
@@ -66,12 +60,19 @@ EOT
 # Return command status. Default to colored console output.
 status() {
 	local check=$?
-	if [ ! "$output" ]; then
-		local cols=$(stty -a | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
-		local scol=$(($cols - 10))
-		done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
-		error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]"
-	fi
+	case $output in
+		raw|gtk) 
+			done=" $okmsg" 
+			error=" $ermsg" ;;
+		html)
+			done=" <span class='done'>$okmsg</span>" 
+			error=" <span class='error'>$ermsg</span>" ;;
+		*) 
+			local cols=$(stty -a | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
+			local scol=$(($cols - 10))
+			done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
+			error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]" ;;
+	esac
 	if [ $check = 0 ]; then
 		echo -e "$done"
 	else
@@ -81,9 +82,11 @@ status() {
 
 # Line separator.
 separator() {
+	sepchar="="
+	[ "$HTTP_REFERER" ] && sepchar="<hr />"
 	local cols=$(stty -a | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
 	for c in $(seq 1 $cols); do
-		echo -n "="
+		echo -n "$sepchar"
 	done && echo ""
 }
 
