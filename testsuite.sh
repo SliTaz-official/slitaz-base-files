@@ -14,7 +14,6 @@ boldify "Message"
 
 echo "Checking libtaz.sh: separator"
 separator
-#check_root $@
 
 echo ""
 exit 0

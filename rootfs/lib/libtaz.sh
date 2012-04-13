@@ -82,9 +82,13 @@ status() {
 
 # Line separator.
 separator() {
-	sepchar="="
-	[ "$HTTP_REFERER" ] && sepchar="<hr />"
-	local cols=$(stty -a | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
+	local sepchar="="
+	[ "$HTTP_REFERER" ] && local sepchar="<hr />"
+	case $output in
+		raw|gtk) local sepchar="-" && local cols="8" ;;
+		html) local sepchar="<hr />" ;;
+		*) local cols=$(stty -a | head -n 1 | cut -d ";" -f 3 | awk '{print $2}') ;;
+	esac
 	for c in $(seq 1 $cols); do
 		echo -n "$sepchar"
 	done && echo ""
