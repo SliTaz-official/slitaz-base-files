@@ -67,8 +67,8 @@ status() {
 		html)
 			done=" <span class='done'>$okmsg</span>" 
 			error=" <span class='error'>$ermsg</span>" ;;
-		*) 
-			local cols=$(stty -a -F /dev/pts/1 | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
+		*)
+			cols=$(stty -a -F /dev/stdin | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
 			local scol=$(($cols - 10))
 			done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
 			error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]" ;;
@@ -87,7 +87,7 @@ separator() {
 	case $output in
 		raw|gtk) local sepchar="-" && local cols="8" ;;
 		html) local sepchar="<hr />" ;;
-		*) local cols=$(eval stty -a -F /dev/pts/1 | head -n 1 | cut -d ";" -f 3 | awk '{print $2}') ;;
+		*) local cols=$(stty -a -F /dev/stdin | head -n 1 | cut -d ";" -f 3 | awk '{print $2}') ;;
 	esac
 	for c in $(seq 1 $cols); do
 		echo -n "$sepchar"
