@@ -13,7 +13,8 @@ Files in rootfs/
 	* /etc: Configuration files for SliTaz such as users network.
 	* /sbin: Scripts that may be used at boot without /usr mounted.
 	* /usr/bin: Small utility and tools depending only on Busybox.
-	* /usr/lib/slitaz: SliTaz base library and helper.
+	* /usr/lib/slitaz: SliTaz libraries and helpers.
+	* /lib/libtaz.sh: Main SliTaz SHell library used by almost all tools.
 	
 
 ===============================================================================
