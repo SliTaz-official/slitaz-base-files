@@ -21,5 +21,8 @@ check_libtaz
 output="raw"
 check_libtaz
 
-echo ""
+[ "$forced" ] && echo "Checking option: forced=$forced"
+[ "$root" ] && echo "Checking option: root=$root"
+[ ! "$1" ] && echo "Check options: $(basename $0) --forced --root=/dev/null"
+
 exit 0

@@ -22,16 +22,12 @@ ermsg="$(gettext "Failed")"
 okcolor=32
 ercolor=31
 
-# Parse cmdline options.
+# Parse cmdline options and store values in a variable.
 for opt in "$@"
 do
 	case "$opt" in
-		--raw-out)
-			output="raw" ;;
-		--gtk-out)
-			output="gtk" ;;
-		--html-out)
-			output="html" ;;
+		--*=*) export ${opt#--} ;;
+		--*) export ${opt#--}="yes" ;;
 	esac
 done
 [ "$HTTP_REFERER" ] && output="html"
@@ -50,9 +46,7 @@ Functions:
   check_root
 
 Options:
-  --raw-out
-  --gtk-out
-  --html-out
+  --output=[raw|gtk|html]
  
 EOT
 }
