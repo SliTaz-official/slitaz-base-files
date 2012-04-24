@@ -3,6 +3,7 @@
 # Tiny man fake using online manuals.
 # Copyright (C) 2009-2012 SliTaz GNU/Linux.
 #
+. /lib/libtaz.sh
 
 if [ ! -x /usr/bin/retawq ]; then
 	echo -e "\nMissing Retawq web browser..."
@@ -20,7 +21,7 @@ case "$1" in
 	''|-*)
 		cat <<EOT
 
-Usage: man [section] command
+$(boldify "Usage:") man [section] command
 
 EOT
 		return ;;
@@ -44,6 +45,10 @@ if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	return
 elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/slitaz-tools/$TOPIC.html | less -M
+	return
+elif [ -f /usr/share/doc/slitaz/$TOPIC.txt ]; then
+	# SliTaz tools/libraries documentation (man a like format)
+	less -M /usr/share/doc/slitaz/$TOPIC.txt
 	return
 fi
 

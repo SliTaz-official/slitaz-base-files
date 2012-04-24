@@ -1,0 +1,35 @@
+
+SYNOPSIS
+	. /usr/lib/slitaz/httphelper.sh
+	function
+
+DESCRIPTION
+	Httphelper is a CGI SHell helper providing PHP a like syntax and
+	usefull functions to encode or crypt strings. Httphelper let you
+	easily parse QUERY_STRING and work on any webserver supporting CGI.
+	
+FUNCTIONS
+	GET [var [index]]
+	POST [var [index]]
+	COOKIE [var [index]]
+	FILE [var {name|tmpname|size|type}]
+	header [strings]
+	http_urlencode string
+	urlencode string
+	urldecode string
+	htmlentities string
+	md5crypt string
+	sha512crypt string
+	httpinfo
+	httphelper
+
+EXAMPLES
+	header "Content-type: text/html" "Set-Cookie: name=value; HttpOnly"
+	
+	value=$(GET name)
+	if [ "$value" ]; then
+		echo "Input name has a value: $value"
+	fi
+	
+AUTHOR
+	Written by Pascal Bellard and Christophe Lincoln

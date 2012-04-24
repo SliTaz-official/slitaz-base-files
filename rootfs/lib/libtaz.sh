@@ -3,10 +3,9 @@
 # SliTaz Base functions used from boot scripts to end user tools. Use
 # gettext and not echo for messages. Keep output suitable for GTK boxes
 # and Ncurses dialog. LibTaz should not depend on any configuration file.
-# No bloated code here, function must be used by at least 3-4 tools. See
-# libtaz() for a list of functions and options or run: tazdev libtaz.sh
-# Libtaz is located in /lib/libtaz.sh since it is used when /usr may not
-# be mounted.
+# No bloated code here, function must be used by at least 3-4 tools.
+#
+# Documentation: man libtaz or /usr/share/doc/slitaz/libtaz.txt
 #
 # Copyright (C) 2012 SliTaz GNU/Linux - BSD License
 #
@@ -31,25 +30,6 @@ do
 	esac
 done
 [ "$HTTP_REFERER" ] && output="html"
-
-# Help and usage.
-libtaz() {
-	cat << EOT
-
-Include this library in a script:
-  . /lib/libtaz.sh
-
-Functions:
-  status
-  separator
-  boldify string
-  check_root
-
-Options:
-  --output=[raw|gtk|html]
- 
-EOT
-}
 
 # Return command status. Default to colored console output.
 status() {

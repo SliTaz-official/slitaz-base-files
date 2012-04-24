@@ -33,6 +33,14 @@ msgfmt:
 
 install-libtaz:
 	install -m 0744 rootfs/lib/libtaz.sh $(DESTDIR)/lib
+	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
+	install -m 0644 doc/libtaz.txt $(DESTDIR)/usr/share/doc/slitaz
+
+install-httphelper:
+	install -m 0744 rootfs/usr/lib/slitaz/httphelper.sh \
+		$(DESTDIR)/usr/lib/slitaz
+	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
+	install -m 0644 doc/httphelper.txt $(DESTDIR)/usr/share/doc/slitaz
 	
 install-msg: msgfmt
 	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/locale
@@ -40,6 +48,8 @@ install-msg: msgfmt
 	
 install: install-msg
 	cp -a rootfs/* $(DESTDIR)
+	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
+	cp -a doc/* $(DESTDIR)/usr/share/doc/slitaz
 	chown -R root.root $(DESTDIR)
 
 # Clean source

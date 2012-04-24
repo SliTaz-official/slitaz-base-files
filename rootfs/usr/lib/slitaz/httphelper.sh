@@ -7,43 +7,13 @@
 # project and Busybox httpd server applet since it is used for URL 
 # [en|de]coding.
 #
+# Documentation: man httphelper or /usr/share/doc/slitaz/httpelper.txt
+#
 # Copyright (C) SliTaz 2012 - GNU gpl v2
 #
 
 alias urlencode='busybox httpd -e'
 alias urldecode='busybox httpd -d'
-
-# Help and usage.
-httphelper() {
-	cat << EOT
-
-Include this helper in a script:
-  . /usr/lib/slitaz/httphelper
-
-Functions:
-  GET [var [index]]
-  POST [var [index]]
-  COOKIE [var [index]]
-  FILE [var {name|tmpname|size|type}]
-  header [strings]
-  http_urlencode string
-  urlencode string
-  urldecode string
-  htmlentities string
-  md5crypt string
-  sha512crypt string
-  httpinfo
-  httphelper
-
-Example:
-  header "Content-type: text/html" "Set-Cookie: name=value; HttpOnly"
-  
-  if [ "\$(GET name)" ]; then
-      echo "Input name has a value from HTML form"
-  fi
-
-EOT
-}
 
 # Send headers.
 header() {
