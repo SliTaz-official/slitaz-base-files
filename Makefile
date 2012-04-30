@@ -41,11 +41,11 @@ install-httphelper:
 		$(DESTDIR)/usr/lib/slitaz
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	install -m 0644 doc/httphelper.txt $(DESTDIR)/usr/share/doc/slitaz
-	
+
 install-msg: msgfmt
 	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/locale
 	cp -a po/mo/* $(DESTDIR)$(PREFIX)/share/locale
-	
+
 install: install-msg
 	cp -a rootfs/* $(DESTDIR)
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
@@ -56,4 +56,5 @@ install: install-msg
 
 clean:
 	rm -rf po/mo
-	
+	rm -f po/*~
+
