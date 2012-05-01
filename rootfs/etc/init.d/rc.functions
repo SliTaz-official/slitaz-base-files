@@ -2,16 +2,7 @@
 # /etc/init.d/rc.functions: SliTaz boot scripts functions.
 #
 
-# Status functions.
-status() {
-	echo -en "\\033[70G[ "
-	if [ $? = 0 ]; then
-		echo -en "\\033[1;32mOK"
-	else
-		echo -en "\\033[1;31mFailed"
-	fi
-	echo -e "\\033[0;39m ]"
-}
+. /lib/libtaz.sh
 
 # Check daemon with pidfile: usage check_pidfile $PIDFILE $DAEMON
 active_pidfile()
