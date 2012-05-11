@@ -14,15 +14,6 @@ unset_receipt() {
 		DEPENDS BUILD_DEPENDS WANTED WGET_URL PROVIDE CROSS_BUG
 }
 
-# Display receipt information.
-receipt_info() {
-	cat << EOT
-$(gettext "Version    :") ${VERSION}${EXTRAVERSION}
-$(gettext "Short desc :") $SHORT_DESC
-$(gettext "Category   :") $CATEGORY
-EOT
-}
-
 # converts /tmp/pkg.tazpkg to pkg
 package_name() {
 	local name=$(basename $1)

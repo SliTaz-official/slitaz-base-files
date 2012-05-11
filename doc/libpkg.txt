@@ -10,7 +10,6 @@ DESCRIPTION
 
 FUNCTIONS
 	unset_receipt
-	receipt_info
 	package_name
 	is_valid_tazpkg
 	check_valid_tazpkg
