@@ -118,11 +118,11 @@ newline() {
 	echo ""
 }
 
-# Log activities, we want first letter capitalized. $logfile should be set
+# Log activities, we want first letter capitalized. $activity should be set
 # by the script. The log format is suitable for web interfaces like cook.
 # Usage: echo "Message" | log
 log() {
-	[ "$logfile" ] || logfile=/var/log/slitaz/libtaz.log
+	[ "$activity" ] || activity=/var/log/slitaz/libtaz.log
 	grep ^[A-Z] | \
-		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $logfile
+		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
 }
