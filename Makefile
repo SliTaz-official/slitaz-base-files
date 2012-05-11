@@ -42,6 +42,13 @@ install-httphelper:
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	install -m 0644 doc/httphelper.txt $(DESTDIR)/usr/share/doc/slitaz
 
+install-libpkg:
+	install -m 0755 -d $(DESTDIR)/usr/lib/slitaz
+	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
+	install -m 0744 rootfs/usr/lib/slitaz/libpkg.sh \
+		$(DESTDIR)/usr/lib/slitaz
+	install -m 0644 doc/libpkg.txt $(DESTDIR)/usr/share/doc/slitaz
+
 install-slitaz:
 	install -m 0755 -d $(DESTDIR)/usr/bin
 	install -m 0755 -d $(DESTDIR)/etc/slitaz
