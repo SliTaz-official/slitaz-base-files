@@ -71,10 +71,10 @@ separator() {
 # Display a bold message. GTK Yad: Works only in --text=""
 boldify() {
 	case $output in
-		raw) echo "$1" ;;
-		gtk) echo "<b>$1</b>" ;;
-		html) echo "<strong>$1</strong>" ;;
-		*) echo -e "\\033[1m${1}\\033[0m" ;;
+		raw) echo "$@" ;;
+		gtk) echo "<b>$@</b>" ;;
+		html) echo "<strong>$@</strong>" ;;
+		*) echo -e "\\033[1m$@\\033[0m" ;;
 	esac
 }
 
