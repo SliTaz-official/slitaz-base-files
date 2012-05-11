@@ -110,3 +110,7 @@ translate_query() {
 		*) echo "$1" ;;
 	esac
 }
+
+newline () {
+	echo
+}
