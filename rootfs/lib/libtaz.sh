@@ -35,11 +35,11 @@ done
 status() {
 	local check=$?
 	case $output in
-		raw|gtk) 
-			done=" $okmsg" 
+		raw|gtk)
+			done=" $okmsg"
 			error=" $ermsg" ;;
 		html)
-			done=" <span class='done'>$okmsg</span>" 
+			done=" <span class='done'>$okmsg</span>"
 			error=" <span class='error'>$ermsg</span>" ;;
 		*)
 			cols=$(stty -a -F /dev/tty | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
@@ -79,10 +79,10 @@ boldify() {
 }
 
 # Indent text $1 spaces
-indent() { 
+indent() {
 	local in="$1"
 	shift
-	echo -e "\033["$in"G $@"; 
+	echo -e "\033["$in"G $@";
 }
 
 # Check if user is logged as root.
@@ -93,13 +93,7 @@ check_root() {
 	fi
 }
 
-yes_no() {
-	[ "$autoyes" ] && true
-	echo -n " ($(translate_query y)/$(translate_query N)) ? "
-	read answer
-	[ "$answer" == "$(translate_query y)" ] 
-}
-
+# Gettextize yes/no.
 translate_query() {
 	case $1 in
 		y) gettext "y" ;;
@@ -111,6 +105,14 @@ translate_query() {
 	esac
 }
 
-newline () {
-	echo
+# Usage: echo -n "The question" && confirm
+confirm() {
+	[ "$yes" ] && true
+	echo -n " ($(translate_query y)/$(translate_query N)) ? "
+	read answer
+	[ "$answer" == "$(translate_query y)" ]
+}
+
+newline() {
+	echo ""
 }
