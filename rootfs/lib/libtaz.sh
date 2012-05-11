@@ -110,26 +110,3 @@ translate_query() {
 		*) echo "$1" ;;
 	esac
 }
-
-# Return command status. Default to colored console output.
-status() {
-	local check=$?
-	case $output in
-		raw|gtk) 
-			done=" $okmsg" 
-			error=" $ermsg" ;;
-		html)
-			done=" <span class='done'>$okmsg</span>" 
-			error=" <span class='error'>$ermsg</span>" ;;
-		*)
-			cols=$(stty -a -F /dev/tty | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
-			local scol=$(($cols - 10))
-			done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
-			error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]" ;;
-	esac
-	if [ $check = 0 ]; then
-		echo -e "$done"
-	else
-		echo -e "$error"
-	fi
-}
