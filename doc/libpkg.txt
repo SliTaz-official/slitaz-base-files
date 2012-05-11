@@ -1,0 +1,18 @@
+
+SYNOPSIS
+	. /usr/lib/slitaz/libpkg.sh
+	function
+
+DESCRIPTION
+	Libpkg provide base functions to handle SliTaz Packages archives and
+	receipt. It is used by Spk, the Cookutils and all tools dealing with
+	packages and receipts.
+
+FUNCTIONS
+	unset_receipt
+
+OPTIONS
+
+AUTHOR
+	Written by Christophe Lincoln and Christian Mesh
+
