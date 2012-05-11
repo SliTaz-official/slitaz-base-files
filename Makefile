@@ -42,6 +42,12 @@ install-httphelper:
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	install -m 0644 doc/httphelper.txt $(DESTDIR)/usr/share/doc/slitaz
 
+install-slitaz:
+	install -m 0755 -d $(DESTDIR)/usr/bin
+	install -m 0755 -d $(DESTDIR)/etc/slitaz
+	install -m 0744 rootfs/usr/bin/slitaz $(DESTDIR)/usr/bin
+	install -m 0644 rootfs/etc/slitaz/slitaz.conf $(DESTDIR)/etc/slitaz
+
 install-msg: msgfmt
 	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/locale
 	cp -a po/mo/* $(DESTDIR)$(PREFIX)/share/locale
