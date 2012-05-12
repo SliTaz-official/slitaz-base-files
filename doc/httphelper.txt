@@ -4,8 +4,8 @@ SYNOPSIS
 	function
 
 DESCRIPTION
-	Httphelper is a CGI SHell helper providing PHP a like syntax and
-	usefull functions to encode or crypt strings. Httphelper let you
+	Httphelper is a CGI SHell helper providing PHP-like syntax and
+	useful functions to encode or encrypt strings. Httphelper lets you
 	easily parse QUERY_STRING and work on any webserver supporting CGI.
 	
 FUNCTIONS
@@ -31,5 +31,5 @@ EXAMPLES
 		echo "Input name has a value: $value"
 	fi
 	
-AUTHOR
+AUTHORS
 	Written by Pascal Bellard and Christophe Lincoln

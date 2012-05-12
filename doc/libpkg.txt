@@ -4,8 +4,8 @@ SYNOPSIS
 	function
 
 DESCRIPTION
-	Libpkg provide base functions to handle SliTaz Packages archives and
-	receipt. It is used by Spk, the Cookutils and all tools dealing with
+	Libpkg provides base functions to handle SliTaz Packages archives and
+	receipts. It is used by Spk, the Cookutils and all tools dealing with
 	packages and receipts.
 
 FUNCTIONS
@@ -16,6 +16,6 @@ FUNCTIONS
 
 OPTIONS
 
-AUTHOR
+AUTHORS
 	Written by Christophe Lincoln and Christian Mesh
 

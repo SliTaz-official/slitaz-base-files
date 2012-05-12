@@ -3,7 +3,7 @@
 # SliTaz Base functions used from boot scripts to end user tools. Use
 # gettext and not echo for messages. Keep output suitable for GTK boxes
 # and Ncurses dialog. LibTaz should not depend on any configuration file.
-# No bloated code here, function must be used by at least 3-4 tools.
+# No bloated code here, functions must be used by at least 3-4 tools.
 #
 # Documentation: man libtaz or /usr/share/doc/slitaz/libtaz.txt
 #
