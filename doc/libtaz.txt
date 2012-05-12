@@ -6,20 +6,29 @@ SYNOPSIS
 DESCRIPTION
 	LibTaz is the base SliTaz SHell library used by almost all tools and
 	utilities. It provide common SHell script functions, parse the cmdline
-	options and store values in a variable. The output messages can be 
+	options and store values in a variable. The output messages can be
 	formated for raw/text, gtk, html and by default they are formated for
 	a standard terminal supporting colors. LibTaz is in the directory
 	/lib/libtaz.sh since it is used when /usr may not be mounted.
-	
+
 FUNCTIONS
-	status
-	separator
-	boldify [string]
-	check_root
+	status             Return command status [Done|Failed]
+	separator          Display a line separator
+	newline            Echo a new line if gettext or echo -n is used
+	boldify [string]   Usae bold font for term, html or GTK output
+	indent             Ident text in term mode
+	check_root         Check if user is logged as root
+	confirm            Read anser to confirm an action
+	log [string]       Log activity, $activity must be set
 
 OPTIONS
 	--output=[raw|gtk|html]
+	--activity=/path/files/activity
+
+EXAMPLES
+	log "Message"
+	check_root
 
 AUTHOR
 	Written by Christophe Lincoln
-	
+

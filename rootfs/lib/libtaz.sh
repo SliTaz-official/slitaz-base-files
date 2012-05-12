@@ -68,6 +68,11 @@ separator() {
 	done && echo ""
 }
 
+# New line for echo -n or gettext.
+newline() {
+	echo ""
+}
+
 # Display a bold message. GTK Yad: Works only in --text=""
 boldify() {
 	case $output in
@@ -113,16 +118,9 @@ confirm() {
 	[ "$answer" == "$(translate_query y)" ]
 }
 
-# New line for echo -n or gettext.
-newline() {
-	echo ""
-}
-
-# Log activities, we want first letter capitalized. $activity should be set
-# by the script. The log format is suitable for web interfaces like cook.
-# Usage: echo "Message" | log
+# Log activities. $activity should be set by the script. The log format
+# is suitable for web interfaces like cook. Usage: log "String"
 log() {
 	[ "$activity" ] || activity=/var/log/slitaz/libtaz.log
-	grep ^[A-Z] | \
-		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
+	echo "$(date '+%Y-%m-%d %H:%M') : $@" >> $activity
 }

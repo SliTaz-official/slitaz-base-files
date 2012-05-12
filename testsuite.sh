@@ -5,17 +5,24 @@
 check_libtaz() {
 	echo -n "Checking libtaz.sh: status() 0"
 	status
-	
+
 	echo -n "Checking libtaz.sh: status() 1"
 	touch /tmp/1/2/2/4 2>/dev/null
 	status
-	
+
 	echo -n "Checking libtaz.sh: boldify() "
 	boldify "Message"
-	
+
 	echo "Checking libtaz.sh: separator"
 	separator
 }
+
+echo -n "Checking libtaz.sh: log()"
+activity=/tmp/testsuite.log
+log "Message from SliTaz testsuite"
+status
+cat $activity
+rm -f $activity
 
 check_libtaz
 output="raw"
