@@ -23,7 +23,6 @@ package_name() {
 # checks to see if file is proper tazpkg
 is_valid_tazpkg() {
 	local file=$1
-	local file_dir=$(base_path $file)
 	[ -a $file ] && [ "$file" != "$(package_name $file)" ]
 }
 
