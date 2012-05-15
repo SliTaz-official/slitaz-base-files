@@ -39,8 +39,8 @@ status() {
 			done=" $okmsg"
 			error=" $ermsg" ;;
 		html)
-			done=" <span class='done'>$okmsg</span>"
-			error=" <span class='error'>$ermsg</span>" ;;
+			done=" <span style='color: $okcolor;'>$okmsg</span>"
+			error=" <span style='color: $ercolor;'>$ermsg</span>" ;;
 		*)
 			cols=$(stty -a -F /dev/tty | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
 			local scol=$(($cols - 10))
@@ -81,6 +81,19 @@ boldify() {
 		html) echo "<strong>$@</strong>" ;;
 		*) echo -e "\\033[1m$@\\033[0m" ;;
 	esac
+}
+
+# Usage: colorize "Message" colorNB or use --color=NB option
+# when running a tool. Default to white/38 and no html or gtk.
+colorize() {
+	: ${color=$2}
+	case $output in
+		raw|gtk|html) echo "$1" ;;
+		*)
+			: ${color=38}
+			echo -e "\\033[1;${color}m${1}\\033[0;39m" ;;
+	esac
+	unset color
 }
 
 # Indent text $1 spaces

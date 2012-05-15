@@ -12,14 +12,15 @@ DESCRIPTION
 	/lib/libtaz.sh since it is used when /usr may not be mounted.
 
 FUNCTIONS
-	status             Return command status [Done|Failed]
-	separator          Display a line separator
-	newline            Echo a new line if gettext or echo -n is used
-	boldify [string]   Use a bold font for term, html or GTK output
-	indent             Indent text in term mode
-	check_root         Check if user is logged as root
-	confirm            Read answer to confirm an action
-	log [string]       Log activity, $activity must be set
+	status                Return command status [Done|Failed]
+	separator             Display a line separator
+	newline               Echo a new line if gettext or echo -n is used
+	boldify [string]      Use a bold font for term, html or GTK output
+	colorize [string] NB  Colorize a string in term mode
+	indent                Indent text in term mode
+	check_root            Check if user is logged as root
+	confirm               Read answer to confirm an action
+	log [string]          Log activity, $activity must be set
 
 OPTIONS
 	--output=[raw|gtk|html]

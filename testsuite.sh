@@ -13,6 +13,11 @@ check_libtaz() {
 	echo -n "Checking libtaz.sh: boldify() "
 	boldify "Message"
 
+	echo -n "Checking libtaz.sh: colorize() "
+	echo -n $(colorize "Message " 33)
+	echo -n $(colorize "Message " 35)
+	colorize "Message" 36
+
 	echo "Checking libtaz.sh: separator"
 	separator
 }
