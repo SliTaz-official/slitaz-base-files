@@ -90,7 +90,7 @@ colorize() {
 	case $output in
 		raw|gtk|html) echo "$1" ;;
 		*)
-			: ${color=38}
+			[ "$color" ] || color=38
 			echo -e "\\033[1;${color}m${1}\\033[0;39m" ;;
 	esac
 	unset color
