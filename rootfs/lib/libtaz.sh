@@ -111,6 +111,10 @@ check_root() {
 	fi
 }
 
+debug() {
+	[ "$debug" ] && echo "DEBUG: $1"
+}
+
 # Gettextize yes/no.
 translate_query() {
 	case $1 in
