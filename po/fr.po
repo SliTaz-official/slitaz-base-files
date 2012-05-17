@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-30 09:16+0200\n"
+"POT-Creation-Date: 2012-05-17 08:56+0200\n"
 "PO-Revision-Date: 2012-04-30 09:21+0100\n"
 "Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
 "Language-Team: French\n"
@@ -25,7 +25,22 @@ msgstr "Fait"
 msgid "Failed"
 msgstr "Echec"
 
-#: rootfs/lib/libtaz.sh:84
+#: rootfs/lib/libtaz.sh:109
 msgid "You must be root to execute:"
 msgstr "Vous devez être root pour exécuter:"
 
+#: rootfs/lib/libtaz.sh:121
+msgid "y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:122
+msgid "Y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:123
+msgid "n"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:124
+msgid "N"
+msgstr ""
