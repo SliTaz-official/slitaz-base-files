@@ -14,7 +14,7 @@ unset_receipt() {
 		DEPENDS BUILD_DEPENDS WANTED WGET_URL PROVIDE CROSS_BUG
 }
 
-# converts /tmp/pkg.tazpkg to pkg
+# Converts /tmp/pkg.tazpkg to pkg
 package_name() {
 	local name=$(basename $1)
 	echo ${name%.tazpkg}
@@ -29,7 +29,7 @@ is_valid_tazpkg() {
 check_valid_tazpkg() {
 	local file=$1
 	if ! is_valid_tazpkg $file; then
-		gettext "$file is not a tazpkg. Exiting"; newline
+		echo -n "$file "; gettext "is not a tazpkg. Exiting"; newline
 		exit 1
 	fi
 }

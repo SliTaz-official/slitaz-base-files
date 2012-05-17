@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 08:56+0200\n"
+"POT-Creation-Date: 2012-05-17 09:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,4 +43,8 @@ msgstr ""
 
 #: rootfs/lib/libtaz.sh:124
 msgid "N"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
+msgid "is not a tazpkg. Exiting"
 msgstr ""

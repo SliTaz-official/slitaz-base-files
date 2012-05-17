@@ -14,7 +14,7 @@ help:
 
 pot:
 	xgettext -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		./rootfs/lib/libtaz.sh
+		./rootfs/lib/libtaz.sh ./rootfs/usr/lib/slitaz/libpkg.sh
 
 msgmerge:
 	@for l in $(LINGUAS); do \
