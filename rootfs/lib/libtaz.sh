@@ -18,8 +18,9 @@ export TEXTDOMAIN
 # Internal variables.
 okmsg="$(gettext "Done")"
 ermsg="$(gettext "Failed")"
-okcolor=32
-ercolor=31
+: ${okcolor=32}
+: ${ercolor=31}
+: ${decolor=36}
 
 # Parse cmdline options and store values in a variable.
 for opt in "$@"
@@ -96,7 +97,7 @@ colorize() {
 	unset color
 }
 
-# Indent text $1 spaces
+# Indent text $1 spaces.
 indent() {
 	local in="$1"
 	shift
@@ -111,8 +112,9 @@ check_root() {
 	fi
 }
 
+# Display debug info when --debug is used.
 debug() {
-	[ "$debug" ] && echo "DEBUG: $1"
+	[ "$debug" ] && echo "$(colorize "DEBUG:" $decolor) $1"
 }
 
 # Gettextize yes/no.
