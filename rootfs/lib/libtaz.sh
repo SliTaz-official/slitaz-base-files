@@ -116,7 +116,7 @@ check_root() {
 
 # Display debug info when --debug is used.
 debug() {
-	[ "$debug" ] && echo "$(colorize "DEBUG:" $decolor) $1"
+	[ "$debug" ] && echo "$(colorize $decolor "DEBUG:") $1"
 }
 
 # Gettextize yes/no.

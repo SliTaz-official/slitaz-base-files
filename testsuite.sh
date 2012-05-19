@@ -26,7 +26,7 @@ check_libtaz() {
 check_functions() {
 	lib=$1
 	echo -n "$(boldify "Checking: $(basename $lib) functions")"
-	indent 34 "$(colorize $(grep "[a-z]() {" $lib | wc -l) 32)"
+	indent 34 "$(colorize 32 $(grep "[a-z]() {" $lib | wc -l))"
 	separator
 	grep "[a-z]() {" $lib | while read line
 	do
