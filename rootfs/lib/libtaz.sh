@@ -87,12 +87,14 @@ boldify() {
 # Usage: colorize "Message" colorNB or use --color=NB option
 # when running a tool. Default to white/38 and no html or gtk.
 colorize() {
-	: ${color=$2}
+	: ${color=$1}
+	shift
+	local content="$@"
 	case $output in
-		raw|gtk|html) echo "$1" ;;
+		raw|gtk|html) echo "$content" ;;
 		*)
 			[ "$color" ] || color=38
-			echo -e "\\033[1;${color}m${1}\\033[0;39m" ;;
+			echo -e "\\033[1;${color}m${content}\\033[0;39m" ;;
 	esac
 	unset color
 }
