@@ -67,10 +67,10 @@ install-msg: msgfmt
 	cp -a po/mo/* $(DESTDIR)$(PREFIX)/share/locale
 
 install: install-msg
-	cp -a rootfs/* $(DESTDIR)
+	cp -a rootfs/* $(DESTDIR)/
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	cp -a doc/* $(DESTDIR)/usr/share/doc/slitaz
-	chown -R root.root $(DESTDIR)
+	chown -R root.root $(DESTDIR)/usr/share/doc/slitaz
 
 # Clean source
 
