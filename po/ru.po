@@ -1,0 +1,106 @@
+# Russian translations for SliTaz Base package.
+# Copyright (C) SliTaz Association
+# This file is distributed under the same license as the SliTaz Base package.
+# Aleksej Bobylev <al.bobylev@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-21 10:33+0300\n"
+"PO-Revision-Date: 2012-05-21 10:35+0300\n"
+"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: rootfs/lib/libtaz.sh:28
+msgid "Done"
+msgstr "Готово"
+
+#: rootfs/lib/libtaz.sh:29
+msgid "Failed"
+msgstr "Ошибка"
+
+#: rootfs/lib/libtaz.sh:121
+msgid "You must be root to execute:"
+msgstr "Вы должны обладать правами root для запуска:"
+
+#: rootfs/lib/libtaz.sh:134
+msgid "y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:135
+msgid "Y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:136
+msgid "n"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:137
+msgid "N"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
+#, sh-format
+msgid "$file is not a tazpkg. Exiting"
+msgstr "Файл $file не является пакетом. Выход"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:10
+#: rootfs/var/www/cgi-bin/cgi-env.sh:17
+msgid "CGI SHell Environment"
+msgstr "Переменные окружения CGI"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:23
+msgid "Welcome to the SliTaz web server CGI Shell environment. Let the power of SHell script meet the web! Here you can check HTTP info and try some requests."
+msgstr "Добро пожаловать на сервер, работающий на SliTaz. Пусть мощь скриптов послужит вебу. Здесь вы можете проверить информацию HTTP и попробовать сделать некоторые запросы."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:27
+msgid "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-like syntax such as: $(GET var)"
+msgstr "Включив /usr/lib/slitaz/httphelper.sh в ваши скрипты, вы сможете использовать PHP-подобный синтаксис: $(GET var)"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+msgid "QUERY_STRING test:"
+msgstr "Тест QUERY_STRING:"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+msgid "HTTP Info"
+msgstr "Информация HTTP"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:40
+msgid "HTTP Helper"
+msgstr "Помощник HTTP"
+
+#: rootfs/var/www/cgi-bin/index.cgi:15
+#: rootfs/var/www/cgi-bin/index.cgi:22
+#, sh-format
+msgid "Index of $QUERY_STRING"
+msgstr "Содержимое папки $QUERY_STRING"
+
+#: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr "Отсутствует браузер Retawq…"
+
+#: rootfs/usr/bin/man:16
+msgid "Please run: su -c 'tazpkg get-install retawq'"
+msgstr "Для его установки выполните: su -c 'tazpkg get-install retawq'"
+
+#: rootfs/usr/bin/man:30
+msgid "Usage:"
+msgstr "Использование:"
+
+#: rootfs/usr/bin/man:30
+msgid "man [section] command"
+msgstr "man [раздел] команда"
+
+#: rootfs/usr/bin/man:78
+#, sh-format
+msgid "No manual entry for $TOPIC$MSG"
+msgstr "Руководство по $TOPIC$MSG отсутствует"
+

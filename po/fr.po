@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 09:08+0200\n"
+"POT-Creation-Date: 2012-05-21 10:33+0300\n"
 "PO-Revision-Date: 2012-05-17 09:09+0100\n"
 "Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
 "Language-Team: French\n"
@@ -17,35 +17,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: rootfs/lib/libtaz.sh:19
+#: rootfs/lib/libtaz.sh:28
 msgid "Done"
 msgstr "Fait"
 
-#: rootfs/lib/libtaz.sh:20
+#: rootfs/lib/libtaz.sh:29
 msgid "Failed"
 msgstr "Echec"
 
-#: rootfs/lib/libtaz.sh:109
+#: rootfs/lib/libtaz.sh:121
 msgid "You must be root to execute:"
 msgstr "Vous devez être root pour exécuter:"
 
-#: rootfs/lib/libtaz.sh:121
+#: rootfs/lib/libtaz.sh:134
 msgid "y"
 msgstr "o"
 
-#: rootfs/lib/libtaz.sh:122
+#: rootfs/lib/libtaz.sh:135
 msgid "Y"
 msgstr "O"
 
-#: rootfs/lib/libtaz.sh:123
+#: rootfs/lib/libtaz.sh:136
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:124
+#: rootfs/lib/libtaz.sh:137
 msgid "N"
 msgstr "N"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
-msgid "is not a tazpkg. Exiting"
+#, fuzzy, sh-format
+msgid "$file is not a tazpkg. Exiting"
 msgstr "n'est pas un tazpkg. Arrêt"
 
+#: rootfs/var/www/cgi-bin/cgi-env.sh:10 rootfs/var/www/cgi-bin/cgi-env.sh:17
+msgid "CGI SHell Environment"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:23
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:27
+msgid ""
+"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
+"like syntax such as: $(GET var)"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+msgid "QUERY_STRING test:"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+msgid "HTTP Info"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:40
+msgid "HTTP Helper"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
+#, sh-format
+msgid "Index of $QUERY_STRING"
+msgstr ""
+
+#: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr ""
+
+#: rootfs/usr/bin/man:16
+msgid "Please run: su -c 'tazpkg get-install retawq'"
+msgstr ""
+
+#: rootfs/usr/bin/man:30
+msgid "Usage:"
+msgstr ""
+
+#: rootfs/usr/bin/man:30
+msgid "man [section] command"
+msgstr ""
+
+#: rootfs/usr/bin/man:78
+#, sh-format
+msgid "No manual entry for $TOPIC$MSG"
+msgstr ""
