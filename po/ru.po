@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 10:33+0300\n"
-"PO-Revision-Date: 2012-05-21 10:35+0300\n"
+"POT-Creation-Date: 2012-05-21 11:30+0300\n"
+"PO-Revision-Date: 2012-05-21 11:32+0300\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -27,23 +27,23 @@ msgstr "Готово"
 msgid "Failed"
 msgstr "Ошибка"
 
-#: rootfs/lib/libtaz.sh:121
+#: rootfs/lib/libtaz.sh:132
 msgid "You must be root to execute:"
 msgstr "Вы должны обладать правами root для запуска:"
 
-#: rootfs/lib/libtaz.sh:134
+#: rootfs/lib/libtaz.sh:145
 msgid "y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:135
+#: rootfs/lib/libtaz.sh:146
 msgid "Y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:136
+#: rootfs/lib/libtaz.sh:147
 msgid "n"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:137
+#: rootfs/lib/libtaz.sh:148
 msgid "N"
 msgstr ""
 
@@ -52,28 +52,28 @@ msgstr ""
 msgid "$file is not a tazpkg. Exiting"
 msgstr "Файл $file не является пакетом. Выход"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:10
 #: rootfs/var/www/cgi-bin/cgi-env.sh:17
+#: rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
 msgstr "Переменные окружения CGI"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:23
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
 msgid "Welcome to the SliTaz web server CGI Shell environment. Let the power of SHell script meet the web! Here you can check HTTP info and try some requests."
 msgstr "Добро пожаловать на сервер, работающий на SliTaz. Пусть мощь скриптов послужит вебу. Здесь вы можете проверить информацию HTTP и попробовать сделать некоторые запросы."
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:27
+#: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-like syntax such as: $(GET var)"
 msgstr "Включив /usr/lib/slitaz/httphelper.sh в ваши скрипты, вы сможете использовать PHP-подобный синтаксис: $(GET var)"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+#: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
 msgstr "Тест QUERY_STRING:"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+#: rootfs/var/www/cgi-bin/cgi-env.sh:42
 msgid "HTTP Info"
 msgstr "Информация HTTP"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:40
+#: rootfs/var/www/cgi-bin/cgi-env.sh:47
 msgid "HTTP Helper"
 msgstr "Помощник HTTP"
 
@@ -92,12 +92,8 @@ msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr "Для его установки выполните: su -c 'tazpkg get-install retawq'"
 
 #: rootfs/usr/bin/man:30
-msgid "Usage:"
-msgstr "Использование:"
-
-#: rootfs/usr/bin/man:30
-msgid "man [section] command"
-msgstr "man [раздел] команда"
+msgid "<b>Usage:</b> man [section] command"
+msgstr "<b>Использование:</b> man [раздел] команда"
 
 #: rootfs/usr/bin/man:78
 #, sh-format

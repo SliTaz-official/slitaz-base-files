@@ -93,6 +93,17 @@ boldify() {
 	esac
 }
 
+# Better to keep messages unsplitted
+# Example: unboldify "My <b>pretty</b> function ;)"
+unboldify() {
+	case $output in
+		raw)	echo "$@" | sed -e 's|<b>||g;s|</b>||g' ;;
+		gtk)	echo "$@" ;;
+		html)	echo "$@" | sed -e 's|<b>|<strong>|g;s|</b>|</strong>|g' ;;
+		*)		echo -e "$(echo "$@" | sed -e 's|<b>|\\033[1m|g;s|</b>|\\033[0m|g')" ;;
+	esac
+}
+
 # Usage: colorize "Message" colorNB or use --color=NB option
 # when running a tool. Default to white/38 and no html or gtk.
 colorize() {

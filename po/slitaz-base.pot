@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 10:33+0300\n"
+"POT-Creation-Date: 2012-05-21 11:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,23 +25,23 @@ msgstr ""
 msgid "Failed"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:121
+#: rootfs/lib/libtaz.sh:132
 msgid "You must be root to execute:"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:134
+#: rootfs/lib/libtaz.sh:145
 msgid "y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:135
+#: rootfs/lib/libtaz.sh:146
 msgid "Y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:136
+#: rootfs/lib/libtaz.sh:147
 msgid "n"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:137
+#: rootfs/lib/libtaz.sh:148
 msgid "N"
 msgstr ""
 
@@ -50,32 +50,32 @@ msgstr ""
 msgid "$file is not a tazpkg. Exiting"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:10 rootfs/var/www/cgi-bin/cgi-env.sh:17
+#: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:23
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
 msgid ""
 "Welcome to the SliTaz web server CGI Shell environment. Let the power of "
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:27
+#: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+#: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+#: rootfs/var/www/cgi-bin/cgi-env.sh:42
 msgid "HTTP Info"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:40
+#: rootfs/var/www/cgi-bin/cgi-env.sh:47
 msgid "HTTP Helper"
 msgstr ""
 
@@ -93,11 +93,7 @@ msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr ""
 
 #: rootfs/usr/bin/man:30
-msgid "Usage:"
-msgstr ""
-
-#: rootfs/usr/bin/man:30
-msgid "man [section] command"
+msgid "<b>Usage:</b> man [section] command"
 msgstr ""
 
 #: rootfs/usr/bin/man:78

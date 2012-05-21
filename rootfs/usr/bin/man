@@ -27,7 +27,7 @@ case "$1" in
 	''|-*)
 		cat <<EOT
 
-$(boldify "$(gettext 'Usage:')") $(gettext "man [section] command")
+unboldify "$(gettext '<b>Usage:</b> man [section] command')"
 
 EOT
 		return ;;
