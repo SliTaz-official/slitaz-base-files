@@ -14,7 +14,14 @@ help:
 
 pot:
 	xgettext -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		./rootfs/lib/libtaz.sh ./rootfs/usr/lib/slitaz/libpkg.sh
+		--copyright-holder="SliTaz Association" -k -klgettext \
+		./rootfs/lib/libtaz.sh
+	xgettext -j -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
+		--copyright-holder="SliTaz Association" \
+		./rootfs/usr/lib/slitaz/libpkg.sh \
+		./rootfs/var/www/cgi-bin/cgi-env.sh \
+		./rootfs/var/www/cgi-bin/index.cgi \
+		./rootfs/usr/bin/man
 
 msgmerge:
 	@for l in $(LINGUAS); do \

@@ -12,12 +12,21 @@
 
 # Internationalization.
 . /usr/bin/gettext.sh
-TEXTDOMAIN='slitaz-base'
-export TEXTDOMAIN
+# We can't export TEXTDOMAIN because this script includes to other scripts
+#  with other TEXTDOMAIN exported
+## TEXTDOMAIN='slitaz-base'
+## export TEXTDOMAIN
+
+# xgettext (from Makefile) can't extract strings from above example:
+#  gettext -d 'slitaz-base' 'Done'
+# so, I define own function (and add it as option to xgettext to Makefile)
+lgettext() {
+	gettext -d 'slitaz-base' $1
+}
 
 # Internal variables.
-okmsg="$(gettext "Done")"
-ermsg="$(gettext "Failed")"
+okmsg="$(lgettext 'Done')"
+ermsg="$(lgettext 'Failed')"
 : ${okcolor=32}
 : ${ercolor=31}
 : ${decolor=36}
@@ -109,7 +118,7 @@ indent() {
 # Check if user is logged as root.
 check_root() {
 	if [ $(id -u) != 0 ]; then
-		gettext "You must be root to execute:" && echo " $(basename $0) $@"
+		lgettext "You must be root to execute:" && echo " $(basename $0) $@"
 		exit 1
 	fi
 }
@@ -122,10 +131,10 @@ debug() {
 # Gettextize yes/no.
 translate_query() {
 	case $1 in
-		y) gettext "y" ;;
-		Y) gettext "Y" ;;
-		n) gettext "n" ;;
-		N) gettext "N" ;;
+		y) lgettext "y" ;;
+		Y) lgettext "Y" ;;
+		n) lgettext "n" ;;
+		N) lgettext "N" ;;
 		# Support other cases but keep them untranslated.
 		*) echo "$1" ;;
 	esac
