@@ -20,6 +20,10 @@ package_name() {
 	echo ${name%.tazpkg}
 }
 
+#
+# Do we realy need the code below here ???
+#
+
 # checks to see if file is proper tazpkg
 is_valid_tazpkg() {
 	local file=$1
