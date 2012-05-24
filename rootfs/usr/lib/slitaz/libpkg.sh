@@ -50,7 +50,8 @@ is_valid_tazpkg() {
 check_valid_tazpkg() {
 	local file=$1
 	if ! is_valid_tazpkg $file; then
-		eval_gettext "\$file is not a tazpkg. Exiting"; newline
+		echo -n "$file "
+		gettext "is not a tazpkg. Exiting"; newline
 		exit 1
 	fi
 }

@@ -11,6 +11,7 @@ DESCRIPTION
 FUNCTIONS
 	unset_receipt
 	package_name
+	check_mirror_id
 	is_valid_tazpkg
 	check_valid_tazpkg
 
