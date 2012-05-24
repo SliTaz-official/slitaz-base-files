@@ -14,10 +14,27 @@ unset_receipt() {
 		DEPENDS BUILD_DEPENDS WANTED WGET_URL PROVIDE CROSS_BUG
 }
 
-# Converts /tmp/pkg.tazpkg to pkg
+# Converts pkg.tazpkg to pkg
 package_name() {
 	local name=$(basename $1)
 	echo ${name%.tazpkg}
+}
+
+# Check mirror ID: return false if no changes or mirror unreachable
+check_mirror_id() {
+	[ "$forced" ] && rm -f ID
+	[ -f "ID" ] || echo $$ > ID
+	mv ID ID.bak
+	if wget -qs ${mirror%/}/ID; then
+		wget -q ${mirror%/}/ID
+	else
+		gettext "Mirror is unreachable"; false
+		status && return 1
+	fi
+	if [ "$(cat ID)" == "$(cat ID.bak)" ]; then
+		gettext "Mirror is up-to-date"; true
+		status && return 1
+	fi
 }
 
 #

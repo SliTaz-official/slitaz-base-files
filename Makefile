@@ -1,7 +1,7 @@
 # Makefile for SliTaz Bugs.
 #
 
-PACKAGE="slitaz-base"
+PACKAGE=slitaz-base
 PREFIX?=/usr
 LINGUAS?=fr ru
 
@@ -76,5 +76,4 @@ install: install-msg
 
 clean:
 	rm -rf po/mo
-	rm -f po/*~
-
+	rm -f po/*~ $(PACKAGE)*.tar.gz $(PACKAGE)*.md5
