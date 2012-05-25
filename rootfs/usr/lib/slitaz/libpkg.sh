@@ -8,6 +8,8 @@
 # Copyright (C) 2012 SliTaz GNU/Linux - BSD License
 #
 
+. /lib/libtaz.sh
+
 # Unset all receipt variables.
 unset_receipt() {
 	unset PACKAGE VERSION EXTRAVERSION SHORT_DESC HOST_ARCH TARBALL \
@@ -35,6 +37,18 @@ check_mirror_id() {
 		gettext "Mirror is up-to-date"; true
 		status && return 1
 	fi
+}
+
+# Source a package receipt
+source_receipt() {
+		local receipt=$1
+		if [ ! -f $receipt ]; then
+			echo -n $(colorize 31 "$pkg")
+			indent 28 $(gettext "missing receipt")
+			continue
+		else
+			. $receipt
+		fi
 }
 
 #
