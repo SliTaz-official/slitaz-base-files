@@ -10,15 +10,12 @@
 # Copyright (C) 2012 SliTaz GNU/Linux - BSD License
 #
 
-# Internationalization.
+# Internationalization. We can't export TEXTDOMAIN because this script
+# includes to other scripts with other TEXTDOMAIN exported
 . /usr/bin/gettext.sh
-# We can't export TEXTDOMAIN because this script includes to other scripts
-#  with other TEXTDOMAIN exported
-## TEXTDOMAIN='slitaz-base'
-## export TEXTDOMAIN
 
 # xgettext (from Makefile) can't extract strings from above example:
-#  gettext -d 'slitaz-base' 'Done'
+# gettext -d 'slitaz-base' 'Done'
 # so, I define own function (and add it as option to xgettext to Makefile)
 lgettext() {
 	gettext -d 'slitaz-base' $1
@@ -41,6 +38,11 @@ do
 done
 [ "$HTTP_REFERER" ] && output="html"
 
+# Get terminal columns
+get_cols() {
+	stty -a 2>/dev/null | head -n 1 | cut -d ";" -f 3 | awk '{print $2}'
+}
+
 # Return command status. Default to colored console output.
 status() {
 	local check=$?
@@ -52,7 +54,8 @@ status() {
 			done=" <span style='color: $okcolor;'>$okmsg</span>"
 			error=" <span style='color: $ercolor;'>$ermsg</span>" ;;
 		*)
-			cols=$(stty -a -F /dev/tty | head -n 1 | cut -d ";" -f 3 | awk '{print $2}')
+			local cols=$(get_cols)
+			[ "$cols" ] || cols=80
 			local scol=$(($cols - 10))
 			done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
 			error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]" ;;
@@ -71,7 +74,9 @@ separator() {
 	case $output in
 		raw|gtk) local sepchar="-" && local cols="8" ;;
 		html) local sepchar="<hr />" ;;
-		*) local cols=$(stty -a -F /dev/tty | head -n 1 | cut -d ";" -f 3 | awk '{print $2}') ;;
+		*)
+			local cols=$(get_cols)
+			[ "$cols" ] || cols=80 ;;
 	esac
 	for c in $(seq 1 $cols); do
 		echo -n "$sepchar"
