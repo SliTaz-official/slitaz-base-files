@@ -1,31 +1,20 @@
 #!/bin/sh
-# mktazdevs.sh: Make device files for SliTaz GNU/Linux
-# 2007/10/02 - pankso@slitaz.org
 #
-
-# Script functions.
-status()
-{
-	local CHECK=$?
-	echo -en "\\033[70G[ "
-	if [ $CHECK = 0 ]; then
-		echo -en "\\033[1;33mOK"
-	else
-		echo -en "\\033[1;31mFailed"
-	fi
-	echo -e "\\033[0;39m ]"
-}
+# mktazdevs.sh: Make device files for SliTaz GNU/Linux
+# 2007/10/02 - 2012 <pankso@slitaz.org>
+#
+# As of SliTaz 5.0 we have a radicaly minimal /dev tree for ARM and we
+# use mdev to create devices nodes on the fly. On i486 we use udev and
+# mount a devtmpfs on /dev, minimal tree for udev is in: /lib/udev/devices
+# This script yet be usefull to rescue a broken system but may be removed.
+#
+. /lib/libtaz.sh
 
 # We do our work in the dev/ directory.
 if [ -z "$1" ] ; then
 	echo "usage: `basename $0` path/to/dev"
 	exit 1
 fi
-
-# Script start.
-echo -n "Moving to $1... "
-cd $1
-status
 
 # Make useful directories.
 echo -n "Starting to build directories... "
