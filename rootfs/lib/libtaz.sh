@@ -40,7 +40,7 @@ done
 
 # Get terminal columns
 get_cols() {
-	stty -a 2>/dev/null | head -n 1 | cut -d ";" -f 3 | awk '{print $2}'
+	stty size | cut -d " " -f 2
 }
 
 # Return command status. Default to colored console output.
