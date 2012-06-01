@@ -1,8 +1,9 @@
 # /etc/fstab: Information about static filesystems.
 #
-proc            /proc        proc    defaults          0       0
-sysfs           /sys         sysfs   defaults          0       0
-devpts          /dev/pts     devpts  rw,gid=5,mode=0620 0       0
-tmpfs           /dev/shm     tmpfs   defaults          0       0
-#/dev/hda3       /home        ext3    defaults          0       2
-#/dev/hdb1       /mnt/data    ext3    defaults          0       2
+proc          /proc        proc     defaults             0       0
+sysfs         /sys         sysfs    defaults             0       0
+devpts        /dev/pts     devpts   rw,gid=5,mode=0620   0       0
+tmpfs         /dev/shm     tmpfs    defaults             0       0
+/dev/cdrom    /media/cdrom iso9660  user,ro,noauto       0       0
+#/dev/sda3     /home        ext3     defaults             0       2
+#/dev/hdb1     /mnt/data    btrfs    defaults             0       2
