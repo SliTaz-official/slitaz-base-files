@@ -43,8 +43,7 @@ check_mirror_id() {
 source_receipt() {
 		local receipt=$1
 		if [ ! -f $receipt ]; then
-			echo -n $(colorize 31 "$pkg")
-			indent 28 $(gettext "missing receipt")
+			indent 28 $(gettext "Missing receipt: ") $receipt
 			continue
 		else
 			. $receipt
