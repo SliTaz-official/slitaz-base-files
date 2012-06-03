@@ -1,35 +1,34 @@
-# Russian translations for SliTaz Base package.
-# Copyright (C) SliTaz Association
+# Greek translation for SliTaz Base package.
+# Copyright (C) 2012 SliTaz Association
 # This file is distributed under the same license as the SliTaz Base package.
-# Aleksej Bobylev <al.bobylev@gmail.com>, 2012.
+# Douros Dimitris <dourosdimitris@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-03 14:46+0000\n"
-"PO-Revision-Date: 2012-06-03 14:06-0000\n"
-"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
+"PO-Revision-Date: 2012-06-03 21:04+0200\n"
+"Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
-"Language: ru\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
 
 #: rootfs/lib/libtaz.sh:25
 msgid "Done"
-msgstr "Готово"
+msgstr "Έγινε"
 
 #: rootfs/lib/libtaz.sh:26
 msgid "Failed"
-msgstr "Ошибка"
+msgstr "Απέτυχε"
 
 #: rootfs/lib/libtaz.sh:155
 msgid "You must be root to execute:"
-msgstr "Вы должны обладать правами root для запуска:"
+msgstr "Χρειάζονται δικαιώματα διαχειριστή (root) για να εκτελέσετε:"
 
 #: rootfs/lib/libtaz.sh:168
 msgid "y"
@@ -49,25 +48,25 @@ msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
-msgstr "Зеркало недоступно"
+msgstr "Το είδωλο είναι απρόσιτο"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:37
 msgid "Mirror is up-to-date"
-msgstr "Зеркало в актуальном состоянии"
+msgstr "Το είδωλο είναι ενημερωμένο"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
 #, sh-format
 msgid "Missing receipt: $receipt"
-msgstr "Отсутствует рецепт: $receipt"
+msgstr "Λείπει η απόδειξη: $receipt"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
 msgid "$file is not a tazpkg. Exiting"
-msgstr "Файл $file не является пакетом tazpkg. Выход"
+msgstr "To $file δεν είναι tazpkg. Έξοδος"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
-msgstr "Переменные окружения CGI"
+msgstr "Περιβάλλον CGI SHell"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:30
 msgid ""
@@ -75,53 +74,53 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Добро пожаловать на сервер, работающий на SliTaz. Пусть мощь скриптов "
-"послужит вебу. Здесь вы можете проверить информацию HTTP и попробовать "
-"сделать некоторые запросы."
+"Καλώς ήρθατε στον εξυπηρετητή ιστού περιβάλλον CGI Shell SliTaz. Αφήστε τη "
+"δύναμη του shell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
+"πληροφορίες για το HTTP και να δοκιμάστε κάποια αιτήματα."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
-"Включив /usr/lib/slitaz/httphelper.sh в ваши скрипты, вы сможете "
-"использовать PHP-подобный синтаксис: $(GET var)"
+"Συμπεριλαμβάνοντας το /usr/lib/sliTaz/httphelper.sh στα script σας, σας "
+"επιτρέπει να χρησιμοποιήσετε σύνταξη σαν PHP, όπως: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
-msgstr "Тест QUERY_STRING:"
+msgstr "Δοκιμή QUERY_STRING:"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:42
 msgid "HTTP Info"
-msgstr "Информация HTTP"
+msgstr "Πληροφορίες HTTP"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:47
 msgid "HTTP Helper"
-msgstr "Помощник HTTP"
+msgstr "Βοηθός HTTP"
 
 #: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
 #, sh-format
 msgid "Index of $QUERY_STRING"
-msgstr "Содержимое папки $QUERY_STRING"
+msgstr "Ευρετήριο του $QUERY_STRING"
 
 #: rootfs/usr/bin/man:15
 msgid "Missing Retawq web browser..."
-msgstr "Отсутствует браузер Retawq…"
+msgstr "Λείπει ο περιηγητής Retawq..."
 
 #: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Для его установки выполните: su -c 'tazpkg get-install retawq'"
+msgstr "Παρακαλώ εκτελέστε: su -c 'tazpkg get-install retawq'"
 
 #: rootfs/usr/bin/man:28
 msgid "<b>Usage:</b> man [section] command"
-msgstr "<b>Использование:</b> man [раздел] команда"
+msgstr "<b>Χρήση:</b> man [τομέας] εντολή"
 
 #: rootfs/usr/bin/man:39
 #, sh-format
 msgid "in section $SECTION"
-msgstr "в разделе $SECTION"
+msgstr "στον τομέα $SECTION"
 
 #: rootfs/usr/bin/man:77
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
-msgstr "Руководство по $TOPIC$MSG отсутствует"
+msgstr "Δεν υπάρχει καταχώρηση εγχειριδίου για το $TOPIC$MSG"
