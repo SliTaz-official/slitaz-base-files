@@ -1,13 +1,13 @@
-# French translations for SliTaz package.
+# French translations for SliTaz Base package.
 # Copyright (C) 2012 THE SliTaz'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the SliTaz package.
+# This file is distributed under the same license as the SliTaz Base package.
 # Christophe Lincoln <pankso@slitaz.org>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 11:30+0300\n"
+"POT-Creation-Date: 2012-06-03 14:03+0000\n"
 "PO-Revision-Date: 2012-05-17 09:09+0100\n"
 "Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
 "Language-Team: French\n"
@@ -17,38 +17,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: rootfs/lib/libtaz.sh:28
+#: rootfs/lib/libtaz.sh:25
 msgid "Done"
 msgstr "Fait"
 
-#: rootfs/lib/libtaz.sh:29
+#: rootfs/lib/libtaz.sh:26
 msgid "Failed"
 msgstr "Echec"
 
-#: rootfs/lib/libtaz.sh:132
+#: rootfs/lib/libtaz.sh:155
 msgid "You must be root to execute:"
 msgstr "Vous devez être root pour exécuter:"
 
-#: rootfs/lib/libtaz.sh:145
+#: rootfs/lib/libtaz.sh:168
 msgid "y"
 msgstr "o"
 
-#: rootfs/lib/libtaz.sh:146
+#: rootfs/lib/libtaz.sh:169
 msgid "Y"
 msgstr "O"
 
-#: rootfs/lib/libtaz.sh:147
+#: rootfs/lib/libtaz.sh:170
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:171
 msgid "N"
 msgstr "N"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:32
-#, fuzzy, sh-format
+#: rootfs/usr/lib/slitaz/libpkg.sh:33
+msgid "Mirror is unreachable"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:37
+msgid "Mirror is up-to-date"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#, sh-format
+msgid "Missing receipt: $receipt"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#, sh-format
 msgid "$file is not a tazpkg. Exiting"
-msgstr "n'est pas un tazpkg. Arrêt"
+msgstr "$file n'est pas un tazpkg. Arrêt"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
@@ -94,6 +107,11 @@ msgstr ""
 
 #: rootfs/usr/bin/man:30
 msgid "<b>Usage:</b> man [section] command"
+msgstr ""
+
+#: rootfs/usr/bin/man:43
+#, sh-format
+msgid "in section $SECTION"
 msgstr ""
 
 #: rootfs/usr/bin/man:78

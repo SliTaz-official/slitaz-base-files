@@ -43,7 +43,7 @@ check_mirror_id() {
 source_receipt() {
 		local receipt=$1
 		if [ ! -f $receipt ]; then
-			indent 28 $(gettext "Missing receipt: ") $receipt
+			indent 28 $(eval_gettext 'Missing receipt: $receipt')
 			continue
 		else
 			. $receipt
@@ -63,8 +63,7 @@ is_valid_tazpkg() {
 check_valid_tazpkg() {
 	local file=$1
 	if ! is_valid_tazpkg $file; then
-		echo -n "$file "
-		gettext "is not a tazpkg. Exiting"; newline
+		eval_gettext "\$file is not a tazpkg. Exiting"; newline
 		exit 1
 	fi
 }

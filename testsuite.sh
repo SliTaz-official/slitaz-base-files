@@ -13,9 +13,6 @@ check_libtaz() {
 	echo -n "Checking libtaz.sh: boldify() "
 	boldify "Message"
 
-	echo -n "Checking libtaz.sh: unboldify() "
-	unboldify "It's a <b>sample</b> message"
-
 	echo -n "Checking libtaz.sh: colorize() "
 	echo -n $(colorize 33 "Message ")
 	echo -n $(colorize 35 "Message ")
@@ -23,6 +20,9 @@ check_libtaz() {
 
 	echo "Checking libtaz.sh: separator"
 	separator
+
+	echo -n "Checking libtaz.sh: emsg() "
+	emsg "<b>bold</b> color: <c 31>bold red</c> <c 32>bold green</c> separator:<->newline:<n> message with<i 26>indent"
 }
 
 # Usage: check_functions path/to/lib.sh
@@ -59,7 +59,7 @@ rm -f $activity
 
 check_libtaz
 output="raw"
-echo "Checking libtaz.sh: --output=raw"
+echo -e "\nChecking libtaz.sh: --output=raw"
 check_libtaz
 
 # Check libtaz.sh functions usage

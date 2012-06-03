@@ -27,7 +27,7 @@ case "$1" in
 	''|-*)
 		cat <<EOT
 
-unboldify "$(gettext '<b>Usage:</b> man [section] command')"
+emsg "$(gettext '<b>Usage:</b> man [section] command')"
 
 EOT
 		return ;;
@@ -40,7 +40,7 @@ MSG=""
 if [ -n "$2" ]; then
 	SECTION=$1
 	MAN_SECTION=$1
-	MSG=" in section $SECTION"
+	MSG=" $(eval_gettext 'in section $SECTION')"
 	shift
 fi
 
@@ -58,7 +58,7 @@ elif [ -f /usr/share/doc/slitaz/$TOPIC.txt ]; then
 	return
 fi
 
-for i in /usr/share/$LC_ALL/man$MAN_SECTION /usr/share/man$MAN_SECTION; do
+for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; do
 	if [ -f $i/raw-$TOPIC.* ]; then
 		i=$(ls $i/raw-$TOPIC.*)
 		case "$i" in

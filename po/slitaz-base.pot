@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 11:30+0300\n"
+"POT-Creation-Date: 2012-06-03 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rootfs/lib/libtaz.sh:28
+#: rootfs/lib/libtaz.sh:25
 msgid "Done"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:29
+#: rootfs/lib/libtaz.sh:26
 msgid "Failed"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:132
+#: rootfs/lib/libtaz.sh:155
 msgid "You must be root to execute:"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:145
+#: rootfs/lib/libtaz.sh:168
 msgid "y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:146
+#: rootfs/lib/libtaz.sh:169
 msgid "Y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:147
+#: rootfs/lib/libtaz.sh:170
 msgid "n"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:171
 msgid "N"
 msgstr ""
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:32
+#: rootfs/usr/lib/slitaz/libpkg.sh:33
+msgid "Mirror is unreachable"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:37
+msgid "Mirror is up-to-date"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#, sh-format
+msgid "Missing receipt: $receipt"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
 msgid "$file is not a tazpkg. Exiting"
 msgstr ""
@@ -94,6 +107,11 @@ msgstr ""
 
 #: rootfs/usr/bin/man:30
 msgid "<b>Usage:</b> man [section] command"
+msgstr ""
+
+#: rootfs/usr/bin/man:43
+#, sh-format
+msgid "in section $SECTION"
 msgstr ""
 
 #: rootfs/usr/bin/man:78

@@ -98,18 +98,7 @@ boldify() {
 	esac
 }
 
-# Better to keep messages unsplitted
-# Example: unboldify "My <b>pretty</b> function ;)"
-unboldify() {
-	case $output in
-		raw)	echo "$@" | sed -e 's|<b>||g;s|</b>||g' ;;
-		gtk)	echo "$@" ;;
-		html)	echo "$@" | sed -e 's|<b>|<strong>|g;s|</b>|</strong>|g' ;;
-		*)		echo -e "$(echo "$@" | sed -e 's|<b>|\\033[1m|g;s|</b>|\\033[0m|g')" ;;
-	esac
-}
-
-# Usage: colorize "Message" colorNB or use --color=NB option
+# Usage: colorize colorNB "Message"  or use --color=NB option
 # when running a tool. Default to white/38 and no html or gtk.
 colorize() {
 	: ${color=$1}
@@ -131,6 +120,35 @@ indent() {
 	echo -e "\033["$in"G $@";
 }
 
+# Extended MeSsaGe output
+emsg() {
+	local sep="\n--------\n"
+	case $output in
+		raw)
+			echo "$@" | sed -e 's|<b>||g; s|</b>||g; s|<c [0-9]*>||g; \
+			s|</c>||g; s|<->|'$sep'|g; s|<n>|\n|g; s|<i [0-9]*>| |g' ;;
+		gtk)
+			echo "$@" | sed -e 's|<c [0-9]*>||g; s|</c>||g; s|<->|'$sep'|g; \
+			s|<n>|\n|g; s|<i [0-9]*>| |g' ;;
+		html)
+			echo "$@" | sed -e 's|<b>|<strong>|g; s|</b>|</strong>|g; \
+			s|<n>|<br/>|g; s|<->|<hr/>|g; s|<i [0-9]*>| |g' ;;
+		*)
+			local sep="\n"
+			local cols=$(get_cols)
+			[ "$cols" ] || cols=80
+			for c in $(seq 1 $cols)
+			do
+				sep="${sep}="
+			done
+			echo -en "$(echo "$@" | sed -e 's|<b>|\\033[1m|g; s|</b>|\\033[0m|g; \
+			s|<c \([0-9]*\)>|\\033[1;\1m|g; s|</c>|\\033[0;39m|g; s|<n>|\n|g; \
+			s|<->|'$sep'|g; s|<i \([0-9]*\)>|\\033[\1G|g')"
+			[ "$1" != "-n" ] && echo
+			;;
+	esac
+}
+
 # Check if user is logged as root.
 check_root() {
 	if [ $(id -u) != 0 ]; then
@@ -141,7 +159,7 @@ check_root() {
 
 # Display debug info when --debug is used.
 debug() {
-	[ "$debug" ] && echo "$(colorize $decolor "DEBUG:") $1"
+	[ "$debug" ] && echo "$(colorize $decolor 'DEBUG:') $1"
 }
 
 # Gettextize yes/no.
