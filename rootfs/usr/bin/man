@@ -25,11 +25,7 @@ local MAN_SECTION
 
 case "$1" in
 	''|-*)
-		cat <<EOT
-
-emsg "$(gettext '<b>Usage:</b> man [section] command')"
-
-EOT
+		emsg "$(gettext '<b>Usage:</b> man [section] command')"
 		return ;;
 esac
 
@@ -59,12 +55,14 @@ elif [ -f /usr/share/doc/slitaz/$TOPIC.txt ]; then
 fi
 
 for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; do
-	if [ -f $i/raw-$TOPIC.* ]; then
-		i=$(ls $i/raw-$TOPIC.*)
-		case "$i" in
-		*gz) (zcat $i || unlzma -c $i 2> /dev/null) | less -M;;
-		*) less -M $i;;
-		esac
+	if [ -f $i/$TOPIC.* ]; then
+		i=$(ls $i/$TOPIC.* 2> /dev/null)
+		if [ "x$i" != "x" ]; then
+			case "$i" in
+				*gz) (zcat $i || unlzma -c $i 2> /dev/null) | less -M;;
+				*) less -M $i;;
+			esac
+		fi
 		return
 	fi
 	if [ -x /usr/bin/retawq -a -f $i/$TOPIC.html ]; then
@@ -73,6 +71,7 @@ for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; 
 	fi
 done
 
+[ "x$SECTION" = "x" ] && SECTION="all"
 (wget -O - "http://mirror.slitaz.org/man/$SECTION/$TOPIC.html" || \
 	wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION") 2> /dev/null | \
 	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"$(eval_gettext 'No manual entry for $TOPIC$MSG')\" }" | \
