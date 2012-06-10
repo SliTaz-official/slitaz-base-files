@@ -45,6 +45,9 @@ TOPIC=$1
 if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
 	return
+elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz/$TOPIC.html ]; then
+	retawq --dump=file:///usr/share/doc/slitaz/$TOPIC.html | less -M
+	return
 elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/slitaz-tools/$TOPIC.html | less -M
 	return
