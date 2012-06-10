@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-03 14:46+0000\n"
-"PO-Revision-Date: 2012-06-03 21:04+0200\n"
+"PO-Revision-Date: 2012-06-09 21:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -48,11 +48,11 @@ msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
-msgstr "Το είδωλο είναι απρόσιτο"
+msgstr "Ο καθρέπτης είναι απρόσιτος"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:37
 msgid "Mirror is up-to-date"
-msgstr "Το είδωλο είναι ενημερωμένο"
+msgstr "Ο καθρέπτης είναι ενημερωμένος"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
 #, sh-format
@@ -74,7 +74,7 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Καλώς ήρθατε στον εξυπηρετητή ιστού περιβάλλον CGI Shell SliTaz. Αφήστε τη "
+"Καλώς ήρθατε στον εξυπηρετητή ιστού SliTaz σε περιβάλλον CGI Shell. Αφήστε τη "
 "δύναμη του shell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
 "πληροφορίες για το HTTP και να δοκιμάστε κάποια αιτήματα."
 
