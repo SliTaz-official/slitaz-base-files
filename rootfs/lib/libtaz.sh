@@ -18,7 +18,7 @@
 # gettext -d 'slitaz-base' 'Done'
 # so, I define own function (and add it as option to xgettext to Makefile)
 lgettext() {
-	gettext -d 'slitaz-base' $1
+	gettext -d 'slitaz-base' "$@"
 }
 
 # Internal variables.
