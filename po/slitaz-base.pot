@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-03 23:43+0000\n"
+"POT-Creation-Date: 2012-07-01 18:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "in section $SECTION"
 msgstr ""
 
-#: rootfs/usr/bin/man:77
+#: rootfs/usr/bin/man:80
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr ""

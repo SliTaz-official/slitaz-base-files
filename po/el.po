@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-03 14:46+0000\n"
+"POT-Creation-Date: 2012-07-01 18:58+0000\n"
 "PO-Revision-Date: 2012-06-09 21:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -74,8 +74,8 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Καλώς ήρθατε στον εξυπηρετητή ιστού SliTaz σε περιβάλλον CGI Shell. Αφήστε τη "
-"δύναμη του shell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
+"Καλώς ήρθατε στον εξυπηρετητή ιστού SliTaz σε περιβάλλον CGI Shell. Αφήστε "
+"τη δύναμη του shell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
 "πληροφορίες για το HTTP και να δοκιμάστε κάποια αιτήματα."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
@@ -120,7 +120,7 @@ msgstr "<b>Χρήση:</b> man [τομέας] εντολή"
 msgid "in section $SECTION"
 msgstr "στον τομέα $SECTION"
 
-#: rootfs/usr/bin/man:77
+#: rootfs/usr/bin/man:80
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr "Δεν υπάρχει καταχώρηση εγχειριδίου για το $TOPIC$MSG"

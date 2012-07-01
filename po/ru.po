@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-03 14:46+0000\n"
+"POT-Creation-Date: 2012-07-01 18:58+0000\n"
 "PO-Revision-Date: 2012-06-03 14:06-0000\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -121,7 +121,7 @@ msgstr "<b>Использование:</b> man [раздел] команда"
 msgid "in section $SECTION"
 msgstr "в разделе $SECTION"
 
-#: rootfs/usr/bin/man:77
+#: rootfs/usr/bin/man:80
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr "Руководство по $TOPIC$MSG отсутствует"
