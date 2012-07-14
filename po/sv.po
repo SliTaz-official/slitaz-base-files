@@ -1,0 +1,124 @@
+# Swedish translations for SliTaz Base package.
+# Copyright (C) 2012 SliTaz Association
+# This file is distributed under the same license as the SliTaz Base package.
+# Emil Eklund <emileklund123@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-01 18:58+0000\n"
+"PO-Revision-Date: 2012-07-10 18:24-0000\n"
+"Last-Translator: Emil Eklund <emileklund123@gmail.com>\n"
+"Language-Team: Swedish\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: rootfs/lib/libtaz.sh:25
+msgid "Done"
+msgstr "Klar"
+
+#: rootfs/lib/libtaz.sh:26
+msgid "Failed"
+msgstr "Avta"
+
+#: rootfs/lib/libtaz.sh:155
+msgid "You must be root to execute:"
+msgstr "Du måste vara root-användare för att utföra:"
+
+#: rootfs/lib/libtaz.sh:168
+msgid "y"
+msgstr "j"
+
+#: rootfs/lib/libtaz.sh:169
+msgid "Y"
+msgstr "J"
+
+#: rootfs/lib/libtaz.sh:170
+msgid "n"
+msgstr "n"
+
+#: rootfs/lib/libtaz.sh:171
+msgid "N"
+msgstr "N"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:33
+msgid "Mirror is unreachable"
+msgstr "Spegeln går inte att nå"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:37
+msgid "Mirror is up-to-date"
+msgstr "Spegeln är up-to-date"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#, sh-format
+msgid "Missing receipt: $receipt"
+msgstr "Recept saknas: $receipt"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#, sh-format
+msgid "$file is not a tazpkg. Exiting"
+msgstr "$file är inte en taxpkg. Avslutar."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
+msgid "CGI SHell Environment"
+msgstr "CGI SHell Environment"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+"Välkommen till Slitaz web server CGI Shell environment. Låt kraften av SHell "
+"skript möta webben! Här kan du kolla HTTP info och pröva några kommandon."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:34
+msgid ""
+"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
+"like syntax such as: $(GET var)"
+msgstr ""
+"Att inkludera /usr/lib/slitaz/httphelper.sh i dina skript tillåter dig att "
+"se PHP-aktiga syntax så som: $(GET var)"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:37
+msgid "QUERY_STRING test:"
+msgstr "QUERY_STRING test:"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:42
+msgid "HTTP Info"
+msgstr "HTTP info"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:47
+msgid "HTTP Helper"
+msgstr "HTTP hjälpare"
+
+#: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
+#, sh-format
+msgid "Index of $QUERY_STRING"
+msgstr "Början av $QUERY_STRING"
+
+#: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr "Saknar webbläsaren Retawq..."
+
+#: rootfs/usr/bin/man:16
+msgid "Please run: su -c 'tazpkg get-install retawq'"
+msgstr "Var god kör: su -c 'tazpkg get-install retawq'"
+
+#: rootfs/usr/bin/man:28
+msgid "<b>Usage:</b> man [section] command"
+msgstr "<b>Användning:</b> man [sektion] kommando"
+
+#: rootfs/usr/bin/man:39
+#, sh-format
+msgid "in section $SECTION"
+msgstr "i sektion $SECTION"
+
+#: rootfs/usr/bin/man:80
+#, sh-format
+msgid "No manual entry for $TOPIC$MSG"
+msgstr "Inget manualinlägg för $TOPIC$MSG"

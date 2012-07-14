@@ -3,7 +3,7 @@
 
 PACKAGE=slitaz-base
 PREFIX?=/usr
-LINGUAS?=el fr ru
+LINGUAS?=el fr ru sv
 
 all: help
 
