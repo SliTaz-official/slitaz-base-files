@@ -16,13 +16,16 @@ if [ -z "$1" ] ; then
 	exit 1
 fi
 
+# Script start.
+echo -n "Moving to $1..."
+cd $1
+status
+
 # Make useful directories.
 echo -n "Starting to build directories... "
 mkdir pts input net usb shm
 status
 
-# Script start.
-#
 echo -n "Starting to build devices... "
 
 # Input devs.
