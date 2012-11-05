@@ -41,7 +41,7 @@ if [ -s "/etc/TZ" ]; then
 	TZ=`cat /etc/TZ`
 	export TZ
 fi
-ip=$(ifconfig eth0 2> /dev/null | awk '/inet addr/ { print substr($2,6) }')
+ip=$(ifconfig $(route -n|sed '$!d;s/.* //')|sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
 case "$TERM" in
 xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip\007";;
 esac

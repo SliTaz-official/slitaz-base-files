@@ -7,3 +7,4 @@ tmpfs         /dev/shm     tmpfs    defaults             0       0
 /dev/cdrom    /media/cdrom iso9660  user,ro,noauto       0       0
 #/dev/sda3     /home        ext3     defaults             0       2
 #/dev/hdb1     /mnt/data    btrfs    defaults             0       2
+#datasvr:/nfs/home  /home   nfs      tcp,nolock           0       0
