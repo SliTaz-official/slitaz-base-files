@@ -47,25 +47,25 @@ msgstr "N"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
-msgstr ""
+msgstr "Le miroir est inacessible"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:37
 msgid "Mirror is up-to-date"
-msgstr ""
+msgstr "Le miroir est à jour"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
 #, sh-format
 msgid "Missing receipt: $receipt"
-msgstr ""
+msgstr "Recette manquante: $receipt"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
 msgid "$file is not a tazpkg. Exiting"
-msgstr "$file n'est pas un tazpkg. Arrêt"
+msgstr "$file n'est pas un paquet tazpkg. Arrêt"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
-msgstr ""
+msgstr "Environnement SHell CGI"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:30
 msgid ""
@@ -73,12 +73,17 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
+"Bienvenue sur le serveur web SliTaz avec support CGI. "
+"Quand la puissance de script shell rencontrer le web!"
+"Ici, vous pouvez vérifier les info HTTP et essayer certaines demandes."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
+"Vous devez inclure '/usr/lib/slitaz/httphelper.sh' dans vos scripts pour utiliser la synthaxe PHP"
+"comme par exemple: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
@@ -86,7 +91,7 @@ msgstr ""
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:42
 msgid "HTTP Info"
-msgstr ""
+msgstr "Info HTTP"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:47
 msgid "HTTP Helper"
@@ -99,22 +104,22 @@ msgstr ""
 
 #: rootfs/usr/bin/man:15
 msgid "Missing Retawq web browser..."
-msgstr ""
+msgstr "Navigateur web Retawq manquant..."
 
 #: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr ""
+msgstr "Vous pouvez l'installer en exécutant la commande: su -c 'tazpkg get-install retawq'"
 
 #: rootfs/usr/bin/man:28
 msgid "<b>Usage:</b> man [section] command"
-msgstr ""
+msgstr "<b>Usage:</b> man [section] commande"
 
 #: rootfs/usr/bin/man:39
 #, sh-format
 msgid "in section $SECTION"
-msgstr ""
+msgstr "dans cette section $SECTION"
 
 #: rootfs/usr/bin/man:80
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
-msgstr ""
+msgstr "Pas de manuel disponible pour $TOPIC$MSG"
