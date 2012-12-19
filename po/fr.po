@@ -87,7 +87,7 @@ msgstr ""
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
-msgstr ""
+msgstr "Test de la chaine de caractères:"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:42
 msgid "HTTP Info"
@@ -95,12 +95,12 @@ msgstr "Info HTTP"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:47
 msgid "HTTP Helper"
-msgstr ""
+msgstr "Helper HTTP"
 
 #: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
 #, sh-format
 msgid "Index of $QUERY_STRING"
-msgstr ""
+msgstr "Racine de $QUERY_STRING"
 
 #: rootfs/usr/bin/man:15
 msgid "Missing Retawq web browser..."
