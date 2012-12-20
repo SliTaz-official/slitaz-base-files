@@ -33,7 +33,8 @@ http_urlencode() {
 }
 
 htmlentities() {
-	echo $1 | sed 's|&|\&amp;|g;s|<|\&lt;|g;s|>|\&gt;|g;s|"|\&quot;|g'
+	echo $1 | sed -e 's|&|\&amp;|g;s|<|\&lt;|g;s|>|\&gt;|g' \
+		-e 's|"|\&quot;|g;s|'"'"'|\&acute;|g;s|\t|\&#09;|g'
 }
 
 # MD5 crypt a string such as password (httpd -m dont give same result ?)
