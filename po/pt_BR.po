@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the SliTaz Base package.
 # Claudinei Pereira <claudinei@slitaz.org>, 2013.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
@@ -32,11 +31,11 @@ msgstr "Você deve ser usuário root para executar"
 
 #: rootfs/lib/libtaz.sh:168
 msgid "y"
-msgstr "s"
+msgstr "y"
 
 #: rootfs/lib/libtaz.sh:169
 msgid "Y"
-msgstr "S"
+msgstr "Y"
 
 #: rootfs/lib/libtaz.sh:170
 msgid "n"
@@ -62,7 +61,7 @@ msgstr "Arquivo receipt não encontrado: $receipt"
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
 msgid "$file is not a tazpkg. Exiting"
-msgstr "O $file não é um tazpkg. Abortando"
+msgstr "$file não é um tazpkg. Abortando"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
 msgid "CGI SHell Environment"
