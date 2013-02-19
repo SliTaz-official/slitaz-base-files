@@ -45,3 +45,18 @@ ip=$(ifconfig $(route -n|sed '$!d;s/.* //')|sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
 case "$TERM" in
 xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip\007";;
 esac
+
+dirs()
+{
+	echo $_dirs
+}
+
+pushd()
+{
+	cd $1 && _dirs="$1 $_dirs" && dirs
+}
+
+popd()
+{
+	[ -n "$_dirs" ] && _dirs="${_dirs#* }" && cd ${_dirs%% *} && dirs
+}
