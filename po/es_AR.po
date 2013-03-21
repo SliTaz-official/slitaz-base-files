@@ -74,7 +74,7 @@ msgid ""
 msgstr ""
 "Bienvenido al servidor web de SliTaz entorno CGI Shell. Deje que el poder de "
 "los script shell satisfaga la web! Aquí puede comprobar la información HTTP "
-"y probar algunas peticiones".
+"y probar algunas peticiones."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""

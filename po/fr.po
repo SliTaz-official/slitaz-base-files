@@ -73,17 +73,17 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Bienvenue sur le serveur web SliTaz avec support CGI. "
-"Quand la puissance de script shell rencontrer le web!"
-"Ici, vous pouvez vérifier les info HTTP et essayer certaines demandes."
+"Bienvenue sur le serveur web SliTaz avec support CGI. Quand la puissance de "
+"script shell rencontrer le web! Ici, vous pouvez vérifier les info HTTP et "
+"essayer certaines demandes."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
-"Vous devez inclure '/usr/lib/slitaz/httphelper.sh' dans vos scripts pour utiliser la synthaxe PHP"
-"comme par exemple: $(GET var)"
+"Vous devez inclure '/usr/lib/slitaz/httphelper.sh' dans vos scripts pour "
+"utiliser la synthaxe PHPcomme par exemple: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
@@ -108,7 +108,9 @@ msgstr "Navigateur web Retawq manquant..."
 
 #: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Vous pouvez l'installer en exécutant la commande: su -c 'tazpkg get-install retawq'"
+msgstr ""
+"Vous pouvez l'installer en exécutant la commande: su -c 'tazpkg get-install "
+"retawq'"
 
 #: rootfs/usr/bin/man:28
 msgid "<b>Usage:</b> man [section] command"

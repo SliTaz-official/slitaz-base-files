@@ -74,16 +74,16 @@ msgid ""
 "requests."
 msgstr ""
 "Bem-vindo ao servidor em Ambiente CGI SHell do SliTaz. Deixe o poder do "
-"script SHell dominar a rede! Aqui você pode checar informações HTTP e "
-"tentar algumas requisições."
- 
+"script SHell dominar a rede! Aqui você pode checar informações HTTP e tentar "
+"algumas requisições."
+
 #: rootfs/var/www/cgi-bin/cgi-env.sh:34
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
-"Incluindo o arquivo /usr/lib/slitaz/httphelper.sh em seus scripts permite "
-"a você utilizar sintaxe PHP como: $(GET var)"
+"Incluindo o arquivo /usr/lib/slitaz/httphelper.sh em seus scripts permite a "
+"você utilizar sintaxe PHP como: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:37
 msgid "QUERY_STRING test:"
