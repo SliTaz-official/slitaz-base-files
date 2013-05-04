@@ -1,0 +1,68 @@
+/* CSS style for SliTaz Doc */
+
+html { min-height: 102%; }
+body {
+	font: 100% "DejaVu Sans", Ubuntu, "Droid Sans", "Liberation Sans", FreeSans, sans-serif;
+	margin: 0;
+	-moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
+}
+
+h1 { margin: 0; padding: 0.4em; color: #fff; font-size: 125%; }
+h2 { color: #d66018; }
+h3 { color: #666; font-size: 140%; }
+
+a, a:link, a:visited {
+	color: #436976;
+	text-decoration: none;
+	border-bottom: 1px dotted #7cd;
+}
+a:hover, a:focus {
+	color: #d66018;
+	border-bottom: 1px solid;
+}
+a[href^="http:"] {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKAgMAAADqYMegAAAADFBMVEUkJCT///8kJCRDaXZbtgmAAAAAA3RSTlMAAIAXzkf+AAAAI0lEQVQIHWNYGsCwS4Bh/wKG/Q0M6ycwzJ7AEAZGUQEMkQEAn7cJ51TmPjwAAAAASUVORK5CYII=") no-repeat right top;
+	padding-right: 8px;
+}
+
+img { border: none; vertical-align: middle; }
+
+pre {
+	padding: 0.8em;
+	border: 1px solid #ddd; border-radius: 0.4em;
+}
+pre, code { background-color: #f8f8f8; }
+code, tt { color: #666; }
+pre tt { color: #d62; /* shell prompt */ }
+
+header, #header {
+	background-color: #351a0a;
+	border-bottom: 0.5em solid #d66018;
+}
+
+#content {
+	margin: 2.5em auto;
+	width:90%; max-width:72ex;
+	text-align: justify;
+}
+
+footer, #footer {
+	text-align: center;
+	padding: 1.2em;
+	border-top: 1px solid #ddd;
+}
+
+/* Languages */
+
+#lang {
+	float: right;
+	padding: 0.5em;
+	font-size: small;
+}
+
+#lang a {
+	text-decoration: none; border: none;
+	padding: 0 0.2ex;
+}
+
+td, th { vertical-align: top; }
