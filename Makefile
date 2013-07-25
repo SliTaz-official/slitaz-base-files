@@ -3,7 +3,7 @@
 
 PACKAGE=slitaz-base
 PREFIX?=/usr
-LINGUAS?=el es_AR fr pt_BR ru sv
+LINGUAS?=el es_AR fr pl pt_BR ru sv
 
 all: help
 
@@ -14,10 +14,10 @@ help:
 
 pot:
 	xgettext -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz Association" -k -klgettext \
+		--copyright-holder="SliTaz" -k -klgettext \
 		./rootfs/lib/libtaz.sh
 	xgettext -j -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz Association" \
+		--copyright-holder="SliTaz" \
 		./rootfs/usr/lib/slitaz/libpkg.sh \
 		./rootfs/var/www/cgi-bin/cgi-env.sh \
 		./rootfs/var/www/cgi-bin/index.cgi \

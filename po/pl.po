@@ -1,0 +1,121 @@
+# Polish translation for SliTaz Base package.
+# Copyright (C) YEAR SliTaz Association
+# This file is distributed under the same license as the SliTaz Base package.
+# Paweł Pyrczak <support@pyrczak.pl>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-01 18:58+0000\n"
+"PO-Revision-Date: 2013-07-23 12:34+0100\n"
+"Last-Translator: Paweł Pyrczak <tkr.tkr.pl@gmail.com>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: rootfs/lib/libtaz.sh:25
+msgid "Done"
+msgstr "Zakończono"
+
+#: rootfs/lib/libtaz.sh:26
+msgid "Failed"
+msgstr "Niepowodzenie"
+
+#: rootfs/lib/libtaz.sh:155
+msgid "You must be root to execute:"
+msgstr "Musisz być administratorem (root) aby wykonać:"
+
+#: rootfs/lib/libtaz.sh:168
+msgid "y"
+msgstr "t"
+
+#: rootfs/lib/libtaz.sh:169
+msgid "Y"
+msgstr "T"
+
+#: rootfs/lib/libtaz.sh:170
+msgid "n"
+msgstr "n"
+
+#: rootfs/lib/libtaz.sh:171
+msgid "N"
+msgstr "N"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:33
+msgid "Mirror is unreachable"
+msgstr "Serwer lustrzany jest nieosiągalny"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:37
+msgid "Mirror is up-to-date"
+msgstr "Serwer lustrzany jest aktualny"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#, sh-format
+msgid "Missing receipt: $receipt"
+msgstr "Brakująca recepta: $receipt"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#, sh-format
+msgid "$file is not a tazpkg. Exiting"
+msgstr "$file nie jest plikiem tazpkg. Kończenie pracy"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:17
+#: rootfs/var/www/cgi-bin/cgi-env.sh:24
+msgid "CGI SHell Environment"
+msgstr "Środowisko CGI SHell"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+msgid "Welcome to the SliTaz web server CGI Shell environment. Let the power of SHell script meet the web! Here you can check HTTP info and try some requests."
+msgstr "Witamy w środowisku CGI SHell serwera web SliTaz. Niech siła skryptów SHell pozna sieć ! Tu może sprawdzić informacje HTTP, i spróbować wykonać kilka zapytań."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:34
+msgid "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-like syntax such as: $(GET var)"
+msgstr "Dołączanie /usr/lib/slitaz/httphelper.sh do twoich skryptów pozwoli używać składnie podobną do PHP, taką jak: $(GET var)"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:37
+msgid "QUERY_STRING test:"
+msgstr "Test QUERY_STRING:"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:42
+msgid "HTTP Info"
+msgstr "HTTP Info"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:47
+msgid "HTTP Helper"
+msgstr "HTTP Helper"
+
+#: rootfs/var/www/cgi-bin/index.cgi:15
+#: rootfs/var/www/cgi-bin/index.cgi:22
+#, sh-format
+msgid "Index of $QUERY_STRING"
+msgstr "Indeks $QUERY_STRING"
+
+#: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr "Brakuje przeglądarki internetowej Retawq..."
+
+#: rootfs/usr/bin/man:16
+msgid "Please run: su -c 'tazpkg get-install retawq'"
+msgstr "Proszę uruchomić: su -c 'tazpkg get-install retawq'"
+
+#: rootfs/usr/bin/man:28
+msgid "<b>Usage:</b> man [section] command"
+msgstr "<b>Użycie:</b> man [section] command"
+
+#: rootfs/usr/bin/man:39
+#, sh-format
+msgid "in section $SECTION"
+msgstr "w sekcji $SECTION"
+
+#: rootfs/usr/bin/man:80
+#, sh-format
+msgid "No manual entry for $TOPIC$MSG"
+msgstr "Brak ręcznego wpisu dla $TOPIC$MSG"
+
