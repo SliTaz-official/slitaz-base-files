@@ -7,19 +7,17 @@
 #
 # Documentation: man libtaz or /usr/share/doc/slitaz/libtaz.txt
 #
-# Copyright (C) 2012 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2013 SliTaz GNU/Linux - BSD License
 #
 
-# Internationalization. We can't export TEXTDOMAIN because this script
-# includes to other scripts with other TEXTDOMAIN exported
 . /usr/bin/gettext.sh
 
-# xgettext (from Makefile) can't extract strings from above example:
-# gettext -d 'slitaz-base' 'Done'
-# so, I define own function (and add it as option to xgettext to Makefile)
-lgettext() {
-	gettext -d 'slitaz-base' "$@"
-}
+# short names for common i18n functions (like 'echo' and 'echo -n')
+_() { eval_gettext "$@"; echo; }
+_n() { eval_gettext "$@"; }
+
+# internal i18n
+lgettext() { gettext -d 'slitaz-base' "$@"; }
 
 # Internal variables.
 okmsg="$(lgettext 'Done')"

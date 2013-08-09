@@ -30,11 +30,11 @@ check_mirror_id() {
 	if wget -qs ${mirror%/}/ID; then
 		wget -q ${mirror%/}/ID
 	else
-		gettext "Mirror is unreachable"; false
+		_n "Mirror is unreachable"; false
 		status && return 1
 	fi
 	if [ "$(cat ID)" == "$(cat ID.bak)" ]; then
-		gettext "Mirror is up-to-date"; true
+		_n "Mirror is up-to-date"; true
 		status && return 1
 	fi
 }
@@ -43,7 +43,7 @@ check_mirror_id() {
 source_receipt() {
 		local receipt=$1
 		if [ ! -f $receipt ]; then
-			indent 28 $(eval_gettext 'Missing receipt: $receipt')
+			indent 28 $(_ 'Missing receipt: $receipt')
 			continue
 		else
 			. $receipt
@@ -63,7 +63,7 @@ is_valid_tazpkg() {
 check_valid_tazpkg() {
 	local file=$1
 	if ! is_valid_tazpkg $file; then
-		eval_gettext "\$file is not a tazpkg. Exiting"; newline
+		_ '$file is not a tazpkg. Exiting'
 		exit 1
 	fi
 }

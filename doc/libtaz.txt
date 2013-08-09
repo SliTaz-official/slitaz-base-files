@@ -12,6 +12,8 @@ DESCRIPTION
 	/lib/libtaz.sh since it is used when /usr may not be mounted.
 
 FUNCTIONS
+	_ string              Short name for "gettext string; echo"
+	_n string             Short name for "gettext string"
 	status                Return command status [Done|Failed]
 	separator             Display a line separator
 	newline               Echo a new line if gettext or echo -n is used

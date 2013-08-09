@@ -6,14 +6,13 @@
 . /lib/libtaz.sh
 
 # Internationalization.
-. /usr/bin/gettext.sh
 TEXTDOMAIN='slitaz-base'
 . /etc/locale.conf
 export TEXTDOMAIN LANG
 
 if [ ! -x /usr/bin/retawq ]; then
-	echo; gettext "Missing Retawq web browser..."; echo
-	gettext "Please run: su -c 'tazpkg get-install retawq'"; echo -e "\n"
+	echo; _ "Missing Retawq web browser..."
+	_ "Please run: su -c 'tazpkg get-install retawq'"
 	exit 0
 fi
 
@@ -25,7 +24,7 @@ local MAN_SECTION
 
 case "$1" in
 	''|-*)
-		emsg "$(gettext '<b>Usage:</b> man [section] command')"
+		emsg "$(_ '<b>Usage:</b> man [section] command')"
 		return ;;
 esac
 
@@ -36,7 +35,7 @@ MSG=""
 if [ -n "$2" ]; then
 	SECTION=$1
 	MAN_SECTION=$1
-	MSG=" $(eval_gettext 'in section $SECTION')"
+	MSG=" $(_n 'in section $SECTION')"
 	shift
 fi
 
@@ -77,7 +76,7 @@ done
 [ "x$SECTION" = "x" ] && SECTION="all"
 (wget -O - "http://mirror.slitaz.org/man/$SECTION/$TOPIC.html" || \
 	wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION") 2> /dev/null | \
-	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"$(eval_gettext 'No manual entry for $TOPIC$MSG')\" }" | \
+	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"$(_ 'No manual entry for $TOPIC$MSG')\" }" | \
 	sed -e 's/<[^>]*>//g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&amp;/\&/g' | less -M
 
 exit 0

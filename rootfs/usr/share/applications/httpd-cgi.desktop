@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
+Type=Application
 Name=CGI SHell Environment
-Name[ru]=Переменные окружения CGI
 Name[pt]=Ambiente SHell CGI
 Name[pt_BR]=Ambiente SHell CGI
+Name[ru]=Переменные окружения CGI
 Exec=browser http://localhost/cgi-bin/cgi-env.sh
 Icon=text-x-script
-Type=Application
-Categories=Application;Development;
+Categories=Development;WebDevelopment;

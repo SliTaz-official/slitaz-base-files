@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR SliTaz Association
+# Copyright (C) YEAR SliTaz
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 18:58+0000\n"
+"POT-Creation-Date: 2013-08-09 15:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:23
 msgid "Done"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:26
+#: rootfs/lib/libtaz.sh:24
 msgid "Failed"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:155
+#: rootfs/lib/libtaz.sh:153
 msgid "You must be root to execute:"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:166
 msgid "y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:167
 msgid "Y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:170
+#: rootfs/lib/libtaz.sh:168
 msgid "n"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:171
+#: rootfs/lib/libtaz.sh:169
 msgid "N"
 msgstr ""
 
@@ -63,58 +63,54 @@ msgstr ""
 msgid "$file is not a tazpkg. Exiting"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
+#: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+#: rootfs/var/www/cgi-bin/cgi-env.sh:31
 msgid ""
 "Welcome to the SliTaz web server CGI Shell environment. Let the power of "
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:34
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:37
+#: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:42
+#: rootfs/var/www/cgi-bin/cgi-env.sh:43
 msgid "HTTP Info"
 msgstr ""
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:47
-msgid "HTTP Helper"
-msgstr ""
-
-#: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
+#: rootfs/var/www/cgi-bin/index.cgi:12
 #, sh-format
 msgid "Index of $QUERY_STRING"
 msgstr ""
 
-#: rootfs/usr/bin/man:15
+#: rootfs/usr/bin/man:14
 msgid "Missing Retawq web browser..."
 msgstr ""
 
-#: rootfs/usr/bin/man:16
+#: rootfs/usr/bin/man:15
 msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr ""
 
-#: rootfs/usr/bin/man:28
+#: rootfs/usr/bin/man:27
 msgid "<b>Usage:</b> man [section] command"
 msgstr ""
 
-#: rootfs/usr/bin/man:39
+#: rootfs/usr/bin/man:38
 #, sh-format
 msgid "in section $SECTION"
 msgstr ""
 
-#: rootfs/usr/bin/man:80
+#: rootfs/usr/bin/man:79
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr ""

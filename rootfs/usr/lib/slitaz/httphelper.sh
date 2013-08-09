@@ -9,7 +9,7 @@
 #
 # Documentation: man httphelper or /usr/share/doc/slitaz/httpelper.txt
 #
-# Copyright (C) SliTaz 2012 - GNU gpl v2
+# Copyright (C) SliTaz 2012 - GNU GPL v2
 #
 
 alias urlencode='busybox httpd -e'

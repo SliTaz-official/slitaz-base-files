@@ -1,25 +1,29 @@
 #!/bin/sh
+. /lib/libtaz.sh
 
 # Internationalization.
-. /usr/bin/gettext.sh
 TEXTDOMAIN='slitaz-base'
 . /etc/locale.conf
 export TEXTDOMAIN LANG
 
-[ ! -d ..$QUERY_STRING ] && echo "HTTP/1.1 404 Not Found" || cat <<EOT
+if [ ! -d ..$QUERY_STRING ]; then
+	echo "HTTP/1.1 404 Not Found";
+else
+	title=$(_ 'Index of $QUERY_STRING')
+	cat << EOT
 Content-type: text/html
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>$(eval_gettext "Index of \$QUERY_STRING")</title>
+	<title>$title</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
 
 <!-- Header -->
 <div id="header">
-	<h1>$(eval_gettext "Index of \$QUERY_STRING")</h1>
+	<h1>$title</h1>
 </div>
 
 <!-- Content -->
@@ -39,3 +43,4 @@ $({ [ "$QUERY_STRING" != "/" ] && echo "../"; ls -p ..$QUERY_STRING; } | \
 </body>
 </html>
 EOT
+fi

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 18:58+0000\n"
+"POT-Creation-Date: 2013-08-09 15:29+0300\n"
 "PO-Revision-Date: 2012-07-10 18:24-0000\n"
 "Last-Translator: Emil Eklund <emileklund123@gmail.com>\n"
 "Language-Team: Swedish\n"
@@ -17,31 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:23
 msgid "Done"
 msgstr "Klar"
 
-#: rootfs/lib/libtaz.sh:26
+#: rootfs/lib/libtaz.sh:24
 msgid "Failed"
 msgstr "Fel"
 
-#: rootfs/lib/libtaz.sh:155
+#: rootfs/lib/libtaz.sh:153
 msgid "You must be root to execute:"
 msgstr "Du måste vara root-användare för att utföra:"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:166
 msgid "y"
 msgstr "j"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:167
 msgid "Y"
 msgstr "J"
 
-#: rootfs/lib/libtaz.sh:170
+#: rootfs/lib/libtaz.sh:168
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:171
+#: rootfs/lib/libtaz.sh:169
 msgid "N"
 msgstr "N"
 
@@ -63,11 +63,11 @@ msgstr "Recept saknas: $receipt"
 msgid "$file is not a tazpkg. Exiting"
 msgstr "$file är inte en taxpkg. Avslutar."
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:17 rootfs/var/www/cgi-bin/cgi-env.sh:24
+#: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
 msgstr "CGI SHell Environment"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:30
+#: rootfs/var/www/cgi-bin/cgi-env.sh:31
 msgid ""
 "Welcome to the SliTaz web server CGI Shell environment. Let the power of "
 "SHell script meet the web! Here you can check HTTP info and try some "
@@ -76,7 +76,7 @@ msgstr ""
 "Välkommen till Slitaz web server CGI Shell environment. Låt kraften av SHell "
 "skript möta webben! Här kan du kolla HTTP info och pröva några kommandon."
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:34
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid ""
 "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
 "like syntax such as: $(GET var)"
@@ -84,41 +84,40 @@ msgstr ""
 "Att inkludera /usr/lib/slitaz/httphelper.sh i dina skript tillåter dig att "
 "se PHP-aktiga syntax så som: $(GET var)"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:37
+#: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
 msgstr "QUERY_STRING test:"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:42
+#: rootfs/var/www/cgi-bin/cgi-env.sh:43
 msgid "HTTP Info"
 msgstr "HTTP info"
 
-#: rootfs/var/www/cgi-bin/cgi-env.sh:47
-msgid "HTTP Helper"
-msgstr "HTTP hjälpare"
-
-#: rootfs/var/www/cgi-bin/index.cgi:15 rootfs/var/www/cgi-bin/index.cgi:22
+#: rootfs/var/www/cgi-bin/index.cgi:12
 #, sh-format
 msgid "Index of $QUERY_STRING"
 msgstr "Början av $QUERY_STRING"
 
-#: rootfs/usr/bin/man:15
+#: rootfs/usr/bin/man:14
 msgid "Missing Retawq web browser..."
 msgstr "Saknar webbläsaren Retawq..."
 
-#: rootfs/usr/bin/man:16
+#: rootfs/usr/bin/man:15
 msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr "Var god kör: su -c 'tazpkg get-install retawq'"
 
-#: rootfs/usr/bin/man:28
+#: rootfs/usr/bin/man:27
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Användning:</b> man [sektion] kommando"
 
-#: rootfs/usr/bin/man:39
+#: rootfs/usr/bin/man:38
 #, sh-format
 msgid "in section $SECTION"
 msgstr "i sektion $SECTION"
 
-#: rootfs/usr/bin/man:80
+#: rootfs/usr/bin/man:79
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr "Inget manualinlägg för $TOPIC$MSG"
+
+#~ msgid "HTTP Helper"
+#~ msgstr "HTTP hjälpare"

@@ -17,7 +17,7 @@ pot:
 		--copyright-holder="SliTaz" -k -klgettext \
 		./rootfs/lib/libtaz.sh
 	xgettext -j -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz" \
+		--copyright-holder="SliTaz" -k_ -k_n \
 		./rootfs/usr/lib/slitaz/libpkg.sh \
 		./rootfs/var/www/cgi-bin/cgi-env.sh \
 		./rootfs/var/www/cgi-bin/index.cgi \
