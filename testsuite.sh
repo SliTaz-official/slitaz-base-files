@@ -3,6 +3,33 @@
 . rootfs/lib/libtaz.sh
 
 check_libtaz() {
+	newline; longline "This package provides the base system files and \
+directories, it is built using a wok receipt and Cookutils. The creation of \
+the initial files are described in the SliTaz Scratchbook: http://www.slitaz.\
+org/en/doc/scratchbook/"
+
+	newline; boldify Available functions list:
+	separator
+	optlist "\
+_			Alias for eval_gettext with newline. Can be used with success both instead of gettext and eval_gettext.
+_n			Alias for eval_gettext without newline at end.
+get_cols	Get width of current terminal emulator or console. Number in columns.
+status		Output localized short message based on the previous command exit status (0 - OK, other than 0 - error).
+separator	Line separator for full terminal width.
+newline		Produces empty line.
+boldify		Display a bold message.
+colorize	Color messages for terminal.
+indent		Jump to specified column, useful for simple tabulated lists (tables).
+emsg		All-in-one tool that contains: boldify, colorize, newline, separator and indent.
+check_root	Check if user have root permissions (logged as root or used su for become root) for execute something.
+debug		Display debug info when --debug is used.
+confirm		Used at end of questions - adds '(y/N)?' and waits for answer. Press 'y' if yes, any other letters/words or just Enter - if no. Note that 'y' and 'N' can be localized and this function know about that.
+log			Log activities in /var/log/slitaz/libtaz.log (by default) or in specified log file.
+optlist		Sophisticated, UTF-8 friendly, function to print two-column list of options with descriptions.
+longline	Not break words into two lines of terminal when display long messages."
+	separator; newline
+
+
 	echo -n "Checking libtaz.sh: status() 0"
 	status
 
@@ -38,7 +65,8 @@ check_functions() {
 		usage=0
 		echo -n "Checking: ${func}()"
 		for tool in /usr/bin/cook* /usr/bin/taz* /usr/bin/spk* /usr/sbin/spk* \
-			/sbin/taz*
+			/sbin/taz* /sbin/hwsetup /var/www/cgi-bin/* /var/www/cooker/*.cgi \
+			/var/www/tazpanel/*.cgi 
 		do
 			[ -x "$tool" ] || continue
 			count=$(grep "$func" $tool | wc -l)

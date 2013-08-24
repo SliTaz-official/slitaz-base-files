@@ -186,3 +186,25 @@ log() {
 	[ "$activity" ] || activity=/var/log/slitaz/libtaz.log
 	echo "$(date '+%Y-%m-%d %H:%M') : $@" >> $activity
 }
+
+# Sophisticated function to print two-column list of options with descriptions
+# Be UTF-8 friendly, not use `wc -L`, `awk length`, `${#string}`
+optlist() {
+	local in cols col1=1 line
+	in="$(echo "$1" | sed 's|		*|	|g')"
+	cols=$(get_cols); [ "$cols" ] || cols=80
+	IFS="
+"
+	for line in $in; do
+		col=$(echo -n "$line" | cut -f1 | wc -m)
+		[ $col -gt $col1 ] && col1=$col
+	done
+	echo "$in" | sed 's|\t|&\n|' | fold -sw$((cols - col1 - 4)) | \
+	sed "/\t/!{s|^.*$|[$((col1 + 4))G&|g}" | sed "/\t$/{N;s|.*|  &|;s|\t\n||}"
+}
+
+# Wrap words in long terminal message
+longline() {
+	cols=$(get_cols); [ "$cols" ] || cols=80
+	echo -e "$@" | fold -sw$cols
+}

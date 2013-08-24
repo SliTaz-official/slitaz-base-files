@@ -12,19 +12,21 @@ DESCRIPTION
 	/lib/libtaz.sh since it is used when /usr may not be mounted.
 
 FUNCTIONS
-	_ string              Short name for "gettext string; echo"
-	_n string             Short name for "gettext string"
+	_ <string>            Short name for "eval_gettext string; echo"
+	_n <string>           Short name for "eval_gettext string"
 	status                Return command status [Done|Failed]
 	separator             Display a line separator
 	newline               Echo a new line if gettext or echo -n is used
-	boldify [string]      Use a bold font for term, html or GTK output
-	colorize NB [string]  Colorize a string in term mode
+	boldify <string>      Use a bold font for term, html or GTK output
+	colorize NB <string>  Colorize a string in term mode
 	indent NB [string]    Indent text in term mode
-	emsg [string]         Output mark up messages
+	emsg <string>         Output mark up messages
 	check_root            Check if user is logged as root
-	debug [string]        Display a DEBUG message when --debug is used
+	debug <string>        Display a DEBUG message when --debug is used
 	confirm               Read answer to confirm an action
-	log [string]          Log activity, $activity must be set
+	log <string>          Log activity, $activity must be set
+	optlist <lines>       Prints two-column list (of options, or functions, etc.)
+	longline <string>     Wrap words in long terminal message
 
 OPTIONS
 	--output=[raw|gtk|html]
@@ -34,7 +36,11 @@ EXAMPLES
 	log "Message"
 	check_root
 	emsg "<b>bold</b> <c 31>red</c> <c 32>green</c> separator<-> newline<n> <i 26>indent"
+	optlist "\
+option1				Description1 (after one or any number of tab symbols)
+format $(_ 'disk')	$(_ 'Format a specified disk')"
 
 AUTHORS
-	Written by Christophe Lincoln
+	Christophe Lincoln
+	Aleksej Bobylev
 
