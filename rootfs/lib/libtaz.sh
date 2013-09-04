@@ -30,7 +30,7 @@ ermsg="$(lgettext 'Failed')"
 for opt in "$@"
 do
 	case "$opt" in
-		--*=*) export ${opt#--} ;;
+		--*=*) export "${opt#--}" ;;
 		--*) export ${opt#--}="yes" ;;
 	esac
 done
