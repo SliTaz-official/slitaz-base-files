@@ -11,8 +11,8 @@ org/en/doc/scratchbook/"
 	newline; boldify Available functions list:
 	separator
 	optlist "\
-_			Alias for eval_gettext with newline. Can be used with success both instead of gettext and eval_gettext.
-_n			Alias for eval_gettext without newline at end.
+_		Alias for eval_gettext with newline. Can be used with success both instead of gettext and eval_gettext.
+_n		Alias for eval_gettext without newline at end.
 get_cols	Get width of current terminal emulator or console. Number in columns.
 status		Output localized short message based on the previous command exit status (0 - OK, other than 0 - error).
 separator	Line separator for full terminal width.
@@ -21,12 +21,13 @@ boldify		Display a bold message.
 colorize	Color messages for terminal.
 indent		Jump to specified column, useful for simple tabulated lists (tables).
 emsg		All-in-one tool that contains: boldify, colorize, newline, separator and indent.
-check_root	Check if user have root permissions (logged as root or used su for become root) for execute something.
+check_root	Check if user has root permissions (logged as root or used su for becoming root) for executing something.
 debug		Display debug info when --debug is used.
-confirm		Used at end of questions - adds '(y/N)?' and waits for answer. Press 'y' if yes, any other letters/words or just Enter - if no. Note that 'y' and 'N' can be localized and this function know about that.
-log			Log activities in /var/log/slitaz/libtaz.log (by default) or in specified log file.
+confirm		Used at end of questions - adds '(y/N)?' and waits for answer. Press 'y' if yes, any other letters/words or just Enter - if no. 
+		Note that 'y' and 'N' can be localized and this function knows about that.
+log		Log activities in /var/log/slitaz/libtaz.log (by default) or in specified log file.
 optlist		Sophisticated, UTF-8 friendly, function to print two-column list of options with descriptions.
-longline	Not break words into two lines of terminal when display long messages."
+longline	Doesn't break words into two lines of terminal when displaying long messages."
 	separator; newline
 
 
