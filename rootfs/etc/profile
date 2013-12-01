@@ -43,7 +43,7 @@ if [ -s "/etc/TZ" ]; then
 fi
 ip=$(ifconfig $(route -n|sed '$!d;s/.* //')|sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
 case "$TERM" in
-xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip\007";;
+xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip \007";;
 esac
 
 dirs()
