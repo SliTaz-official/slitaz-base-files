@@ -5,7 +5,7 @@
 #
 # Documentation: man libpkg or /usr/share/doc/slitaz/libpkg.txt
 #
-# Copyright (C) 2012 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2014 SliTaz GNU/Linux - BSD License
 #
 
 . /lib/libtaz.sh

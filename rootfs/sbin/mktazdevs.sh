@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # mktazdevs.sh: Make device files for SliTaz GNU/Linux
-# 2007/10/02 - 2012 <pankso@slitaz.org>
+# 2007/10/02 - 2014 <pankso@slitaz.org>
 #
 # As of SliTaz 5.0 we have a radicaly minimal /dev tree for ARM and we
 # use mdev to create devices nodes on the fly. On i486 we use udev and

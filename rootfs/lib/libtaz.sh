@@ -7,7 +7,7 @@
 #
 # Documentation: man libtaz or /usr/share/doc/slitaz/libtaz.txt
 #
-# Copyright (C) 2012-2013 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2012-2014 SliTaz GNU/Linux - BSD License
 #
 
 . /usr/bin/gettext.sh
