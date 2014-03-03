@@ -10,25 +10,28 @@
 : ${PKGS_DB=/var/lib/tazpkg}
 
 case "$1" in
-	""|--output=*)
-		echo ""
+	*)
+		newline
 		boldify "SliTaz GNU/Linux"
 		separator
 		cat << EOT
 Release      : $SLITAZ_RELEASE
 Architecture : $SLITAZ_ARCH
 Kernel       : $(uname -r)
+Machine type : $(uname -m)
 Boot options : $(cat /proc/cmdline)
 Home path    : $SLITAZ_HOME
 Configs      : $SLITAZ_CONFIGS
+Main config  : $SLITAZ_CONFIGS/slitaz.conf
 Log files    : $SLITAZ_LOGS
 Packages DB  : $PKGS_DB
 Installed    : $(ls $PKGS_DB/installed | wc -l) packages
 Mirror       : $(cat $PKGS_DB/mirror)
+System date  : $(date)
 EOT
-		separator
-		echo -e "Config file: /etc/slitaz/slitaz.conf\n" ;;
-	*)
+		separato
+		newline ;;
+	*help|*usage)
 		echo "Usage: $(basename $0)" ;;
 esac
 
