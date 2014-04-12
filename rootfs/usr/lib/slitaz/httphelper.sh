@@ -139,6 +139,7 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 	read args < ${post}0
 	delim="${args%?}"
 	case "$delim" in
+	
 	-*)	awk "/$delim/ { o+=index(\$0,\"$delim\")-1; print o }
 	   		  { o+=1+length() }" < ${post}0 | while read offset; do
 		    if [ $offset -ne 0 ]; then
@@ -154,14 +155,17 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 		    filename=
 		    while read line; do
 			case "$line" in
+			
 			*Content-Disposition*)
 			    name=$(echo $line | sed 's/.* name="\([^"]*\)".*$/\1/')
 			    name=${name%%[^A-Za-z_0-9]*}
 			    case "$line" in
 			    *filename=*) filename=$(echo $line | sed 's/.* filename="\([^"]*\)".*$/\1/') ;;
 			    esac ;;
+			
 			*Content-Type*)
 			    type=$(echo $line | sed 's/.*-Type: \(.*\).$/\1/') ;;
+			
 			$CR)
 			    if [ -n "$filename" ]; then
 				tmp=$(mktemp $prefix$$/uploadXXXXXX)
@@ -195,8 +199,12 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 		    done < $i
 		    rm -f $i
 		done
-		rmdir $(dirname $post) ;;
-	*)	rm -rf $(dirname $post)
+		#rmdir $(dirname $post) 
+		;;
+	
+	*)	
+		rm -rf $(dirname $post)
 		read_query_string POST "$args" ;;
+	
 	esac
 fi
