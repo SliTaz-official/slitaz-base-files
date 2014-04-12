@@ -19,7 +19,6 @@ Release      : $SLITAZ_RELEASE
 Architecture : $SLITAZ_ARCH
 Kernel       : $(uname -r)
 Machine type : $(uname -m)
-Boot options : $(cat /proc/cmdline)
 Home path    : $SLITAZ_HOME
 Configs      : $SLITAZ_CONFIGS
 Main config  : $SLITAZ_CONFIGS/slitaz.conf
@@ -28,8 +27,10 @@ Packages DB  : $PKGS_DB
 Installed    : $(ls $PKGS_DB/installed | wc -l) packages
 Mirror       : $(cat $PKGS_DB/mirror)
 System date  : $(date)
+--------------
+Boot options : $(cat /proc/cmdline)
 EOT
-		separato
+		separator
 		newline ;;
 	*help|*usage)
 		echo "Usage: $(basename $0)" ;;
