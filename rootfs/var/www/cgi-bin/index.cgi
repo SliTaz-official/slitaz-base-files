@@ -1,46 +1,54 @@
 #!/bin/sh
-. /lib/libtaz.sh
+#
+# Directory lister for BusyBox HTTPd
+# Copyright (C) 2014 SliTaz GNU/Linux - BSD License
+#
+. /usr/lib/slitaz/httphelper.sh
+header
 
-# Internationalization.
-TEXTDOMAIN='slitaz-base'
-. /etc/locale.conf
-export TEXTDOMAIN LANG
+# Security check
+case "$QUERY_STRING" in
+	..*) echo "Security exit" && exit 1 ;;
+esac
 
-if [ ! -d ..$QUERY_STRING ]; then
-	echo "HTTP/1.1 404 Not Found";
-else
-	title=$(_ 'Index of $QUERY_STRING')
-	cat << EOT
-Content-type: text/html
-
+# Html5 head
+cat << EOT
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-	<title>$title</title>
 	<meta charset="utf-8" />
+	<title>Index of /$QUERY_STRING</title>
 	<link rel="stylesheet" type="text/css" href="/style.css" />
+	<style type="text/css">
+		#header h1 { width: auto; }
+		ul { line-height: 1.5em; } li { color: #666; }
+	</style>
 </head>
-
-<!-- Header -->
-<div id="header">
-	<h1>$title</h1>
-</div>
-
-<!-- Content -->
-<div id="content">
 <body>
-	<ul>
-$({ [ "$QUERY_STRING" != "/" ] && echo "../"; ls -p ..$QUERY_STRING; } | \
-  sed 's|.*|		<li><a href="&">&</a></li>|')
-	</ul>
+<div id="header">
+	<h1>Index of /$QUERY_STRING</h1>
 </div>
+<section id="content">
+<div>Files: $(ls ../$QUERY_STRING | wc -l)</div>
+<ul>
+EOT
 
-<!-- Footer -->
-<div id="footer">
-	Copyright &copy; $(date +%Y) <a href="http://www.slitaz.org/">SliTaz GNU/Linux</a>
-</div>
+[ "$QUERY_STRING" ] && echo '<li><a href="../">../</a></li>'
 
+# We need ?/path
+for i in $(ls -p ../$QUERY_STRING)
+do
+	if [ -f "../$QUERY_STRING/$i" ]; then
+		echo "<li><a href='/${QUERY_STRING}${i}'>$i</a></li>"
+	else
+		echo "<li><a href='/${QUERY_STRING}${i}?${QUERY_STRING}${i}'>$i</a></li>"
+	fi
+done
+
+cat << EOT
+</ul>
+</section>
+<footer id="footer"></footer>
 </body>
 </html>
 EOT
-fi
