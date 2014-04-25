@@ -8,8 +8,8 @@ body {
 }
 
 h1 { margin: 0; padding: 0.4em; color: #fff; font-size: 125%; }
-h2 { color: #d66018; }
-h3 { color: #666; font-size: 140%; }
+h2 { color: #215090; }
+h3 { color: #215090; font-size: 140%; }
 
 a, a:link, a:visited {
 	color: #436976;
@@ -36,8 +36,8 @@ code, tt { color: #666; }
 pre tt { color: #d62; /* shell prompt */ }
 
 header, #header {
-	background-color: #351a0a;
-	border-bottom: 0.5em solid #d66018;
+	background-color: #111111;
+	border-bottom: 4px solid #cfcfcf;
 }
 
 #content {
