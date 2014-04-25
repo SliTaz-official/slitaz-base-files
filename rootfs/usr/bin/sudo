@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Sudo wrapper using Busybox su applet.
+# Copyright (C) 2014 SliTaz GNU/Linux.
+#
+
+cmd="$@"
+pwd="$(pwd)"
+
+case "$1" in
+	usage|*help|"")
+		echo -e "\nExecute a command as root"
+		echo -e "Usage: $(basename $0) [command]\n" ;;
+	*)
+		su -c "cd $pwd; $cmd"
+esac
+exit 0
