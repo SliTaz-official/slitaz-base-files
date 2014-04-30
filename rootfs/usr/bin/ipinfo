@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# ipinfo: Show SliTaz local IP address 
+#
+. /etc/network.conf
+
+if [ "$WIFI" == "yes" ]; then
+	iface="$WIFI_INTERFACE"
+else
+	iface="$INTERFACE"
+fi
+
+ifconfig ${iface} | fgrep 'inet addr:' | cut -d ':' -f 2 | awk '{print $1}'
+
+exit 0
