@@ -10,11 +10,13 @@ TEXTDOMAIN='slitaz-base'
 . /etc/locale.conf
 export TEXTDOMAIN LANG
 
-if [ ! -x /usr/bin/retawq ]; then
-	echo; _ "Missing Retawq web browser..."
-	_ "Please run: su -c 'tazpkg get-install retawq'"
-	exit 0
-fi
+check_retawq() {
+	if [ ! -x /usr/bin/retawq ]; then
+		echo; _ "Missing Retawq web browser..."
+		_ "Please run: su -c 'tazpkg get-install retawq'"
+		exit 0
+	fi
+}
 
 local i
 local SECTION
@@ -41,13 +43,13 @@ fi
 
 TOPIC=$1
 
-if [ -x /usr/bin/retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
+if [ check_retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
 	return
-elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz/$TOPIC.html ]; then
+elif [ check_retawq -a -f /usr/share/doc/slitaz/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/slitaz/$TOPIC.html | less -M
 	return
-elif [ -x /usr/bin/retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
+elif [ check_retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/slitaz-tools/$TOPIC.html | less -M
 	return
 elif [ -f /usr/share/doc/slitaz/$TOPIC.txt ]; then
@@ -67,7 +69,7 @@ for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; 
 		fi
 		return
 	fi
-	if [ -x /usr/bin/retawq -a -f $i/$TOPIC.html ]; then
+	if [ check_retawq -a -f $i/$TOPIC.html ]; then
 		retawq --dump=file://$i/$TOPIC.html | less -M
 		return
 	fi
