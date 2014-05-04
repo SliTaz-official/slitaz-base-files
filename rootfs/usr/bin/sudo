@@ -6,12 +6,22 @@
 
 cmd="$@"
 pwd="$(pwd)"
+conf="$HOME/.config/slitaz/subox.conf"
+
+# Saved root password
+if [ -f "$conf" ]; then
+	pass="$(cat $conf)"
+fi
 
 case "$1" in
 	usage|*help|"")
 		echo -e "\nExecute a command as root"
 		echo -e "Usage: $(basename $0) [command]\n" ;;
 	*)
-		su -c "cd $pwd; $cmd"
+		if [ "$pass" ]; then
+			echo "$pass" | su -c "cd $pwd; $cmd"
+		else
+			su -c "cd $pwd; $cmd"
+		fi ;;
 esac
 exit 0
