@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-09 15:29+0300\n"
+"POT-Creation-Date: 2014-05-26 14:20+0300\n"
 "PO-Revision-Date: 2012-06-09 21:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: rootfs/lib/libtaz.sh:23
 msgid "Done"
-msgstr "Έγινε"
+msgstr "Ολοκληρώθηκε"
 
 #: rootfs/lib/libtaz.sh:24
 msgid "Failed"
@@ -28,31 +28,31 @@ msgstr "Απέτυχε"
 
 #: rootfs/lib/libtaz.sh:153
 msgid "You must be root to execute:"
-msgstr "Χρειάζονται δικαιώματα διαχειριστή (root) για να εκτελέσετε:"
+msgstr "Χρειάζεστε δικαιώματα διαχειριστή για να συνεχίσετε:"
 
 #: rootfs/lib/libtaz.sh:166
 msgid "y"
-msgstr ""
+msgstr "y"
 
 #: rootfs/lib/libtaz.sh:167
 msgid "Y"
-msgstr ""
+msgstr "Υ"
 
 #: rootfs/lib/libtaz.sh:168
 msgid "n"
-msgstr ""
+msgstr "n"
 
 #: rootfs/lib/libtaz.sh:169
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
-msgstr "Ο καθρέπτης είναι απρόσιτος"
+msgstr "O καθρέπτης (mirror) είναι απρόσιτoς"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:37
 msgid "Mirror is up-to-date"
-msgstr "Ο καθρέπτης είναι ενημερωμένος"
+msgstr "Ο καθρέπτης (mirror) είναι ενημερωμένος"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
 #, sh-format
@@ -62,7 +62,7 @@ msgstr "Λείπει η απόδειξη: $receipt"
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
 msgid "$file is not a tazpkg. Exiting"
-msgstr "To $file δεν είναι tazpkg. Έξοδος"
+msgstr "To $file δεν είναι έγκυρο αρχείο tazpkg. Έξοδος"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -75,7 +75,7 @@ msgid ""
 "requests."
 msgstr ""
 "Καλώς ήρθατε στον εξυπηρετητή ιστού SliTaz σε περιβάλλον CGI Shell. Αφήστε "
-"τη δύναμη του shell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
+"τη δύναμη του SHell script να συναντήσει το διαδίκτυο! Εδώ μπορείτε να δείτε "
 "πληροφορίες για το HTTP και να δοκιμάστε κάποια αιτήματα."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
@@ -84,7 +84,7 @@ msgid ""
 "like syntax such as: $(GET var)"
 msgstr ""
 "Συμπεριλαμβάνοντας το /usr/lib/sliTaz/httphelper.sh στα script σας, σας "
-"επιτρέπει να χρησιμοποιήσετε σύνταξη σαν PHP, όπως: $(GET var)"
+"επιτρέπει να χρησιμοποιήσετε παρόμοια σύνταξη με PHP, όπως: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -94,32 +94,30 @@ msgstr "Δοκιμή QUERY_STRING:"
 msgid "HTTP Info"
 msgstr "Πληροφορίες HTTP"
 
-#: rootfs/var/www/cgi-bin/index.cgi:12
-#, sh-format
-msgid "Index of $QUERY_STRING"
-msgstr "Ευρετήριο του $QUERY_STRING"
-
-#: rootfs/usr/bin/man:14
-msgid "Missing Retawq web browser..."
-msgstr "Λείπει ο περιηγητής Retawq..."
-
 #: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr "Λείπει ο περιηγητής ιστού Retawq..."
+
+#: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr "Παρακαλώ εκτελέστε: su -c 'tazpkg get-install retawq'"
 
-#: rootfs/usr/bin/man:27
+#: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
-msgstr "<b>Χρήση:</b> man [τομέας] εντολή"
+msgstr "<b>Χρήση:</b> man [τμήμα] εντολή"
 
-#: rootfs/usr/bin/man:38
+#: rootfs/usr/bin/man:40
 #, sh-format
 msgid "in section $SECTION"
-msgstr "στον τομέα $SECTION"
+msgstr "στο τμήμα $SECTION"
 
-#: rootfs/usr/bin/man:79
+#: rootfs/usr/bin/man:81
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
-msgstr "Δεν υπάρχει καταχώρηση εγχειριδίου για το $TOPIC$MSG"
+msgstr "Δεν υπάρχει καταχώρηση στο εγχειρίδιο για το $TOPIC$MSG"
+
+#~ msgid "Index of $QUERY_STRING"
+#~ msgstr "Ευρετήριο του $QUERY_STRING"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Βοηθός HTTP"

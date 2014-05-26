@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-09 15:29+0300\n"
+"POT-Creation-Date: 2014-05-26 14:20+0300\n"
 "PO-Revision-Date: 2012-05-17 09:09+0100\n"
 "Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
 "Language-Team: French\n"
@@ -93,34 +93,32 @@ msgstr "Test de la chaine de caractères:"
 msgid "HTTP Info"
 msgstr "Info HTTP"
 
-#: rootfs/var/www/cgi-bin/index.cgi:12
-#, sh-format
-msgid "Index of $QUERY_STRING"
-msgstr "Racine de $QUERY_STRING"
-
-#: rootfs/usr/bin/man:14
+#: rootfs/usr/bin/man:15
 msgid "Missing Retawq web browser..."
 msgstr "Navigateur web Retawq manquant..."
 
-#: rootfs/usr/bin/man:15
+#: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr ""
 "Vous pouvez l'installer en exécutant la commande: su -c 'tazpkg get-install "
 "retawq'"
 
-#: rootfs/usr/bin/man:27
+#: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Usage:</b> man [section] commande"
 
-#: rootfs/usr/bin/man:38
+#: rootfs/usr/bin/man:40
 #, sh-format
 msgid "in section $SECTION"
 msgstr "dans cette section $SECTION"
 
-#: rootfs/usr/bin/man:79
+#: rootfs/usr/bin/man:81
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr "Pas de manuel disponible pour $TOPIC$MSG"
+
+#~ msgid "Index of $QUERY_STRING"
+#~ msgstr "Racine de $QUERY_STRING"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Helper HTTP"

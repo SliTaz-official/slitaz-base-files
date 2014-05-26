@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-09 15:29+0300\n"
+"POT-Creation-Date: 2014-05-26 14:20+0300\n"
 "PO-Revision-Date: 2013-07-23 12:34+0100\n"
 "Last-Translator: Paweł Pyrczak <tkr.tkr.pl@gmail.com>\n"
 "Language-Team: \n"
@@ -97,32 +97,30 @@ msgstr "Test QUERY_STRING:"
 msgid "HTTP Info"
 msgstr "HTTP Info"
 
-#: rootfs/var/www/cgi-bin/index.cgi:12
-#, sh-format
-msgid "Index of $QUERY_STRING"
-msgstr "Indeks $QUERY_STRING"
-
-#: rootfs/usr/bin/man:14
+#: rootfs/usr/bin/man:15
 msgid "Missing Retawq web browser..."
 msgstr "Brakuje przeglądarki internetowej Retawq..."
 
-#: rootfs/usr/bin/man:15
+#: rootfs/usr/bin/man:16
 msgid "Please run: su -c 'tazpkg get-install retawq'"
 msgstr "Proszę uruchomić: su -c 'tazpkg get-install retawq'"
 
-#: rootfs/usr/bin/man:27
+#: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Użycie:</b> man [section] command"
 
-#: rootfs/usr/bin/man:38
+#: rootfs/usr/bin/man:40
 #, sh-format
 msgid "in section $SECTION"
 msgstr "w sekcji $SECTION"
 
-#: rootfs/usr/bin/man:79
+#: rootfs/usr/bin/man:81
 #, sh-format
 msgid "No manual entry for $TOPIC$MSG"
 msgstr "Brak ręcznego wpisu dla $TOPIC$MSG"
+
+#~ msgid "Index of $QUERY_STRING"
+#~ msgstr "Indeks $QUERY_STRING"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "HTTP Helper"
