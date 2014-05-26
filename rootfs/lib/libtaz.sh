@@ -38,7 +38,7 @@ done
 
 # Get terminal columns
 get_cols() {
-	stty size 2>/dev/null | cut -d " " -f 2
+	stty size 2>/dev/null | busybox cut -d " " -f 2
 }
 
 # Return command status. Default to colored console output.
