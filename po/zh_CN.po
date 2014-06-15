@@ -1,0 +1,116 @@
+# Simplified Chinese translations for SliTaz Base package.
+# Copyright (C) 2014 Slitaz Association
+# This file is distributed under the same license as the SliTaz Base package.
+# 张文宇 <jame987165702@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-26 14:20+0300\n"
+"PO-Revision-Date: 2014-06-14 21:31+0800\n"
+"Last-Translator: 张文宇 <jame987165702@gmail.com>\n"
+"Language-Team: 张文宇 <jame987165702@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: rootfs/lib/libtaz.sh:23
+msgid "Done"
+msgstr "完成"
+
+#: rootfs/lib/libtaz.sh:24
+msgid "Failed"
+msgstr "失败"
+
+#: rootfs/lib/libtaz.sh:153
+msgid "You must be root to execute:"
+msgstr "你需要以root权限运行"
+
+#: rootfs/lib/libtaz.sh:166
+msgid "y"
+msgstr "是"
+
+#: rootfs/lib/libtaz.sh:167
+msgid "Y"
+msgstr "是"
+
+#: rootfs/lib/libtaz.sh:168
+msgid "n"
+msgstr "否"
+
+#: rootfs/lib/libtaz.sh:169
+msgid "N"
+msgstr "否"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:33
+msgid "Mirror is unreachable"
+msgstr "无法连接镜像"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:37
+msgid "Mirror is up-to-date"
+msgstr "镜像已是最新版本"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#, sh-format
+msgid "Missing receipt: $receipt"
+msgstr "缺少 manquante: $receipt"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#, sh-format
+msgid "$file is not a tazpkg. Exiting"
+msgstr "$file 并非 tazpkg 格式. 终止"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:12
+msgid "CGI SHell Environment"
+msgstr "SHell CGI 环境"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:31
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+"欢迎使用SliTaz 网页伺服器的CGI Shell 环境。让shell 脚本的力量与网页相遇! 在"
+"这, 你可以查看HTTP信息和尝试请求。"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+msgid ""
+"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
+"like syntax such as: $(GET var)"
+msgstr ""
+"在你的脚本加入'/usr/lib/slitaz/httphelper.sh' 会令你可以使用像PHP的语法，例"
+"如: $(GET var)"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:38
+msgid "QUERY_STRING test:"
+msgstr "搜索串(QUERY_STRING)测试:"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:43
+msgid "HTTP Info"
+msgstr "HTTP 信息"
+
+#: rootfs/usr/bin/man:15
+msgid "Missing Retawq web browser..."
+msgstr "缺少 Retawq 网页浏览器..."
+
+#: rootfs/usr/bin/man:16
+msgid "Please run: su -c 'tazpkg get-install retawq'"
+msgstr "请运行: su -c 'tazpkg get-install retawq"
+
+#: rootfs/usr/bin/man:29
+msgid "<b>Usage:</b> man [section] command"
+msgstr "<b>用法:</b> man [章节] 命令"
+
+#: rootfs/usr/bin/man:40
+#, sh-format
+msgid "in section $SECTION"
+msgstr "在 $SECTION 章节內"
+
+#: rootfs/usr/bin/man:81
+#, sh-format
+msgid "No manual entry for $TOPIC$MSG"
+msgstr "沒有 $TOPIC$MSG 项"
