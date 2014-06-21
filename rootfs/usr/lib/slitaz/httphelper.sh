@@ -18,7 +18,7 @@ alias urldecode='busybox httpd -d'
 # Send headers.
 header() {
 	local i
-	[ -z "$1" ] && set -- "Content-type: text/html"
+	[ -z "$1" ] && set -- "Content-type: text/html; charset=UTF-8"
 	for i in "$@" ""
 	do 
 		echo -e "$i\r"
