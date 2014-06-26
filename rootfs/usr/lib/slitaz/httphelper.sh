@@ -7,7 +7,7 @@
 # project and Busybox httpd server applet since it is used for URL 
 # [en|de]coding.
 #
-# Documentation: man httphelper or /usr/share/doc/slitaz/httpelper.txt
+# Documentation: man httphelper or /usr/share/doc/slitaz/httphelper.txt
 #
 # Copyright (C) SliTaz 2014 - GNU GPL v2
 #
