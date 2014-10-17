@@ -74,7 +74,7 @@ msgid ""
 "requests."
 msgstr ""
 "Bienvenue sur le serveur web SliTaz avec support CGI. Quand la puissance de "
-"script shell rencontrer le web! Ici, vous pouvez vérifier les info HTTP et "
+"script shell rencontre le web! Ici, vous pouvez vérifier les infos HTTP et "
 "essayer certaines demandes."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
@@ -83,7 +83,7 @@ msgid ""
 "like syntax such as: $(GET var)"
 msgstr ""
 "Vous devez inclure '/usr/lib/slitaz/httphelper.sh' dans vos scripts pour "
-"utiliser la synthaxe PHPcomme par exemple: $(GET var)"
+"utiliser la synthaxe PHP comme par exemple: $(GET var)"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
