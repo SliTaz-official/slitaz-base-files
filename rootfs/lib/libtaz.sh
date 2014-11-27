@@ -31,7 +31,7 @@ for opt in "$@"
 do
 	case "$opt" in
 		--*=*) export "${opt#--}" ;;
-		--*) export ${opt#--}="yes" ;;
+		--*)   export  ${opt#--}="yes" ;;
 	esac
 done
 [ "$HTTP_REFERER" ] && output="html"
@@ -70,8 +70,8 @@ separator() {
 	local sepchar="="
 	[ "$HTTP_REFERER" ] && local sepchar="<hr />"
 	case $output in
-		raw|gtk) local sepchar="-" && local cols="8" ;;
-		html) local sepchar="<hr />" ;;
+		raw|gtk) local sepchar="-"; local cols="8" ;;
+		html)    local sepchar="<hr />" ;;
 		*)
 			local cols=$(get_cols)
 			[ "$cols" ] || cols=80 ;;
@@ -89,8 +89,8 @@ newline() {
 # Display a bold message. GTK Yad: Works only in --text=""
 boldify() {
 	case $output in
-		raw) echo "$@" ;;
-		gtk) echo "<b>$@</b>" ;;
+		raw)  echo "$@" ;;
+		gtk)  echo "<b>$@</b>" ;;
 		html) echo "<strong>$@</strong>" ;;
 		*) echo -e "\\033[1m$@\\033[0m" ;;
 	esac
@@ -135,8 +135,7 @@ emsg() {
 			local sep="\n"
 			local cols=$(get_cols)
 			[ "$cols" ] || cols=80
-			for c in $(seq 1 $cols)
-			do
+			for c in $(seq 1 $cols); do
 				sep="${sep}="
 			done
 			echo -en "$(echo "$@" | sed -e 's|<b>|\\033[1m|g; s|</b>|\\033[0m|g; \
@@ -150,7 +149,7 @@ emsg() {
 # Check if user is logged as root.
 check_root() {
 	if [ $(id -u) != 0 ]; then
-		lgettext "You must be root to execute:" && echo " $(basename $0) $@"
+		lgettext "You must be root to execute:"; echo " $(basename $0) $@"
 		exit 1
 	fi
 }
@@ -193,8 +192,7 @@ optlist() {
 	local in cols col1=1 line
 	in="$(echo "$1" | sed 's|		*|	|g')"
 	cols=$(get_cols); [ "$cols" ] || cols=80
-	IFS="
-"
+	IFS=$'\n'
 	for line in $in; do
 		col=$(echo -n "$line" | cut -f1 | wc -m)
 		[ $col -gt $col1 ] && col1=$col

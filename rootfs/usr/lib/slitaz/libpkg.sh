@@ -13,13 +13,12 @@
 # Unset all receipt variables.
 unset_receipt() {
 	unset PACKAGE VERSION EXTRAVERSION SHORT_DESC HOST_ARCH TARBALL \
-		DEPENDS BUILD_DEPENDS WANTED WGET_URL PROVIDE CROSS_BUG
+		DEPENDS BUILD_DEPENDS WANTED WGET_URL PROVIDE CROSS_BUG TAGS
 }
 
 # Converts pkg.tazpkg to pkg
 package_name() {
-	local name=$(basename $1)
-	echo ${name%.tazpkg}
+	basename $1 .tazpkg
 }
 
 # Check mirror ID: return false if no changes or mirror unreachable
@@ -30,12 +29,12 @@ check_mirror_id() {
 	if wget -qs ${mirror%/}/ID; then
 		wget -q ${mirror%/}/ID
 	else
-		_n "Mirror is unreachable"; false
-		status && return 1
+		_n "Mirror is unreachable"
+		false; status; return 1
 	fi
 	if [ "$(cat ID)" == "$(cat ID.bak)" ]; then
-		_n "Mirror is up-to-date"; true
-		status && return 1
+		_n "Mirror is up-to-date"
+		true; status; return 1
 	fi
 }
 

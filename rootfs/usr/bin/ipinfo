@@ -10,6 +10,6 @@ else
 	iface="$INTERFACE"
 fi
 
-ifconfig ${iface} | fgrep 'inet addr:' | cut -d ':' -f 2 | awk '{print $1}'
+ifconfig ${iface} | fgrep 'inet addr:' | cut -d: -f2 | awk '{print $1}'
 
 exit 0

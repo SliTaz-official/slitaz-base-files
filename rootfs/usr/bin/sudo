@@ -6,20 +6,16 @@
 
 cmd="$@"
 pwd="$(pwd)"
-conf="$HOME/.config/slitaz/subox.conf"
-
-# Saved root password
-if [ -f "$conf" ]; then
-	pass="$(cat $conf)"
-fi
+conf="${XDG_CONFIG_HOME:-$HOME/.config}/slitaz/subox.conf"
 
 case "$1" in
 	usage|*help|"")
 		echo -e "\nExecute a command as root"
 		echo -e "Usage: $(basename $0) [command]\n" ;;
 	*)
-		if [ "$pass" ]; then
-			echo "$pass" | su -c "cd $pwd; $cmd"
+		if [ -f "$conf" ]; then
+			# Saved root password
+			cat "$conf" | su -c "cd $pwd; $cmd"
 		else
 			su -c "cd $pwd; $cmd"
 		fi ;;
