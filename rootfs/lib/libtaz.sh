@@ -171,12 +171,20 @@ translate_query() {
 	esac
 }
 
-# Usage: echo -n "The question" && confirm
+# Usage 1: echo -n "The question"; confirm
+# Usage 2: confirm "The question (y/N)?"
 confirm() {
-	[ "$yes" ] && true
-	echo -n " ($(translate_query y)/$(translate_query N)) ? "
-	read answer
-	[ "$answer" == "$(translate_query y)" ]
+	if [ -n "$yes" ]; then
+		true
+	else
+		if [ -n "$1" ]; then
+			echo -n "$1 "
+		else
+			echo -n " ($(translate_query y)/$(translate_query N)) ? "
+		fi
+		read answer
+		[ "$answer" == "$(translate_query y)" ]
+	fi
 }
 
 # Log activities. $activity should be set by the script. The log format
