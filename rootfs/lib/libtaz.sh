@@ -13,8 +13,8 @@
 . /usr/bin/gettext.sh
 
 # short names for common i18n functions (like 'echo' and 'echo -n')
-_()  { local T="$1"; shift; printf "$(eval_gettext "$T")" $@; echo; }
-_n() { local T="$1"; shift; printf "$(eval_gettext "$T")" $@; }
+_()  { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; echo; }
+_n() { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; }
 # usage #1: _ 'Hello, $USER!'
 # usage #2: _ 'Hello, %s!' $USER
 
