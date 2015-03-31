@@ -20,6 +20,7 @@ check_retawq() {
 
 local i
 local SECTION
+local SECTIONS
 local MSG
 local TOPIC
 local MAN_SECTION
@@ -75,10 +76,23 @@ for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; 
 	fi
 done
 
-[ "x$SECTION" = "x" ] && SECTION="all"
-(wget -O - "http://mirror.slitaz.org/man/$SECTION/$TOPIC.html" || \
-	wget -O - "http://man.he.net/?topic=$TOPIC&section=$SECTION") 2> /dev/null | \
-	awk "BEGIN { s=0; n=0 } /<PRE>/ { s=1 } { if (s) { print; n++} } /<\/PRE>/ { s=0 } END { if (n == 0) print \"$(_ 'No manual entry for $TOPIC$MSG')\" }" | \
-	sed -e 's/<[^>]*>//g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&amp;/\&/g' | less -M
+if [ "$SECTION" = all ]
+then SECTIONS="1 2 3 4 5 6 7 8"
+else SECTIONS=$SECTION
+fi
 
+for SECTION in $SECTIONS
+do
+  URL=$( wget -q -O - http://man7.org/linux/man-pages/dir_all_alphabetic.html | \
+        sed -n -r "s%.*href=\"\./(man./.*html)\">$TOPIC\($SECTION\).*%\1%p" )
+  if [ -n "$URL" ]
+  then
+    wget -q -O - "http://man7.org/linux/man-pages/$URL" | \
+    awk "BEGIN {s=0} /headline/{s=1} /COLOPHON/{s=0} {if(s) print}" | \
+    sed -e 's%<span class="top-link">top</span>%%' -e 's/<[^>]*>//g' -e 's/&lt;/</g' \
+        -e 's/&gt;/>/g' -e 's/&amp;/\&/g' -e 's/&nbsp;//g' | less -M
+    exit 0
+  fi
+done
+_ 'No manual entry for $TOPIC$MSG'
 exit 0
