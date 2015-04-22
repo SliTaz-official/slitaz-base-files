@@ -9,13 +9,16 @@
 #
 # Documentation: man httphelper or /usr/share/doc/slitaz/httphelper.txt
 #
-# Copyright (C) SliTaz 2014 - GNU GPL v2
+# Copyright (C) SliTaz 2014-2015 - GNU GPL v2
 #
+
 
 alias urlencode='busybox httpd -e'
 alias urldecode='busybox httpd -d'
 
+
 # Send headers.
+
 header() {
 	local i
 	[ -z "$1" ] && set -- "Content-type: text/html; charset=UTF-8"
@@ -23,6 +26,7 @@ header() {
 		echo -e "$i\r"
 	done
 }
+
 
 http_urlencode() {
 	sed \
@@ -32,38 +36,44 @@ http_urlencode() {
 		-e "s|\?|%3F|g; s|#|%25|g; s|\[|%5B|g; s|\]|%5D|g; s| |+|g"
 }
 
+
 htmlentities() {
 	echo $1 | sed \
 		-e 's|&|\&amp;|g;  s|<|\&lt;|g;       s|>|\&gt;|g' \
 		-e 's|"|\&quot;|g; s|'"'"'|\&apos;|g; s|\t|\&#09;|g'
 }
 
-# MD5 crypt a string such as password (httpd -m dont give same result ?)
+
+# MD5 crypt a string such as password (httpd -m give not the same result)
+
 md5crypt() {
 	echo -n "$1" | md5sum | awk '{print $1}'
 }
 
+
 # MD5 crypt a string. Stronger crypto than MD5
+
 sha512crypt() {
 	echo -n "$1" | sha512sum | awk '{print $1}'
 }
 
-_ARRAY()
-{
+
+_ARRAY() {
 	if [ -z "$2" ]; then
 		eval echo \$${1}__NAMES
 	else
-		[ -n "$(eval echo \$${1}__NAMES)" ] && eval echo \$${1}_${2}_${3:-1}
+		[ -n "$(eval echo \$${1}__NAMES)" ] && eval "echo \"\$${1}_${2}_${3:-1}\""
 	fi
 }
+
 
 GET()   	{ _ARRAY GET    "$1" $2; }
 POST()  	{ _ARRAY POST   "$1" $2; }
 FILE()  	{ _ARRAY FILE   "$1" $2; }
 COOKIE()	{ _ARRAY COOKIE "$1" $2; }
 
-httpinfo()
-{
+
+httpinfo() {
 	local i
 	local j
 	local x
@@ -86,15 +96,15 @@ httpinfo()
 	done
 }
 
-read_query_string()
-{
+
+read_query_string() {
 	local i
 	local names
 	local cnt
 	names=""
 	IFS="&"
-	for i in $2 ; do
-		var=${i%%[^A-Za-z_0-9]*}
+	for i in $2; do
+		var=${i%%=*}
 		case " $names " in
 			*\ $var\ *)
 				eval cnt=\$${1}_${var}_count ;;
@@ -103,7 +113,7 @@ read_query_string()
 				names="$names $var" ;;
 		esac
 		eval ${1}_${var}_count=$((++cnt))
-		eval ${1}_${var}_$cnt=\'$(busybox httpd -d "${i#*=}" | sed "s/'/\'\\\\\'\'/g")\'
+		eval "${1}_${var}_$cnt='$(busybox httpd -d "${i#*=}" | sed "s/'/\'\\\\\'\'/g; s|\r||g")'"
 	done
 	unset IFS
 	eval ${1}__NAMES=\'${names# }\'
@@ -117,8 +127,7 @@ read_query_string()
 
 
 
-ddcut()
-{
+ddcut() {
 	page=4096
 	skip=$1
 	count=$(($2 - $1 -2))
