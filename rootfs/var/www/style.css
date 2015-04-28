@@ -1,6 +1,6 @@
 /* CSS style for SliTaz Network (minimal version) */
 
-html { min-height: 102%; }
+/*html { min-height: 102%; }*/
 body { font: 88% sans-serif, vernada, arial; margin: 0; }
 h1 { margin: 0; padding: 8px; color: #fff; font-size: 20px; }
 h1 a { color: #fff; text-decoration: none; }
@@ -15,13 +15,14 @@ pre {
 
 /* Header */
 
-#header {
+#header, header {
+	position: absolute; left: 0; right: 0; top: 0;
 	background: #222;
 	height: 40px;
 	border-bottom: 4px solid #afafaf;
 }
 
-#header h1 {
+#header h1, header h1 {
 	margin: 0;
 	padding: 8px 0 0 4px;
 	width: 250px;
@@ -34,7 +35,7 @@ pre {
 	font-style: italic;
 }
 
-#header h1 a:hover { 
+#header h1 a:hover, #header h1 a:hover { 
 	color: #afafaf;
 }
 
@@ -92,7 +93,9 @@ pre {
 /* Content */
 
 #content {
-	margin: 40px auto;
+	position: absolute; left: 0; right: 0; top: 44px; bottom: 1rem;
+	overflow-x: hidden; overflow-y: auto;
+	margin-bottom: 1px;
 	padding: 0 20px;
 	text-align: justify;
 	max-width: 720px;
@@ -128,11 +131,16 @@ pre, img, .box, input[type="text"] {
 
 /* Footer */
 
-#footer {
+#footer, footer {
+	position: absolute; left: 0; right: 0; bottom: 0;
+	height: 1rem;
+	background-color: #fff;
 	text-align: center;
-	padding: 20px;
+	display: table-cell;
 	border-top: 1px solid #ddd;
 	font-size: 90%;
 }
 
-#footer a { padding: 0 2px; }
+/*#footer a, footer a { padding: 0 2px; }*/
+
+html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
