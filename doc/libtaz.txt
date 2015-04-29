@@ -3,6 +3,7 @@ SYNOPSIS
 	. /lib/libtaz.sh
 	function
 
+
 DESCRIPTION
 	LibTaz is the base SliTaz SHell library used by almost all tools and
 	utilities. It provides common SHell script functions, parses the cmdline
@@ -11,11 +12,12 @@ DESCRIPTION
 	a standard terminal supporting colors. LibTaz is in the directory
 	/lib/libtaz.sh since it is used when /usr may not be mounted.
 
+
 FUNCTIONS
 	_ <string>            Short name for "eval_gettext string; echo"
 	_n <string>           Short name for "eval_gettext string"
 	status                Return command status [Done|Failed]
-	separator             Display a line separator
+	separator [<char>]    Display a line separator
 	newline               Echo a new line if gettext or echo -n is used
 	boldify <string>      Use a bold font for term, html or GTK output
 	colorize NB <string>  Colorize a string in term mode
@@ -28,17 +30,56 @@ FUNCTIONS
 	optlist <lines>       Prints two-column list (of options, or functions, etc.)
 	longline <string>     Wrap words in long terminal message
 
+
 OPTIONS
 	--output=[raw|gtk|html]
 	--activity=/path/files/activity
 
+
 EXAMPLES
-	log "Message"
+	_ 'Hello, $USER!'
+	_ 'Hello, %s!' $USER
+
+	echo -n 'Removing...'; rm $file; status
+
+	separator
+	separator '*'
+
+	newline
+
+	boldify 'Bold text'
+
+	colorize 32 "Message"
+	myprogram --color=32
+
+	indent 32 "Message"
+
+	emsg "<b>bold</b> <c 31>red</c> separator<-> newline<n> <i 26>indent"
+
 	check_root
-	emsg "<b>bold</b> <c 31>red</c> <c 32>green</c> separator<-> newline<n> <i 26>indent"
+
+	debug "A='$A'"
+
+	echo -n "The question"; confirm
+	confirm "The question (y/N)?"
+
+	activity='/var/log/my.log'
+	log "Message"
+
 	optlist "\
-option1				Description1 (after one or any number of tab symbols)
-format $(_ 'disk')	$(_ 'Format a specified disk')"
+   option1		Description1 (after one or any number of tab symbols)
+-a option2		$(_ 'Description2')"
+
+	longline $(busybox --help)
+	longline "$(cat /usr/share/licenses/lgpl.txt)"
+
+
+USAGE NOTES
+	SliTaz Base functions used from boot scripts to end user tools.
+	Use gettext and not echo for messages. Keep output suitable for GTK boxes
+	and Ncurses dialog. LibTaz should not depend on any configuration file.
+	No bloated code here, functions must be used by at least 3-4 tools.
+
 
 AUTHORS
 	Christophe Lincoln
