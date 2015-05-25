@@ -41,6 +41,7 @@ done
 # i18n functions
 _()  { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; echo; }
 _n() { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; }
+_p() { local S="$1" P="$2" N="$3"; shift 3; printf "$(ngettext "$S" "$P" "$N")" "$@"; }
 
 # Get terminal columns
 get_cols() { stty size 2>/dev/null | busybox cut -d' ' -f2; }
@@ -169,7 +170,7 @@ confirm() {
 
 # Log activities
 log() {
-	echo "$(date '+%Y-%m-%d %H:%M') : $@" >> ${activity:-/var/log/slitaz/libtaz.log}
+	echo "$(date '+%F %R') : $@" >> ${activity:-/var/log/slitaz/libtaz.log}
 }
 
 # Print two-column list of options with descriptions
@@ -190,4 +191,40 @@ optlist() {
 longline() {
 	cols=$(get_cols)
 	echo -e "$@" | fold -sw${cols:-80}
+}
+
+# Print localized title
+title() {
+	case $output in
+		html) echo "<section><header>$(_ "$@")</header><pre class=\"scroll\">";;
+		*)    newline; boldify "$(_ "$@")"; separator;;
+	esac
+}
+
+# Print footer
+footer() {
+	case $output in
+		html) echo "</pre><footer>$1</footer></section>";;
+		*)    separator; echo "$1"; [ -n "$1" ] && newline;;
+	esac
+}
+
+# Print current action
+action() {
+	case $output in
+		raw|gtk|html) _n "$@";;
+		*) echo -ne "\033[0;33m"$(_ "$@")"\033[0m";;
+	esac
+}
+
+# Print long line as list item
+itemize() {
+	local inp="$@" cols=$(get_cols) first offset
+	cols="${cols:-80}"
+	first="$(echo -e "$inp" | fold -sw$cols | head -n1)"
+	echo "$first"
+	cols1="$(echo "${first:1}" | wc -c)"
+	offset=$(echo "$first" | sed -n 's|^\([^:\*-]*[:\*-]\).*$|\1|p' | wc -m)
+	echo "${inp:$cols1}" | fold -sw$((cols - offset)) | awk \
+		'($0){printf "%'$offset's%s\n","",$0}'
 }

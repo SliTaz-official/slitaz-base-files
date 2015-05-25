@@ -29,6 +29,10 @@ FUNCTIONS
 	log <string>          Log activity, $activity must be set
 	optlist <lines>       Prints two-column list (of options, or functions, etc.)
 	longline <string>     Wrap words in long terminal message
+	title <string>        Print localized title
+	footer [<string>]     Print footer
+	action <string>       Print action
+	itemize <string>      Print long line as list item (check for :-* markers)
 
 
 OPTIONS
@@ -72,6 +76,15 @@ EXAMPLES
 
 	longline $(busybox --help)
 	longline "$(cat /usr/share/licenses/lgpl.txt)"
+
+	title "Summary"
+	footer "$(_ 'No errors found')"
+	action 'Checking settings...'; checking_settings; status
+
+	itemize "  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d\
+o eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	itemize "  * Ut enim ad minim veniam, quis nostrud exercitation ullamco lab\
+oris nisi ut aliquip ex ea commodo consequat."
 
 
 USAGE NOTES
