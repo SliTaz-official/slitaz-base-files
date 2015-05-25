@@ -54,14 +54,12 @@ msgid "Mirror is up-to-date"
 msgstr "Spegeln är up-to-date"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Recept saknas: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Recept saknas: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "$file är inte en taxpkg. Avslutar."
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "%s är inte en taxpkg. Avslutar."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -77,12 +75,10 @@ msgstr ""
 "skript möta webben! Här kan du kolla HTTP info och pröva några kommandon."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"Att inkludera /usr/lib/slitaz/httphelper.sh i dina skript tillåter dig att "
-"se PHP-aktiga syntax så som: $(GET var)"
+"Att inkludera %s i dina skript tillåter dig att se PHP-aktiga syntax så som: "
+"%s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -97,25 +93,23 @@ msgid "Missing Retawq web browser..."
 msgstr "Saknar webbläsaren Retawq..."
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Var god kör: su -c 'tazpkg get-install retawq'"
+msgid "Please run: %s"
+msgstr "Var god kör: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Användning:</b> man [sektion] kommando"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "i sektion $SECTION"
+msgid "in section %s"
+msgstr "i sektion %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "Inget manualinlägg för $TOPIC$MSG"
+msgid "No manual entry for %s"
+msgstr "Inget manualinlägg för %s"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Början av $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Början av %s"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "HTTP hjälpare"

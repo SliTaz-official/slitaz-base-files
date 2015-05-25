@@ -5,7 +5,7 @@
 #
 # Documentation: man libpkg or /usr/share/doc/slitaz/libpkg.txt
 #
-# Copyright (C) 2014 SliTaz GNU/Linux - BSD License
+# Copyright (C) 2014-2015 SliTaz GNU/Linux - BSD License
 #
 
 . /lib/libtaz.sh
@@ -23,30 +23,30 @@ package_name() {
 
 # Check mirror ID: return false if no changes or mirror unreachable
 check_mirror_id() {
-	[ "$forced" ] && rm -f ID
-	[ -f "ID" ] || echo $$ > ID
+	[ -n "$forced" ] && rm -f ID
+	[ -f 'ID' ] || echo $$ > ID
 	mv ID ID.bak
 	if wget -qs ${mirror%/}/ID; then
 		wget -q ${mirror%/}/ID
 	else
-		_n "Mirror is unreachable"
+		_n 'Mirror is unreachable'
 		false; status; return 1
 	fi
 	if [ "$(cat ID)" == "$(cat ID.bak)" ]; then
-		_n "Mirror is up-to-date"
+		_n 'Mirror is up-to-date'
 		true; status; return 1
 	fi
 }
 
 # Source a package receipt
 source_receipt() {
-		local receipt=$1
-		if [ ! -f $receipt ]; then
-			indent 28 $(_ 'Missing receipt: $receipt')
-			continue
-		else
-			. $receipt
-		fi
+	local receipt="$1"
+	if [ ! -f $receipt ]; then
+		indent 28 $(_ 'Missing receipt: %s' "$receipt")
+		continue
+	else
+		. $receipt
+	fi
 }
 
 #
@@ -55,14 +55,14 @@ source_receipt() {
 
 # checks to see if file is proper tazpkg
 is_valid_tazpkg() {
-	local file=$1
+	local file="$1"
 	[ -a $file ] && [ "$file" != "$(package_name $file)" ]
 }
 
 check_valid_tazpkg() {
-	local file=$1
+	local file="$1"
 	if ! is_valid_tazpkg $file; then
-		_ '$file is not a tazpkg. Exiting'
+		_ 'File %s is not a tazpkg. Exiting' "$file"
 		exit 1
 	fi
 }

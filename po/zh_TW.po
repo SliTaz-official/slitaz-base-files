@@ -53,14 +53,12 @@ msgid "Mirror is up-to-date"
 msgstr "鏡像已是最新版本"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "缺少 manquante: $receipt"
+msgid "Missing receipt: %s"
+msgstr "缺少 manquante: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "$file 並非 tazpkg 格式. 終止"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "%s 並非 tazpkg 格式. 終止"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -77,12 +75,8 @@ msgstr ""
 "請求。"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
-msgstr ""
-"在你的腳本加入 '/usr/lib/slitaz/httphelper.sh' 會令你可以 "
-"使用像PHP的語法，例如: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
+msgstr "在你的腳本加入 '%s' 會令你可以 使用像PHP的語法，例如: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -97,20 +91,17 @@ msgid "Missing Retawq web browser..."
 msgstr "缺少 Retawq 網頁瀏覽器..."
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr ""
-"請運行: su -c 'tazpkg get-install retawq"
+msgid "Please run: %s"
+msgstr "請運行: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>用法:</b> man [章節] 命令"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "在 $SECTION 章節內"
+msgid "in section %s"
+msgstr "在 %s 章節內"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "沒有 $TOPIC$MSG 項"
+msgid "No manual entry for %s"
+msgstr "沒有 %s 項"

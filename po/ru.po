@@ -56,26 +56,31 @@ msgid "Mirror is up-to-date"
 msgstr "Репозиторий в актуальном состоянии"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Отсутствует рецепт: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Отсутствует рецепт: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "Файл $file не является пакетом tazpkg. Выход"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "Файл %s не является пакетом tazpkg. Выход"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
 msgstr "Переменные окружения CGI"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:31
-msgid "Welcome to the SliTaz web server CGI Shell environment. Let the power of SHell script meet the web! Here you can check HTTP info and try some requests."
-msgstr "Добро пожаловать на сервер, работающий на SliTaz. Пусть мощь скриптов послужит вебу. Здесь вы можете проверить информацию HTTP и попробовать сделать некоторые запросы."
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+"Добро пожаловать на сервер, работающий на SliTaz. Пусть мощь скриптов "
+"послужит вебу. Здесь вы можете проверить информацию HTTP и попробовать "
+"сделать некоторые запросы."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid "Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-like syntax such as: $(GET var)"
-msgstr "Включив /usr/lib/slitaz/httphelper.sh в ваши скрипты, вы сможете использовать PHP-подобный синтаксис: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
+msgstr ""
+"Включив %s в ваши скрипты, вы сможете использовать PHP-подобный синтаксис: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -90,25 +95,23 @@ msgid "Missing Retawq web browser..."
 msgstr "Отсутствует браузер Retawq…"
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Для его установки выполните: su -c 'tazpkg -gi retawq'"
+msgid "Please run: %s"
+msgstr "Для его установки выполните: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Использование:</b> man [раздел] команда"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "в разделе $SECTION"
+msgid "in section %s"
+msgstr "в разделе %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "Руководство по $TOPIC$MSG отсутствует"
+msgid "No manual entry for %s"
+msgstr "Руководство по %s отсутствует"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Содержимое папки $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Содержимое папки %s"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Помощник HTTP"

@@ -54,14 +54,12 @@ msgid "Mirror is up-to-date"
 msgstr "Le miroir est à jour"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Recette manquante: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Recette manquante: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "$file n'est pas un paquet tazpkg. Arrêt"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "%s n'est pas un paquet tazpkg. Arrêt"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -78,12 +76,10 @@ msgstr ""
 "essayer certaines demandes."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"Vous devez inclure '/usr/lib/slitaz/httphelper.sh' dans vos scripts pour "
-"utiliser la synthaxe PHP comme par exemple: $(GET var)"
+"Vous devez inclure '%s' dans vos scripts pour utiliser la synthaxe PHP comme "
+"par exemple: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -98,27 +94,23 @@ msgid "Missing Retawq web browser..."
 msgstr "Navigateur web Retawq manquant..."
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr ""
-"Vous pouvez l'installer en exécutant la commande: su -c 'tazpkg get-install "
-"retawq'"
+msgid "Please run: %s"
+msgstr "Vous pouvez l'installer en exécutant la commande: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Usage:</b> man [section] commande"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "dans cette section $SECTION"
+msgid "in section %s"
+msgstr "dans cette section %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "Pas de manuel disponible pour $TOPIC$MSG"
+msgid "No manual entry for %s"
+msgstr "Pas de manuel disponible pour %s"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Racine de $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Racine de %s"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Helper HTTP"

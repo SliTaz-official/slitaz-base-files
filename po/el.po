@@ -55,14 +55,12 @@ msgid "Mirror is up-to-date"
 msgstr "Ο καθρέπτης (mirror) είναι ενημερωμένος"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Λείπει η απόδειξη: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Λείπει η απόδειξη: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "To $file δεν είναι έγκυρο αρχείο tazpkg. Έξοδος"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "To %s δεν είναι έγκυρο αρχείο tazpkg. Έξοδος"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -79,12 +77,10 @@ msgstr ""
 "πληροφορίες για το HTTP και να δοκιμάστε κάποια αιτήματα."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"Συμπεριλαμβάνοντας το /usr/lib/sliTaz/httphelper.sh στα script σας, σας "
-"επιτρέπει να χρησιμοποιήσετε παρόμοια σύνταξη με PHP, όπως: $(GET var)"
+"Συμπεριλαμβάνοντας το %s στα script σας, σας επιτρέπει να χρησιμοποιήσετε "
+"παρόμοια σύνταξη με PHP, όπως: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -107,17 +103,15 @@ msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Χρήση:</b> man [τμήμα] εντολή"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "στο τμήμα $SECTION"
+msgid "in section %s"
+msgstr "στο τμήμα %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "Δεν υπάρχει καταχώρηση στο εγχειρίδιο για το $TOPIC$MSG"
+msgid "No manual entry for %s"
+msgstr "Δεν υπάρχει καταχώρηση στο εγχειρίδιο για το %s"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Ευρετήριο του $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Ευρετήριο του %s"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Βοηθός HTTP"

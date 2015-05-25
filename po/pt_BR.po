@@ -54,14 +54,12 @@ msgid "Mirror is up-to-date"
 msgstr "Mirror está atualizado"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Arquivo receipt não encontrado: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Arquivo receipt não encontrado: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
-#, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "$file não é um tazpkg. Abortando"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "%s não é um tazpkg. Abortando"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -78,12 +76,10 @@ msgstr ""
 "algumas requisições."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"Incluindo o arquivo /usr/lib/slitaz/httphelper.sh em seus scripts permite a "
-"você utilizar sintaxe PHP como: $(GET var)"
+"Incluindo o arquivo %s em seus scripts permite a você utilizar sintaxe PHP "
+"como: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -98,25 +94,23 @@ msgid "Missing Retawq web browser..."
 msgstr "Navegador Retawq não instalado..."
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Por favor execute: su -c 'tazpkg get-install retawq'"
+msgid "Please run: %s"
+msgstr "Por favor execute: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Utilização:</b> man [seção] comando"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "Na seção $SECTION"
+msgid "in section %s"
+msgstr "Na seção %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "Nenhuma entrada para $TOPIC$MSG"
+msgid "No manual entry for %s"
+msgstr "Nenhuma entrada para %s"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Índice do $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Índice do %s"
 
 #~ msgid "HTTP Helper"
 #~ msgstr "Auxiliar HTTP"

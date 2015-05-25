@@ -53,14 +53,13 @@ msgid "Mirror is up-to-date"
 msgstr "Mirror está al día"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:46
-#, sh-format
-msgid "Missing receipt: $receipt"
-msgstr "Falta el recibo: $receipt"
+msgid "Missing receipt: %s"
+msgstr "Falta el recibo: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:66
 #, sh-format
-msgid "$file is not a tazpkg. Exiting"
-msgstr "El archivo no es un tazpkg. Salir"
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "El archivo %s no es un tazpkg. Salir"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
@@ -77,12 +76,10 @@ msgstr ""
 "y probar algunas peticiones."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
-msgid ""
-"Including /usr/lib/slitaz/httphelper.sh in your scripts lets you use PHP-"
-"like syntax such as: $(GET var)"
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"La inclusión de /usr/lib/slitaz/httphelper.sh en las secuencias de comandos "
-"le permite utilizar PHP-como la sintaxis: $(GET var)"
+"La inclusión de %s en las secuencias de comandos le permite utilizar PHP-"
+"como la sintaxis: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -97,22 +94,20 @@ msgid "Missing Retawq web browser..."
 msgstr "Falta el navegador web Retawq"
 
 #: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Por favor ejecute: su -c 'tazpkg get-install retawq'"
+msgid "Please run: %s"
+msgstr "Por favor ejecute: %s"
 
 #: rootfs/usr/bin/man:29
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Use:</b> man [seccion] comando"
 
 #: rootfs/usr/bin/man:40
-#, sh-format
-msgid "in section $SECTION"
-msgstr "en la sección $SECTION"
+msgid "in section %s"
+msgstr "en la sección %s"
 
 #: rootfs/usr/bin/man:81
-#, sh-format
-msgid "No manual entry for $TOPIC$MSG"
-msgstr "No hay entrada manual para $TOPIC$MSG"
+msgid "No manual entry for %s"
+msgstr "No hay entrada manual para %s"
 
-#~ msgid "Index of $QUERY_STRING"
-#~ msgstr "Indice de $QUERY_STRING"
+#~ msgid "Index of %s"
+#~ msgstr "Indice de %s"

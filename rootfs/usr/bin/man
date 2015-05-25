@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Tiny man fake using online manuals.
-# Copyright (C) 2009-2014 SliTaz GNU/Linux.
+# Copyright (C) 2009-2015 SliTaz GNU/Linux.
 #
 . /lib/libtaz.sh
 
@@ -13,17 +13,12 @@ export TEXTDOMAIN LANG
 check_retawq() {
 	if [ ! -x /usr/bin/retawq ]; then
 		echo; _ "Missing Retawq web browser..."
-		_ "Please run: su -c 'tazpkg get-install retawq'"
+		_ 'Please run: %s' "su -c 'tazpkg get-install retawq'"
 		exit 0
 	fi
 }
 
-local i
-local SECTION
-local SECTIONS
-local MSG
-local TOPIC
-local MAN_SECTION
+local i SECTION SECTIONS MSG TOPIC MAN_SECTION
 
 case "$1" in
 	''|-*)
@@ -31,18 +26,18 @@ case "$1" in
 		return ;;
 esac
 
-SECTION=all
+SECTION='all'
 MAN_SECTION='*'
-MSG=""
+MSG=''
 
 if [ -n "$2" ]; then
-	SECTION=$1
-	MAN_SECTION=$1
-	MSG=" $(_n 'in section $SECTION')"
+	SECTION="$1"
+	MAN_SECTION="$1"
+	MSG=" $(_n 'in section %s' "$SECTION")"
 	shift
 fi
 
-TOPIC=$1
+TOPIC="$1"
 
 if [ check_retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
 	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
@@ -64,7 +59,7 @@ for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; 
 		i=$(ls $i/$TOPIC.* 2> /dev/null)
 		if [ "x$i" != "x" ]; then
 			case "$i" in
-				*gz) (zcat $i || unlzma -c $i 2> /dev/null) | less -M;;
+				*gz) (zcat $i || unlzma -c $i 2>/dev/null) | less -M;;
 				*) less -M $i;;
 			esac
 		fi
@@ -76,13 +71,12 @@ for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; 
 	fi
 done
 
-if [ "$SECTION" = all ]
-then SECTIONS="1 2 3 4 5 6 7 8"
-else SECTIONS=$SECTION
+if [ "$SECTION" == 'all' ]
+	then SECTIONS='1 2 3 4 5 6 7 8'
+	else SECTIONS="$SECTION"
 fi
 
-for SECTION in $SECTIONS
-do
+for SECTION in $SECTIONS; do
   URL=$( wget -q -O - http://man7.org/linux/man-pages/dir_all_alphabetic.html | \
         sed -n -r "s%.*href=\"\./(man./.*html)\">$TOPIC\($SECTION\).*%\1%p" )
   if [ -n "$URL" ]
@@ -94,5 +88,5 @@ do
     exit 0
   fi
 done
-_ 'No manual entry for $TOPIC$MSG'
+_ 'No manual entry for %s' "$TOPIC$MSG"
 exit 0
