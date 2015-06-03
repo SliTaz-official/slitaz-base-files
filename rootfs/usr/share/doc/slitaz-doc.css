@@ -1,44 +1,33 @@
 /* CSS style for SliTaz Doc */
 
-html { min-height: 102%; }
 body {
 	font: 100% "DejaVu Sans", Ubuntu, "Droid Sans", "Liberation Sans", FreeSans, sans-serif;
 	margin: 0;
 	-moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
 }
 
-h1 { margin: 0; padding: 0.4em; color: #fff; font-size: 125%; }
-h2 { color: #215090; }
-h3 { color: #215090; font-size: 140%; }
+h1 { font-size: 150%; font-weight: 400; margin: 0; padding: 0.3em; }
+h2 { font-size: 200%; font-weight: 300; margin: 1em 0 0 0; }
+h3 { font-size: 150%; font-weight: 400; margin: 1em 0 0 0; }
+p  { margin: 0.5em 0; }
 
-a, a:link, a:visited {
-	color: #436976;
-	text-decoration: none;
-	border-bottom: 1px dotted #7cd;
-}
-a:hover, a:focus {
-	color: #d66018;
-	border-bottom: 1px solid;
-}
-a[href^="http:"] {
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKAgMAAADqYMegAAAADFBMVEUkJCT///8kJCRDaXZbtgmAAAAAA3RSTlMAAIAXzkf+AAAAI0lEQVQIHWNYGsCwS4Bh/wKG/Q0M6ycwzJ7AEAZGUQEMkQEAn7cJ51TmPjwAAAAASUVORK5CYII=") no-repeat right top;
-	padding-right: 8px;
+a, a:link { text-decoration: none; }
+a:hover, a:focus { border-bottom: 1px solid; }
+a[href^="http"]::after {
+	content: '\21b1';
+	position: relative;
+	top: -2pt;
 }
 
 img { border: none; vertical-align: middle; }
 
 pre {
-	padding: 0.8em;
-	border: 1px solid #ddd; border-radius: 0.4em;
+	padding: 0.6em;
+	border: 1px solid; border-radius: 0.3em;
+	overflow-x: auto;
 }
-pre, code { background-color: #f8f8f8; }
-code, tt { color: #666; }
-pre tt { color: #d62; /* shell prompt */ }
 
-header, #header {
-	background-color: #111111;
-	border-bottom: 4px solid #cfcfcf;
-}
+header, #header { border-bottom: 4px solid; }
 
 #content {
 	margin: 2.5em auto;
@@ -69,5 +58,29 @@ td, th { vertical-align: top; }
 
 .year:after {
 	/* content: "2007-2014"; */
-	content: "2014";
+	content: "2015";
 }
+
+fieldset {
+	border: 1pt solid #888;
+	border-radius: 0.3rem;
+}
+
+pre, code, tt { font-size: 1.2rem; line-height: 1rem; }
+
+/* colors */
+h1        { color: hsl(  0,  0%, 75%); }
+h2        { color: hsl(210, 90%, 45%); }
+h3        { color: hsl( 30, 90%, 45%); }
+a:link    { color: hsl(210, 40%, 45%); }
+a:visited { color: hsl(300, 40%, 45%); }
+a:hover,
+a:focus   { color: hsl( 30, 40%, 45%); }
+pre, code { background-color: hsl(180, 15%, 90%); border-color: hsl(180, 15%, 60%); }
+header,
+#header   { background-color: hsl(  0,  0%, 15%); }
+#footer, footer, #header, header
+		  { border-color: hsl(0, 0%, 75%); }
+code, tt  { color: hsl(  0,  0%, 30%); }
+pre tt    { color: hsl( 30, 90%, 30%); } /* shell prompt */
+pre em    { color: hsl(180, 90%, 30%); }
