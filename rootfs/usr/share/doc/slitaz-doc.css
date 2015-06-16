@@ -7,7 +7,7 @@ body {
 }
 
 h1 { font-size: 150%; font-weight: 400; margin: 0; padding: 0.3em; }
-h2 { font-size: 200%; font-weight: 300; margin: 1em 0 0 0; }
+h2 { font-size: 200%; font-weight: 300; margin: 1em 0 0 0; text-transform: uppercase; }
 h3 { font-size: 150%; font-weight: 400; margin: 1em 0 0 0; }
 p  { margin: 0.5em 0; }
 
@@ -80,7 +80,21 @@ pre, code { background-color: hsl(180, 15%, 90%); border-color: hsl(180, 15%, 60
 header,
 #header   { background-color: hsl(  0,  0%, 15%); }
 #footer, footer, #header, header
-		  { border-color: hsl(0, 0%, 75%); }
+		  { background-color: hsl(  0,  0%, 95%); border-color: hsl(0, 0%, 75%); }
 code, tt  { color: hsl(  0,  0%, 30%); }
 pre tt    { color: hsl( 30, 90%, 30%); } /* shell prompt */
 pre em    { color: hsl(180, 90%, 30%); }
+
+
+x-details {
+	display: inline; outline: 1px solid hsl(180, 15%, 80%);
+	background-color: hsl(180, 15%, 96%); }
+x-details > label { cursor: pointer; color: hsl(180, 45%, 50%); }
+x-details > input { display: none; }
+x-details > input         + label:before { content: '+'; }
+x-details > input:checked + label:before { content: '−'; }
+
+x-details > label, x-details > span { padding: 0.2rem; }
+
+x-details > input         + label ~ span { display: none; }
+x-details > input:checked + label ~ span { display: inline; }
