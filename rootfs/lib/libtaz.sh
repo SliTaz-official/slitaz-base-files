@@ -29,13 +29,16 @@ ermsg="$(lgettext 'Failed')"
 # Parse cmdline options and store values in a variable.
 for opt in "$@"; do
 	case "$opt" in
-		--*)
+		--*=*)
 			opt_name="${opt%%=*}"; opt_name="$(echo -n "${opt_name#--}" | tr -c 'a-zA-Z0-9' '_')"
 			case "$opt_name" in
 				[0-9]*) opt_name="_$opt_name";;
 			esac
 			opt_value="${opt#--}="; opt_value="${opt_value#*=}"; opt_value="${opt_value%=}"
-			export "$opt_name=${opt_value:-yes}"
+			export "$opt_name=$opt_value"
+			;;
+		--*)
+			export "${opt#--}=yes"
 			;;
 	esac
 done
