@@ -28,18 +28,12 @@ ermsg="$(lgettext 'Failed')"
 
 # Parse cmdline options and store values in a variable.
 for opt in "$@"; do
+	opt_name="${opt%%=*}"; opt_name="$(echo -n "${opt_name#--}" | tr -c 'a-zA-Z0-9' '_')"
 	case "$opt" in
-		--*=*)
-			opt_name="${opt%%=*}"; opt_name="$(echo -n "${opt_name#--}" | tr -c 'a-zA-Z0-9' '_')"
-			case "$opt_name" in
-				[0-9]*) opt_name="_$opt_name";;
-			esac
-			opt_value="${opt#--}="; opt_value="${opt_value#*=}"; opt_value="${opt_value%=}"
-			export "$opt_name=$opt_value"
-			;;
-		--*)
-			export "${opt#--}=yes"
-			;;
+		--[0-9]*=*)	export _$opt_name="${opt#*=}" ;;
+		--[0-9]*)	export _$opt_name=yes ;;
+		--*=*)		export  $opt_name="${opt#*=}" ;;
+		--*)		export  $opt_name=yes ;;
 	esac
 done
 [ "$HTTP_REFERER" ] && output='html'
@@ -222,7 +216,7 @@ footer() {
 action() {
 	case $output in
 		raw|gtk|html) _n "$@";;
-		*) echo -ne "\033[0;33m"$(_ "$@")"\033[0m";;
+		*) echo -ne "\033[0;33m$(_ "$@")\033[0m";;
 	esac
 }
 
