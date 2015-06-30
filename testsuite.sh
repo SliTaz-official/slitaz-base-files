@@ -79,6 +79,25 @@ qui officia deserunt mollit anim id est laborum."
 
 	newline; echo 'Using itemize() in the tazpkg:'
 	tazpkg info gtk+
+
+	title "$(emsg '<c 31>C<c 32>o<c 33>l<c 34>o<c 35>r<c 36>s</c>')"
+	for i in $(seq 0 7); do
+		case $i in
+			0) c='Gray   ';;
+			1) c='Red    ';;
+			2) c='Green  ';;
+			3) c='Yellow ';;
+			4) c='Blue   ';;
+			5) c='Magenta';;
+			6) c='Cyan   ';;
+			7) c='White  ';;
+		esac
+		echo -n "$c "
+		echo -n "$(colorize "03$i" "03$i") $(colorize "3$i" "3$i") " # test `colorize`: fg
+		echo -n "$(colorize "04$i" "04$i") $(colorize "4$i" "4$i") " # test `colorize`: bg
+		echo -n ": "
+		emsg "<c 03$i>03$i $c</c> <c 3$i>3$i Bold $c</c> <c 04$i>04$i $c</c> <c 4$i>4$i Bold $c</c>" # test `emsg`
+	done
 }
 
 # Usage: check_functions path/to/lib.sh

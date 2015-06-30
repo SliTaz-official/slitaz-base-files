@@ -7,6 +7,7 @@
 #
 
 . /usr/bin/gettext.sh
+alias sed="busybox sed"
 
 # Internal
 lgettext() { gettext -d 'slitaz-base' "$@"; }
@@ -102,7 +103,10 @@ colorize() {
 	case $output in
 		raw|gtk) echo "$@";;
 		html)    echo -n "<span class=\"color$color\">$@</span>";;
-		*)       echo -e "\\033[1;${color:-38}m$@\\033[0;39m" ;;
+		*)  case $color in
+				0*) echo -e "\\033[${color:-38}m$@\\033[39m";;
+				*)  echo -e "\\033[1;${color:-38}m$@\\033[0;39m";;
+			esac;;
 	esac
 	unset color
 }
@@ -136,7 +140,8 @@ emsg() {
 				sep="${sep}="
 			done
 			echo -en "$(echo "$@" | sed -e 's|<b>|\\033[1m|g; s|</b>|\\033[0m|g;
-			s|<c \([0-9]*\)>|\\033[1;\1m|g; s|</c>|\\033[0;39m|g; s|<n>|\n|g;
+			s|<c 0\([0-9]*\)>|\\033[\1m|g; s|<c \([1-9][0-9]*\)>|\\033[1;\1m|g;
+			s|</c>|\\033[0;39m|g; s|<n>|\n|g;
 			s|<->|'$sep'|g; s|<i \([0-9]*\)>|\\033[\1G|g')"
 			[ "$1" != "-n" ] && echo
 			;;
