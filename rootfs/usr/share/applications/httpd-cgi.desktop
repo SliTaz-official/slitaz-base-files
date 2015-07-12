@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=CGI SHell Environment
+Name[fr]=Environement SHell CGI
 Name[pt]=Ambiente SHell CGI
 Name[pt_BR]=Ambiente SHell CGI
 Name[ru]=Переменные окружения CGI
