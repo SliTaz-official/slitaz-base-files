@@ -61,15 +61,16 @@ sha512crypt() {
 _ARRAY() {
 	if [ -z "$2" ]; then
 		eval echo \$${1}__NAMES
-	else
-		[ -n "$(eval echo \$${1}__NAMES)" ] && eval "echo \"\$${1}_${2}_${3:-1}\""
+	elif [ "$(eval echo \$${1}__NAMES)" ]; then
+		[ "$4" ] && eval "echo \"\$${1}_${2}_${3}_${4}\"" ||
+		eval "echo \"\$${1}_${2}_${3:-1}\""
 	fi
 }
 
 
 GET()   	{ _ARRAY GET    "$1" $2; }
 POST()  	{ _ARRAY POST   "$1" $2; }
-FILE()  	{ _ARRAY FILE   "$1" $2; }
+FILE()  	{ _ARRAY FILE   "$1" $2 ${3:-1}; }
 COOKIE()	{ _ARRAY COOKIE "$1" $2; }
 
 
@@ -91,7 +92,13 @@ httpinfo() {
 	done
 	for i in $(FILE) ; do
 		for j in name size type tmpname ; do
-			echo "FILE($i,$j)='$(FILE $i $j)'"
+			if [ $(FILE $i count) -gt 1 ]; then
+				for k in $(seq 1 $(FILE $i count)); do
+					echo "FILE($i,$j,$k)='$(FILE $i $j $k)'"
+				done
+			else
+				echo "FILE($i,$j)='$(FILE $i $j)'"
+			fi
 		done
 	done
 }
@@ -197,14 +204,22 @@ if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
 
 					$'\r')
 						if [ -n "$filename" ]; then
+							eval cnt=\$FILE_${name}_count_1
+							cnt=$(($cnt + 1))
+							eval FILE_${name}_count_1=$cnt
 							tmp=$(mktemp $prefix$$/uploadXXXXXX)
 							cat > $tmp
-							FILE__NAMES="$FILE__NAMES $name"
-							FILE__NAMES="${FILE__NAMES# }"
-							eval FILE_${name}_tmpname=$tmp
-							eval FILE_${name}_name=$filename
-							eval FILE_${name}_size=$(stat -c %s $tmp)
-							eval FILE_${name}_type=$type
+							case " $FILE__NAMES " in
+								*\ $name\ *)
+									;;
+								*)
+									FILE__NAMES="$FILE__NAMES $name"
+									FILE__NAMES="${FILE__NAMES# }" ;;
+							esac
+							eval FILE_${name}_tmpname_$cnt=$tmp
+							eval FILE_${name}_name_$cnt=$filename
+							eval FILE_${name}_size_$cnt=$(stat -c %s $tmp)
+							eval FILE_${name}_type_$cnt=$type
 						elif [ -n "$name" ]; then
 							eval cnt=\$POST_${name}_count
 							cnt=$(($cnt + 1))
