@@ -227,12 +227,17 @@ action() {
 
 # Print long line as list item
 itemize() {
-	local inp="$@" cols=$(get_cols) first offset
-	cols="${cols:-80}"
-	first="$(echo -e "$inp" | fold -sw$cols | head -n1)"
-	echo "$first"
-	cols1="$(echo "${first:1}" | wc -c)"
-	offset=$(echo "$first" | sed -n 's|^\([^:\*-]*[:\*-]\).*$|\1|p' | wc -m)
-	echo "${inp:$cols1}" | fold -sw$((cols - offset)) | awk \
-		'($0){printf "%'$offset's%s\n","",$0}'
+	case $output in
+		gtk) echo "$@";;
+		*)
+			local inp="$@" cols=$(get_cols) first offset
+			cols="${cols:-80}"
+			first="$(echo -e "$inp" | fold -sw$cols | head -n1)"
+			echo "$first"
+			cols1="$(echo "${first:1}" | wc -c)"
+			offset=$(echo "$first" | sed -n 's|^\([^:\*-]*[:\*-]\).*$|\1|p' | wc -m)
+			echo "${inp:$cols1}" | fold -sw$((cols - offset)) | awk \
+				'($0){printf "%'$offset's%s\n","",$0}'
+			;;
+	esac
 }
