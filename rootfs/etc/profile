@@ -6,11 +6,11 @@ LD_LIBRARY_PATH="/usr/lib:/lib:/usr/local/lib"
 # Prompt format for Ash (Bash use /etc/bashrc).
 if [ $(id -u) -eq 0 ]; then
 	# Red and blue for root
-	PS1="\[\e[1;31m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+	PS1="\[\e[1;31m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\\$ "
 	#PS1='\u@\h:\w\$ '
 else
 	# Green and blue for users
-	PS1="\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+	PS1="\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\\$ "
 	#PS1='\u@\h:\w\$ '
 fi
 
