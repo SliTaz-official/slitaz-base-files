@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # mktazdevs.sh: Make device files for SliTaz GNU/Linux
-# 2007/10/02 - 2014 <pankso@slitaz.org>
+# 2007/10/02 - 2015 <pankso@slitaz.org>
 #
 # As of SliTaz 5.0 we have a radicaly minimal /dev tree for ARM and we
 # use mdev to create devices nodes on the fly. On i486 we use udev and
@@ -12,7 +12,7 @@
 
 # We do our work in the dev/ directory.
 if [ -z "$1" ] ; then
-	echo "usage: `basename $0` path/to/dev"
+	echo "usage: $(basename $0) path/to/dev"
 	exit 1
 fi
 
@@ -34,42 +34,42 @@ mknod input/event0 c 13 64
 mknod input/event1 c 13 65
 mknod input/event2 c 13 66
 mknod input/mouse0 c 13 32
-mknod input/mice c 13 63
-mknod input/ts0 c 254 0
+mknod input/mice   c 13 63
+mknod input/ts0    c 254 0
 
 # Miscellaneous one-of-a-kind stuff.
 #
-mknod logibm c 10 0
-mknod psaux c 10 1
+mknod logibm   c 10 0
+mknod psaux    c 10 1
 mknod inportbm c 10 2
-mknod atibm c 10 3
-mknod console c 5 1
-mknod full c 1 7
-mknod kmem c 1 2
-mknod mem c 1 1
-mknod null c 1 3
-mknod port c 1 4
-mknod random c 1 8
-mknod urandom c 1 9
-mknod zero c 1 5
-mknod rtc c 10 135
-mknod sr0 b 11 0
-mknod sr1 b 11 1
-mknod agpgart c 10 175
-mknod ttyS0 c 4 64
-mknod audio c 14 4
-mknod beep c 10 128
-mknod ptmx c 5 2
-mknod nvram c 10 144
+mknod atibm    c 10 3
+mknod console  c  5 1
+mknod full     c  1 7
+mknod kmem     c  1 2
+mknod mem      c  1 1
+mknod null     c  1 3
+mknod port     c  1 4
+mknod random   c  1 8
+mknod urandom  c  1 9
+mknod zero     c  1 5
+mknod rtc      c 10 135
+mknod sr0      b 11 0
+mknod sr1      b 11 1
+mknod agpgart  c 10 175
+mknod ttyS0    c  4 64
+mknod audio    c 14 4
+mknod beep     c 10 128
+mknod ptmx     c  5 2
+mknod nvram    c 10 144
 ln -s /proc/kcore core
 # DSP
 mknod -m 0666 dsp c 14 3
 # PPP dev.
-mknod ppp c 108 0
+mknod ppp      c 108 0
 
 # net/tun device.
 #
-mknod net/tun c 10 200
+mknod net/tun  c 10 200
 
 # Framebuffer devs.
 #
@@ -98,7 +98,7 @@ mknod usb/hiddev6 c 180 102
 
 # hda devs.
 #
-mknod hda b 3 0
+mknod hda  b 3 0
 mknod hda1 b 3 1
 mknod hda2 b 3 2
 mknod hda3 b 3 3
@@ -111,7 +111,7 @@ mknod hda9 b 3 9
 
 # hdb devs.
 #
-mknod hdb b 3 64
+mknod hdb  b 3 64
 mknod hdb1 b 3 65
 mknod hdb2 b 3 66
 mknod hdb3 b 3 67
@@ -143,7 +143,7 @@ ln -s sda1 flash
 
 # sdb devs.
 #
-mknod sdb b 8 16
+mknod sdb  b 8 16
 mknod sdb1 b 8 17
 mknod sdb2 b 8 18
 mknod sdb3 b 8 19
@@ -160,13 +160,13 @@ mknod fd0 b 2 0
 
 # loop devs.
 #
-for i in `seq 0 7`; do
+for i in $(seq 0 7); do
 	mknod loop$i b 7 $i
 done
 
 # ram devs.
 #
-for i in `seq 0 7`; do
+for i in $(seq 0 7); do
 	mknod ram$i b 1 $i
 done
 ln -s ram1 ram
@@ -174,20 +174,20 @@ ln -s ram1 ram
 # tty devs.
 #
 mknod tty c 5 0
-for i in `seq 0 7`; do
+for i in $(seq 0 7); do
 	mknod tty$i c 4 $i
 done
 
 # Virtual console screen devs.
 #
-for i in `seq 0 7`; do
+for i in $(seq 0 7); do
 	mknod vcs$i c 7 $i
 done
 ln -s vcs0 vcs
 
 # Virtual console screen w/ attributes devs.
 #
-for i in `seq 0 7`; do
+for i in $(seq 0 7); do
 	mknod vcsa$i c 7 $(($i + 128))
 done
 ln -s vcsa0 vcsa
@@ -208,6 +208,8 @@ chmod 0666 ptmx
 chmod 0666 null
 chmod 0622 console
 chmod 0666 tty*
+chmod 1777 shm
+
 status
 
 # Script end.
