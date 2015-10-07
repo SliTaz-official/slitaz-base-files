@@ -13,7 +13,13 @@ window.onload = function() {
 	{
 		var element = detailsElements[i];
 		element.innerHTML = '<input type="checkbox" id="details' + i +
-			'"><label for="details' + i + '"></label><span>' +
-			element.innerHTML + '</span>';
+			'"/><label for="details' + i + '"><span>' +
+			element.innerHTML + '</span></label>';
+	}
+
+	var sections = document.getElementsByTagName('section');
+	for(var i = 0; i < sections.length; ++ i)
+	{
+		sections[i].dataset.title = sections[i].firstElementChild.innerHTML;
 	}
 }
