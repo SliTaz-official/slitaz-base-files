@@ -47,6 +47,10 @@ msgstr "n"
 msgid "N"
 msgstr "N"
 
+#: rootfs/lib/libtaz.sh:221
+msgid "w"
+msgstr "10"
+
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
 msgstr "Репозиторий недоступен"

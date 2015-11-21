@@ -61,10 +61,8 @@ status() {
 			 done=" <span class=\"float-right color$okcolor\">$okmsg</span>"
 			error=" <span class=\"float-right color$ercolor\">$ermsg</span>";;
 		*)
-			local cols=$(get_cols)
-			local scol=$((${cols:-80} - 10))
-			 done="\\033[${scol}G[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
-			error="\\033[${scol}G[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]";;
+			 done="[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
+			error="[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]";;
 	esac
 	case $check in
 		0) echo -e "$done";;
@@ -219,9 +217,16 @@ footer() {
 
 # Print current action
 action() {
+	local w cols scol msg chars padding
+	w=$(_ 'w'); w=${w/w/10}
+	cols=$(get_cols); cols=${cols:-80}; scol=$(( $cols - $w ))
+	msg="$(_n "$@" | fold -sw$scol)"
+	chars=$(echo -n "$msg" | tail -n1 | wc -m); padding=$(( $scol - $chars ))
+	msg="$(printf '%s%'$padding's' "$msg" "")"
+
 	case $output in
-		raw|gtk|html) _n "$@";;
-		*) echo -ne "\033[0;33m$(_ "$@")\033[0m";;
+		raw|gtk|html) echo -n "$msg";;
+		*) echo -ne "\033[0;33m$msg\033[0m";;
 	esac
 }
 

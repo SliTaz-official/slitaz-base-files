@@ -45,6 +45,10 @@ msgstr "n"
 msgid "N"
 msgstr "N"
 
+#: rootfs/lib/libtaz.sh:221
+msgid "w"
+msgstr "8"
+
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
 msgstr "Spegeln går inte att nå"

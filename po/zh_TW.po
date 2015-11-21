@@ -44,6 +44,10 @@ msgstr "否"
 msgid "N"
 msgstr "否"
 
+#: rootfs/lib/libtaz.sh:221
+msgid "w"
+msgstr "8"
+
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
 msgstr "無法連接鏡像"

@@ -47,6 +47,10 @@ msgstr "n"
 msgid "N"
 msgstr "N"
 
+#: rootfs/lib/libtaz.sh:221
+msgid "w"
+msgstr "14"
+
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
 msgstr "آیینه در دسترس نیست"

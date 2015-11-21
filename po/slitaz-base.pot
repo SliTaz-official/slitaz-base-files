@@ -45,6 +45,10 @@ msgstr ""
 msgid "N"
 msgstr ""
 
+#: rootfs/lib/libtaz.sh:221
+msgid "w"
+msgstr ""
+
 #: rootfs/usr/lib/slitaz/libpkg.sh:33
 msgid "Mirror is unreachable"
 msgstr ""
