@@ -73,7 +73,7 @@ status() {
 # Line separator
 separator() {
 	case $output in
-		raw|gtk) echo '--------';;
+		gtk) echo '--------';;
 		html)    echo -n '<hr/>';;
 		*)
 			local cols=$(get_cols)
