@@ -131,10 +131,12 @@ status
 cat $activity
 rm -f $activity
 
-check_libtaz
-output='raw'
-title 'Checking libtaz.sh: --output=raw'
-check_libtaz
+for output in '' raw gtk html; do
+	export output
+	newline; newline
+	title 'Checking libtaz.sh: --output=$output'
+	check_libtaz
+done
 
 # Check libtaz.sh functions usage
 output='term'

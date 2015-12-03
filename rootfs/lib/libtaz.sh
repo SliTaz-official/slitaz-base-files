@@ -48,44 +48,43 @@ _n() { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; }
 _p() { local S="$1" P="$2" N="$3"; shift 3; printf "$(ngettext "$S" "$P" "$N")" "$@"; }
 
 # Get terminal columns
-get_cols() { stty size 2>/dev/null | busybox cut -d' ' -f2; }
+get_cols() { stty size 2>/dev/null | awk -vc=$cols 'END{print c?c:($2 && $2<80)?$2:80}'; }
 
 # Last command status
 status() {
-	local check=$?
-	case $output in
-		raw|gtk)
-			 done=" $okmsg"
-			error=" $ermsg";;
-		html)
-			 done=" <span class=\"float-right color$okcolor\">$okmsg</span>"
-			error=" <span class=\"float-right color$ercolor\">$ermsg</span>";;
-		*)
-			 done="[ \\033[1;${okcolor}m${okmsg}\\033[0;39m ]"
-			error="[ \\033[1;${ercolor}m${ermsg}\\033[0;39m ]";;
+	local ret_code=$?
+	[ -n "$quiet" -a "$ret_code" -eq 0 ] && return
+	[ -n "$quiet" ] && action "$saved_action" no-quiet
+
+	case $ret_code in
+		0) local msg="$okmsg" color="$okcolor";;
+		*) local msg="$ermsg" color="$ercolor";;
 	esac
-	case $check in
-		0) echo -e "$done";;
-		*) echo -e "$error";;
+	case $output in
+		raw|gtk) echo " $msg";;
+		html) echo " <span class=\"float-right color$color\">$msg</span>";;
+		*) echo -e "[ \\033[1;${color}m$msg\\033[0;39m ]";;
 	esac
 }
 
 # Line separator
 separator() {
+	[ -n "$quiet" ] && return
 	case $output in
 		gtk) echo '--------';;
-		html)    echo -n '<hr/>';;
-		*)
-			local cols=$(get_cols)
-			printf "%${cols:-80}s\n" | tr ' ' "${1:-=}";;
+		html) echo -n '<hr/>';;
+		*) printf "%$(get_cols)s\n" | tr ' ' "${1:-=}";;
 	esac
 }
 
 # New line
-newline() { echo; }
+newline() {
+	[ -z "$quiet" ] && echo
+}
 
 # Display a bold message
 boldify() {
+	[ -n "$quiet" ] && return
 	case $output in
 		raw)  echo "$@" ;;
 		gtk)  echo "<b>$@</b>" ;;
@@ -96,6 +95,7 @@ boldify() {
 
 # Colorize message
 colorize() {
+	[ -n "$quiet" ] && return
 	: ${color=$1}
 	shift
 	case $output in
@@ -111,6 +111,7 @@ colorize() {
 
 # Indent text
 indent() {
+	[ -n "$quiet" ] && return
 	local in="$1"
 	shift
 	echo -e "\033["$in"G $@";
@@ -118,7 +119,8 @@ indent() {
 
 # Extended MeSsaGe output
 emsg() {
-	local sep="\n--------\n"
+	[ -n "$quiet" ] && return
+	local sep="\n$(separator)\n"
 	case $output in
 		raw)
 			echo "$@" | sed -e 's|<b>||g; s|</b>||g; s|<c [0-9]*>||g; \
@@ -131,12 +133,6 @@ emsg() {
 			s|<c \([0-9]*\)>|<span class="color\1">|g; s|</c>|</span>|g; \
 			s|<n>|<br/>|g; s|<->|<hr/>|g; s|<i [0-9]*>| |g' ;;
 		*)
-			local sep="\n"
-			local cols=$(get_cols)
-			[ "$cols" ] || cols=80
-			for c in $(seq 1 $cols); do
-				sep="${sep}="
-			done
 			echo -en "$(echo "$@" | sed -e 's|<b>|\\033[1m|g; s|</b>|\\033[0m|g;
 			s|<c 0\([0-9]*\)>|\\033[\1m|g; s|<c \([1-9][0-9]*\)>|\\033[1;\1m|g;
 			s|</c>|\\033[0;39m|g; s|<n>|\n|g;
@@ -148,7 +144,7 @@ emsg() {
 
 # Check if user is logged as root
 check_root() {
-	if [ $(id -u) != 0 ]; then
+	if [ $(id -u) -ne 0 ]; then
 		lgettext "You must be root to execute:"; echo " $(basename $0) $@"
 		exit 1
 	fi
@@ -181,34 +177,36 @@ log() {
 
 # Print two-column list of options with descriptions
 optlist() {
-	local in cols col1=1 line
-	in="$(echo "$1" | sed 's|		*|	|g')"
-	cols=$(get_cols); [ "$cols" ] || cols=80
+	[ -n "$quiet" ] && return
+	local in="$(echo "$1" | sed 's|		*|	|g')" w=$(get_cols) col1=1 line
 	IFS=$'\n'
 	for line in $in; do
 		col=$(echo -n "$line" | cut -f1 | wc -m)
 		[ $col -gt $col1 ] && col1=$col
 	done
-	echo "$in" | sed 's|\t|&\n|' | fold -sw$((cols - col1 - 4)) | \
+	echo "$in" | sed 's|\t|&\n|' | fold -sw$((w - col1 - 4)) | \
 	sed "/\t/!{s|^.*$|[$((col1 + 4))G&|g}" | sed "/\t$/{N;s|.*|  &|;s|\t\n||}"
 }
 
 # Wrap words in long terminal message
 longline() {
-	cols=$(get_cols)
-	echo -e "$@" | fold -sw${cols:-80}
+	[ -n "$quiet" ] && return
+	local w=$(get_cols)
+	echo -e "$@" | fold -sw$w
 }
 
 # Print localized title
 title() {
+	[ -n "$quiet" ] && return
 	case $output in
 		html) echo "<section><header>$(_ "$@")</header><pre class=\"scroll\">";;
-		*)    newline; boldify "$(_ "$@")"; separator;;
+		*) newline; boldify "$(_ "$@")"; separator;;
 	esac
 }
 
 # Print footer
 footer() {
+	[ -n "$quiet" ] && return
 	case $output in
 		html) echo "</pre><footer>$1</footer></section>";;
 		*)    separator; echo "$1"; [ -n "$1" ] && newline;;
@@ -216,13 +214,17 @@ footer() {
 }
 
 # Print current action
+saved_action=''
 action() {
-	local w cols scol msg chars padding
+	saved_action="$1"
+	[ -n "$quiet" -a -z "$2" ] && return
+	local w c scol msg chars
 	w=$(_ 'w'); w=${w/w/10}
-	cols=$(get_cols); cols=${cols:-80}; scol=$(( $cols - $w ))
+	c=$(get_cols)
+	scol=$(( $c - $w ))
 	msg="$(_n "$@" | fold -sw$scol)"
-	chars=$(echo -n "$msg" | tail -n1 | wc -m); padding=$(( $scol - $chars ))
-	msg="$(printf '%s%'$padding's' "$msg" "")"
+	chars=$(echo -n "$msg" | tail -n1 | wc -m)
+	msg="$(printf '%s%'$(( $scol - $chars ))'s' "$msg" '')"
 
 	case $output in
 		raw|gtk|html) echo -n "$msg";;
@@ -232,16 +234,16 @@ action() {
 
 # Print long line as list item
 itemize() {
+	[ -n "$quiet" ] && return
 	case $output in
 		gtk) echo "$@";;
 		*)
-			local inp="$@" cols=$(get_cols) first offset
-			cols="${cols:-80}"
-			first="$(echo -e "$inp" | fold -sw$cols | head -n1)"
+			local inp="$@" w=$(get_cols) first offset
+			first="$(echo -e "$inp" | fold -sw$w | head -n1)"
 			echo "$first"
 			cols1="$(echo "${first:1}" | wc -c)"
 			offset=$(echo "$first" | sed -n 's|^\([^:\*-]*[:\*-]\).*$|\1|p' | wc -m)
-			echo "${inp:$cols1}" | fold -sw$((cols - offset)) | awk \
+			echo "${inp:$cols1}" | fold -sw$((w - offset)) | awk \
 				'($0){printf "%'$offset's%s\n","",$0}'
 			;;
 	esac

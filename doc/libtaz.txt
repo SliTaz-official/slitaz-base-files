@@ -38,6 +38,8 @@ FUNCTIONS
 OPTIONS
 	--output=[raw|gtk|html]
 	--activity=/path/files/activity
+	--quiet               Display nothing but errors (usually: action ... status)
+	--cols=<number>       Output width in columns
 
 
 EXAMPLES
