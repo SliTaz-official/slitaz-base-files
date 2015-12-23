@@ -10,15 +10,48 @@ TEXTDOMAIN='slitaz-base'
 . /etc/locale.conf
 export TEXTDOMAIN LANG
 
-check_retawq() {
-	if [ ! -x /usr/bin/retawq ]; then
-		echo; _ "Missing Retawq web browser..."
-		_ 'Please run: %s' "su -c 'tazpkg get-install retawq'"
-		exit 0
+display_html() {
+	if [ -x /usr/bin/retawq ]; then
+		retawq --dump=file://"$1" | less -M
+	else
+		# Rationale: busybox "less" is unable to use control chars, so we're
+		# stuck with regular text (no bold, colors...), and use other ways to
+		# emphasis: quotes, underscores, brackets, tabs.
+		# Explanation for following sequence:
+		# 1) keep only what's in the HTML body
+		# 2) make sure <pre> and </pre> are on a line of their own (see 3)
+		# 3a) newlines must be obeyed between <pre> tags, so explicitly add <br>
+		#     because newlines are going to be stripped; also remove <em> (added
+		#     emphasis characters would be misleading)
+		# 3b) the </pre> line is matched also, but should not get a <br> added,
+		#     so remove it (let it on the <pre> line, starts a new paragraph)
+		# 4) strip newlines, remove comments (should be done earlier)
+		# 5) emphasize headers and titles with a Tab, add newline after
+		# 6) add newline for <br> <p> </p> <section> <article[ id=...]>
+		# 7) suppress <a [href=...]> </a> and some other tags
+		# 8) add newline and hyphen for list items, newline for list end
+		# 9) emphasize <tt> and <code> blocks by ‘’ ; <em> by _
+		# 10) render x-details between brackets []
+		# 11) remove start-of-line and end-of-line spaces
+		# 12) render HTML-encoded chars
+		# 13) wrap at word boundaries
+		cat "$1" | sed '1,/<body>/d; /<\/body>/d' \
+		| sed -r 's!(.)<(/?)pre>!\1\n<\2pre>!g; s!<(/?)pre>(.)!<\1pre>\n\2!g;' \
+		| sed -r '/<pre>/,/<\/pre>/{s!$!<br>!g; s!</?em>!!g}; \
+			/<\/pre>/s!<br>$!!' | tr '\n' ' ' \
+		| sed -r 's%<!-- .* -->%%g; \
+			s!<(header|h[1-4])>!	!g; s!<footer>!\n	!; \
+			s!</(header|h[1-4]|footer)>!\n!g; \
+			s!<(br|/?p|section|article[^>]*)>!\n!g; \
+			s!<(a [^>]*|/a|/section|/article|/html|/?pre|/?sup)>!!g; \
+			s!<li>!\n — !g; s!<ul>!!g; s!</(li|ul)>!\n!g; \
+			s!<(tt|code)>!‘!g; s!</(tt|code)>!’!g; s!</?em>!_!g; \
+			s!<x-details>![!g; s!</x-details>!]!g; \
+			s!&lt;!<!g; s!&gt;!>!g; s!&copy;!©!g; s!&quot;!"!g; s!&amp;!\&!g; \
+			s!&reg;!™!g; ' | sed -r 's!(^ *| *$)!!' \
+		| fold -s | less -M
 	fi
 }
-
-local i SECTION SECTIONS MSG TOPIC MAN_SECTION
 
 case "$1" in
 	''|-*)
@@ -26,8 +59,11 @@ case "$1" in
 		return ;;
 esac
 
+local SECTION SECTIONS MSG TOPIC MAN_SECTION MAN_LANG
+
 SECTION='all'
-MAN_SECTION='*'
+MAN_SECTION='[1-8]'
+MAN_LANG=$(locale | sed -nr 's/LC_MESSAGES="?([^"_.]*).*"?/\1/p')
 MSG=''
 
 if [ -n "$2" ]; then
@@ -39,54 +75,85 @@ fi
 
 TOPIC="$1"
 
-if [ check_retawq -a -f /usr/share/doc/$TOPIC/$TOPIC.html ]; then
-	retawq --dump=file:///usr/share/doc/$TOPIC/$TOPIC.html | less -M
+# localized SliTaz doc?
+DOC=$(find /usr/share/doc/"$TOPIC" /usr/share/doc/slitaz* \
+	-name "$TOPIC".$MAN_LANG.html 2>/dev/null | head -1)
+# generic SliTaz doc?
+[ -n "$DOC" ] || DOC=$(find /usr/share/doc/"$TOPIC" /usr/share/doc/slitaz* \
+	-name "$TOPIC".html 2>/dev/null | head -1)
+# other doc?
+[ -n "$DOC" ] || DOC=$(find /usr/share/doc \
+	-name "$TOPIC".html 2>/dev/null | head -1)
+
+if [ -n "$DOC" ]; then
+	display_html "$DOC"
 	return
-elif [ check_retawq -a -f /usr/share/doc/slitaz/$TOPIC.html ]; then
-	retawq --dump=file:///usr/share/doc/slitaz/$TOPIC.html | less -M
-	return
-elif [ check_retawq -a -f /usr/share/doc/slitaz-tools/$TOPIC.html ]; then
-	retawq --dump=file:///usr/share/doc/slitaz-tools/$TOPIC.html | less -M
-	return
-elif [ -f /usr/share/doc/slitaz/$TOPIC.txt ]; then
-	# SliTaz tools/libraries documentation (man a like format)
-	less -M /usr/share/doc/slitaz/$TOPIC.txt
+elif [ -f "/usr/share/doc/slitaz/$TOPIC.txt" ]; then
+	# SliTaz tools/libraries documentation (man-alike format)
+	less -M "/usr/share/doc/slitaz/$TOPIC.txt"
 	return
 fi
 
-for i in /usr/share/man/$LC_ALL/man$MAN_SECTION /usr/share/man/man$MAN_SECTION; do
-	if [ -f $i/$TOPIC.* ]; then
-		i=$(ls $i/$TOPIC.* 2> /dev/null)
-		if [ "x$i" != "x" ]; then
-			case "$i" in
-				*gz) (zcat $i || unlzma -c $i 2>/dev/null) | less -M;;
-				*) less -M $i;;
-			esac
+MANPAGE=$(find /usr/share/man/$MAN_LANG*/man$MAN_SECTION \
+	/usr/local/share/man/$MAN_LANG*/man$MAN_SECTION \
+	/usr/local/man/$MAN_LANG*/man$MAN_SECTION \
+	/usr/share/man/man$MAN_SECTION \
+	/usr/local/share/man/man$MAN_SECTION \
+	/usr/local/man/man$MAN_SECTION \
+	-name "$TOPIC".$MAN_SECTION\* 2>/dev/null)
+if [ -n "$MANPAGE" ]; then
+	case "$MANPAGE" in
+		*html) display_html "$MANPAGE"
+			return;;
+	esac
+	# "less"-ing a manpage is a BAD IDEA: man format is unreadable as is.
+	# Use nroff if available; it outputs control chars, which busybox less
+	# cannot handle: use "more" instead (or GNU less)
+	if [ -x /usr/bin/nroff ]; then
+		if [ x$(readlink $(which less)) == x/bin/busybox ]; then
+			VIEW_CMD="more"
+		else
+			VIEW_CMD="less -rM"
 		fi
+		case "$MANPAGE" in
+			*gz) (zcat "$MANPAGE" || unlzma -c "$MANPAGE" 2>/dev/null) | \
+				nroff -man | $VIEW_CMD;;
+			*) nroff -man "$MANPAGE" | $VIEW_CMD;;
+		esac
 		return
+	else
+		_ 'Found local manpage %s but no tool to display it.' $MANPAGE
+		_ 'Consider installing groff by running: %s' \
+			"su -c 'tazpkg get-install groff'"
+		# do not quit, go on searching online
 	fi
-	if [ check_retawq -a -f $i/$TOPIC.html ]; then
-		retawq --dump=file://$i/$TOPIC.html | less -M
-		return
-	fi
-done
-
-if [ "$SECTION" == 'all' ]
-	then SECTIONS='1 2 3 4 5 6 7 8'
-	else SECTIONS="$SECTION"
 fi
 
-for SECTION in $SECTIONS; do
-  URL=$( wget -q -O - http://man7.org/linux/man-pages/dir_all_alphabetic.html | \
-        sed -n -r "s%.*href=\"\./(man./.*html)\">$TOPIC\($SECTION\).*%\1%p" )
-  if [ -n "$URL" ]
-  then
-    wget -q -O - "http://man7.org/linux/man-pages/$URL" | \
-    awk "BEGIN {s=0} /headline/{s=1} /COLOPHON/{s=0} {if(s) print}" | \
-    sed -e 's%<span class="top-link">top</span>%%' -e 's/<[^>]*>//g' -e 's/&lt;/</g' \
-        -e 's/&gt;/>/g' -e 's/&amp;/\&/g' -e 's/&nbsp;//g' | less -M
-    exit 0
-  fi
-done
-_ 'No manual entry for %s' "$TOPIC$MSG"
+if [ "$SECTION" == 'all' ]; then
+	#search alphabetically
+	LETTER=$(printf "${TOPIC::1}" | tr 'A-Z[:punct:][:digit:]' a-z00)
+	if [ $LETTER == '0' ]; then LETTER=other; fi
+	SECTIONS=$(wget -q -O - http://linux.die.net/man/$LETTER.html | \
+		sed -n -r "s%.*href=\"(.)/$TOPIC\".*%\1%p")
+	[ -n "$SECTIONS" ] || { _ 'No manual entry for %s' "$TOPIC"; exit 0;}
+	_n '%s found in the following sections:\n%s\nPlease choose one: ' "$TOPIC" \
+		"$SECTIONS"
+	read SECTION
+fi
+
+MANURL="http://linux.die.net/man/$SECTION/$TOPIC"
+
+if ! wget -q --spider "$MANURL" 2>/dev/null ; then
+	_ 'No manual entry for %s' "$TOPIC$MSG"
+	exit 0
+fi
+
+if [ -x /usr/bin/retawq ]; then
+	retawq "$MANURL"
+else
+	URL="http://www.w3.org/services/html2txt?url=$MANURL&noinlinerefs=on&nonums=on"
+	wget -q -O - "$URL" | tail -n+3 | \
+		sed 's!\[[0-9]*\]!!g;/\[INS: :INS\]/d;/^   Site Search$/,$d' | less -M
+fi
+
 exit 0
