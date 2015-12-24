@@ -1,17 +1,17 @@
 #!/bin/sh
 #
 # Tiny ldd fake.
-# Copyright (C) 2010-2014 SliTaz GNU/Linux.
+# Copyright (C) 2010-2015 SliTaz GNU/Linux.
 #
 
-echo ""
+echo
 file="$@"
 for file do
-	case $file in
-		*/*) : ;;
-		*) file=./$file ;;
+	case "$file" in
+		*/*) ;;
+		*) [ -f "./$file" ] && file="./$file"
 	esac
-	echo "$file:" | sed 's%^./%%'
-	LD_TRACE_LOADED_OBJECTS=1 /lib/ld*.so "$file"
-	echo ""
+	which "$file" | sed 's%^./%%;s%$%:%'
+	LD_TRACE_LOADED_OBJECTS=1 "$file"
+	echo
 done
