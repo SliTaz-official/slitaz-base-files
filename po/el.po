@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-26 14:20+0300\n"
+"POT-Creation-Date: 2015-12-29 22:40+0100\n"
 "PO-Revision-Date: 2012-06-09 21:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -18,51 +18,47 @@ msgstr ""
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
-#: rootfs/lib/libtaz.sh:23
-msgid "Done"
-msgstr "Ολοκληρώθηκε"
-
-#: rootfs/lib/libtaz.sh:24
-msgid "Failed"
-msgstr "Απέτυχε"
-
-#: rootfs/lib/libtaz.sh:153
-msgid "You must be root to execute:"
-msgstr "Χρειάζεστε δικαιώματα διαχειριστή για να συνεχίσετε:"
-
-#: rootfs/lib/libtaz.sh:166
+#: rootfs/lib/libtaz.sh:16
 msgid "y"
 msgstr "y"
 
-#: rootfs/lib/libtaz.sh:167
+#: rootfs/lib/libtaz.sh:17
 msgid "Y"
 msgstr "Υ"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:18
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:19
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:221
-msgid "w"
-msgstr "16"
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "Ολοκληρώθηκε"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:33
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "Απέτυχε"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "Χρειάζεστε δικαιώματα διαχειριστή για να συνεχίσετε:"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
 msgstr "O καθρέπτης (mirror) είναι απρόσιτoς"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:37
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
 msgstr "Ο καθρέπτης (mirror) είναι ενημερωμένος"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
 msgstr "Λείπει η απόδειξη: %s"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
 msgstr "To %s δεν είναι έγκυρο αρχείο tazpkg. Έξοδος"
 
@@ -94,25 +90,38 @@ msgstr "Δοκιμή QUERY_STRING:"
 msgid "HTTP Info"
 msgstr "Πληροφορίες HTTP"
 
-#: rootfs/usr/bin/man:15
-msgid "Missing Retawq web browser..."
-msgstr "Λείπει ο περιηγητής ιστού Retawq..."
-
-#: rootfs/usr/bin/man:16
-msgid "Please run: su -c 'tazpkg get-install retawq'"
-msgstr "Παρακαλώ εκτελέστε: su -c 'tazpkg get-install retawq'"
-
-#: rootfs/usr/bin/man:29
+#: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Χρήση:</b> man [τμήμα] εντολή"
 
-#: rootfs/usr/bin/man:40
+#: rootfs/usr/bin/man:70
 msgid "in section %s"
 msgstr "στο τμήμα %s"
 
-#: rootfs/usr/bin/man:81
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr ""
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr ""
+
+#: rootfs/usr/bin/man:137
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr ""
+
+#: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "Δεν υπάρχει καταχώρηση στο εγχειρίδιο για το %s"
+
+#~ msgid "w"
+#~ msgstr "16"
+
+#~ msgid "Missing Retawq web browser..."
+#~ msgstr "Λείπει ο περιηγητής ιστού Retawq..."
+
+#~ msgid "Please run: su -c 'tazpkg get-install retawq'"
+#~ msgstr "Παρακαλώ εκτελέστε: su -c 'tazpkg get-install retawq'"
 
 #~ msgid "Index of %s"
 #~ msgstr "Ευρετήριο του %s"

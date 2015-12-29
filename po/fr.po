@@ -7,61 +7,58 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-26 14:20+0300\n"
-"PO-Revision-Date: 2012-05-17 09:09+0100\n"
-"Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
+"POT-Creation-Date: 2015-12-29 22:40+0100\n"
+"PO-Revision-Date: 2015-12-29 23:15+0100\n"
+"Last-Translator: Lucas Levrel <llevrel@yahoo.fr>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.6\n"
 
-#: rootfs/lib/libtaz.sh:23
-msgid "Done"
-msgstr "Fait"
-
-#: rootfs/lib/libtaz.sh:24
-msgid "Failed"
-msgstr "Echec"
-
-#: rootfs/lib/libtaz.sh:153
-msgid "You must be root to execute:"
-msgstr "Vous devez être root pour exécuter:"
-
-#: rootfs/lib/libtaz.sh:166
+#: rootfs/lib/libtaz.sh:16
 msgid "y"
 msgstr "o"
 
-#: rootfs/lib/libtaz.sh:167
+#: rootfs/lib/libtaz.sh:17
 msgid "Y"
 msgstr "O"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:18
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:19
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:221
-msgid "w"
-msgstr "9"
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "Fait"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:33
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "Echec"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "Vous devez être root pour exécuter:"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
 msgstr "Le miroir est inacessible"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:37
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
 msgstr "Le miroir est à jour"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
 msgstr "Recette manquante: %s"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
 msgstr "%s n'est pas un paquet tazpkg. Arrêt"
 
@@ -93,25 +90,40 @@ msgstr "Test de la chaine de caractères:"
 msgid "HTTP Info"
 msgstr "Info HTTP"
 
-#: rootfs/usr/bin/man:15
-msgid "Missing Retawq web browser..."
-msgstr "Navigateur web Retawq manquant..."
-
-#: rootfs/usr/bin/man:16
-msgid "Please run: %s"
-msgstr "Vous pouvez l'installer en exécutant la commande: %s"
-
-#: rootfs/usr/bin/man:29
+#: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Usage:</b> man [section] commande"
 
-#: rootfs/usr/bin/man:40
+#: rootfs/usr/bin/man:70
 msgid "in section %s"
 msgstr "dans cette section %s"
 
-#: rootfs/usr/bin/man:81
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr ""
+"Aucun outil n'a été trouvé pour afficher la page de manuel locale de %s."
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr "Envisagez d'installer groff en exécutant : %s"
+
+#: rootfs/usr/bin/man:137
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr ""
+"%s trouvé dans les sections suivantes : \\n%s\\nVeuillez en choisir une :"
+
+#: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "Pas de manuel disponible pour %s"
+
+#~ msgid "w"
+#~ msgstr "9"
+
+#~ msgid "Missing Retawq web browser..."
+#~ msgstr "Navigateur web Retawq manquant..."
+
+#~ msgid "Please run: %s"
+#~ msgstr "Vous pouvez l'installer en exécutant la commande: %s"
 
 #~ msgid "Index of %s"
 #~ msgstr "Racine de %s"

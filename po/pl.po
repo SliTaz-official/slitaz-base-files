@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-26 14:20+0300\n"
+"POT-Creation-Date: 2015-12-29 22:40+0100\n"
 "PO-Revision-Date: 2013-07-23 12:34+0100\n"
 "Last-Translator: Paweł Pyrczak <tkr.tkr.pl@gmail.com>\n"
 "Language-Team: \n"
@@ -21,51 +21,47 @@ msgstr ""
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: rootfs/lib/libtaz.sh:23
-msgid "Done"
-msgstr "Zakończono"
-
-#: rootfs/lib/libtaz.sh:24
-msgid "Failed"
-msgstr "Niepowodzenie"
-
-#: rootfs/lib/libtaz.sh:153
-msgid "You must be root to execute:"
-msgstr "Musisz być administratorem (root) aby wykonać:"
-
-#: rootfs/lib/libtaz.sh:166
+#: rootfs/lib/libtaz.sh:16
 msgid "y"
 msgstr "t"
 
-#: rootfs/lib/libtaz.sh:167
+#: rootfs/lib/libtaz.sh:17
 msgid "Y"
 msgstr "T"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:18
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:19
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:221
-msgid "w"
-msgstr "17"
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "Zakończono"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:33
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "Niepowodzenie"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "Musisz być administratorem (root) aby wykonać:"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
 msgstr "Serwer lustrzany jest nieosiągalny"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:37
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
 msgstr "Serwer lustrzany jest aktualny"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
 msgstr "Brakująca recepta: %s"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
 msgstr "%s nie jest plikiem tazpkg. Kończenie pracy"
 
@@ -97,25 +93,38 @@ msgstr "Test QUERY_STRING:"
 msgid "HTTP Info"
 msgstr "HTTP Info"
 
-#: rootfs/usr/bin/man:15
-msgid "Missing Retawq web browser..."
-msgstr "Brakuje przeglądarki internetowej Retawq..."
-
-#: rootfs/usr/bin/man:16
-msgid "Please run: %s"
-msgstr "Proszę uruchomić: %s"
-
-#: rootfs/usr/bin/man:29
+#: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>Użycie:</b> man [section] command"
 
-#: rootfs/usr/bin/man:40
+#: rootfs/usr/bin/man:70
 msgid "in section %s"
 msgstr "w sekcji %s"
 
-#: rootfs/usr/bin/man:81
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr ""
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr ""
+
+#: rootfs/usr/bin/man:137
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr ""
+
+#: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "Brak ręcznego wpisu dla %s"
+
+#~ msgid "w"
+#~ msgstr "17"
+
+#~ msgid "Missing Retawq web browser..."
+#~ msgstr "Brakuje przeglądarki internetowej Retawq..."
+
+#~ msgid "Please run: %s"
+#~ msgstr "Proszę uruchomić: %s"
 
 #~ msgid "Index of %s"
 #~ msgstr "Indeks %s"

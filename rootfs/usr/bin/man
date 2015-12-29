@@ -59,8 +59,6 @@ case "$1" in
 		return ;;
 esac
 
-local SECTION SECTIONS MSG TOPIC MAN_SECTION MAN_LANG
-
 SECTION='all'
 MAN_SECTION='[1-8]'
 MAN_LANG=$(locale | sed -nr 's/LC_MESSAGES="?([^"_.]*).*"?/\1/p')

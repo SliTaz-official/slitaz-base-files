@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-26 14:20+0300\n"
+"POT-Creation-Date: 2015-12-29 22:40+0100\n"
 "PO-Revision-Date: 2014-06-14 21:31+0800\n"
 "Last-Translator: 张文宇 <jame987165702@gmail.com>\n"
 "Language-Team: 张文宇 <jame987165702@gmail.com>\n"
@@ -18,51 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.6.5\n"
 
-#: rootfs/lib/libtaz.sh:23
-msgid "Done"
-msgstr "完成"
-
-#: rootfs/lib/libtaz.sh:24
-msgid "Failed"
-msgstr "失败"
-
-#: rootfs/lib/libtaz.sh:153
-msgid "You must be root to execute:"
-msgstr "你需要以root权限运行"
-
-#: rootfs/lib/libtaz.sh:166
+#: rootfs/lib/libtaz.sh:16
 msgid "y"
 msgstr "是"
 
-#: rootfs/lib/libtaz.sh:167
+#: rootfs/lib/libtaz.sh:17
 msgid "Y"
 msgstr "是"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:18
 msgid "n"
 msgstr "否"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:19
 msgid "N"
 msgstr "否"
 
-#: rootfs/lib/libtaz.sh:221
-msgid "w"
-msgstr "8"
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "完成"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:33
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "失败"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "你需要以root权限运行"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
 msgstr "无法连接镜像"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:37
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
 msgstr "镜像已是最新版本"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
 msgstr "缺少 manquante: %s"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
 msgstr "%s 并非 tazpkg 格式. 终止"
 
@@ -91,22 +87,35 @@ msgstr "搜索串(QUERY_STRING)测试:"
 msgid "HTTP Info"
 msgstr "HTTP 信息"
 
-#: rootfs/usr/bin/man:15
-msgid "Missing Retawq web browser..."
-msgstr "缺少 Retawq 网页浏览器..."
-
-#: rootfs/usr/bin/man:16
-msgid "Please run: %s"
-msgstr "请运行: %s"
-
-#: rootfs/usr/bin/man:29
+#: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>用法:</b> man [章节] 命令"
 
-#: rootfs/usr/bin/man:40
+#: rootfs/usr/bin/man:70
 msgid "in section %s"
 msgstr "在 %s 章节內"
 
-#: rootfs/usr/bin/man:81
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr ""
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr ""
+
+#: rootfs/usr/bin/man:137
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr ""
+
+#: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "沒有 %s 项"
+
+#~ msgid "w"
+#~ msgstr "8"
+
+#~ msgid "Missing Retawq web browser..."
+#~ msgstr "缺少 Retawq 网页浏览器..."
+
+#~ msgid "Please run: %s"
+#~ msgstr "请运行: %s"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-26 14:20+0300\n"
+"POT-Creation-Date: 2015-12-29 22:40+0100\n"
 "PO-Revision-Date: 2014-06-26 08:17+0400\n"
 "Last-Translator: Ali Rashidi <alirashidi17@yahoo.com>\n"
 "Language-Team: Ali Rashidi <alirashidi17@yahoo.com>\n"
@@ -19,51 +19,47 @@ msgstr ""
 "X-Generator: Poedit 1.6.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: rootfs/lib/libtaz.sh:23
-msgid "Done"
-msgstr "انجام شد"
-
-#: rootfs/lib/libtaz.sh:24
-msgid "Failed"
-msgstr "ناموفق بود"
-
-#: rootfs/lib/libtaz.sh:153
-msgid "You must be root to execute:"
-msgstr "برای اجرا باید کاربر ریشه باشید"
-
-#: rootfs/lib/libtaz.sh:166
+#: rootfs/lib/libtaz.sh:16
 msgid "y"
 msgstr "y"
 
-#: rootfs/lib/libtaz.sh:167
+#: rootfs/lib/libtaz.sh:17
 msgid "Y"
 msgstr "Y"
 
-#: rootfs/lib/libtaz.sh:168
+#: rootfs/lib/libtaz.sh:18
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:169
+#: rootfs/lib/libtaz.sh:19
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:221
-msgid "w"
-msgstr "14"
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "انجام شد"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:33
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "ناموفق بود"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "برای اجرا باید کاربر ریشه باشید"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
 msgstr "آیینه در دسترس نیست"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:37
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
 msgstr "آینه به روز است"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:46
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
 msgstr "%s :دریافتی گمشده"
 
-#: rootfs/usr/lib/slitaz/libpkg.sh:66
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
 msgstr "...نیست.در حال خروج tazpkg یک فایل %s"
 
@@ -84,8 +80,8 @@ msgstr ""
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"%s مانند استفاده کنید.مانند PHP در اسکریپت شما به شما این امکان را "
-"میدهد که از سینتکس های %s قرار دادن"
+"%s مانند استفاده کنید.مانند PHP در اسکریپت شما به شما این امکان را میدهد که "
+"از سینتکس های %s قرار دادن"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
@@ -95,22 +91,35 @@ msgstr ":تست متن جستجو شده"
 msgid "HTTP Info"
 msgstr "HTTP اطلاعات"
 
-#: rootfs/usr/bin/man:15
-msgid "Missing Retawq web browser..."
-msgstr "...گم شده است retawq مرورگر"
-
-#: rootfs/usr/bin/man:16
-msgid "Please run: %s"
-msgstr "%s :لطفا این فرمان را اجرا کنید "
-
-#: rootfs/usr/bin/man:29
+#: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
 msgstr "<b>:طریقه استفاده</b> man [section] command"
 
-#: rootfs/usr/bin/man:40
+#: rootfs/usr/bin/man:70
 msgid "in section %s"
 msgstr "%s در قسمت"
 
-#: rootfs/usr/bin/man:81
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr ""
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr ""
+
+#: rootfs/usr/bin/man:137
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr ""
+
+#: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "%s ورودی دستی موجود نیست برای"
+
+#~ msgid "w"
+#~ msgstr "14"
+
+#~ msgid "Missing Retawq web browser..."
+#~ msgstr "...گم شده است retawq مرورگر"
+
+#~ msgid "Please run: %s"
+#~ msgstr "%s :لطفا این فرمان را اجرا کنید "

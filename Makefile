@@ -68,6 +68,8 @@ install-msg: msgfmt
 
 install: install-msg
 	cp -a rootfs/* $(DESTDIR)/
+	# strip "man" script
+	sed -i '/^[^#]*$/,${s|^\t*||;/^ *#/d;/^$/d}' $(DESTDIR)/usr/bin/man
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	cp -a doc/* $(DESTDIR)/usr/share/doc/slitaz
 	chown -R root:root $(DESTDIR)/usr/share/doc/slitaz
