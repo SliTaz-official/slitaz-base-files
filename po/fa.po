@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 22:40+0100\n"
+"POT-Creation-Date: 2015-12-30 23:44+0200\n"
 "PO-Revision-Date: 2014-06-26 08:17+0400\n"
 "Last-Translator: Ali Rashidi <alirashidi17@yahoo.com>\n"
 "Language-Team: Ali Rashidi <alirashidi17@yahoo.com>\n"
@@ -46,6 +46,10 @@ msgstr "ناموفق بود"
 #: rootfs/lib/libtaz.sh:148
 msgid "You must be root to execute:"
 msgstr "برای اجرا باید کاربر ریشه باشید"
+
+#: rootfs/lib/libtaz.sh:222
+msgid "w"
+msgstr "14"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
@@ -114,9 +118,6 @@ msgstr ""
 #: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "%s ورودی دستی موجود نیست برای"
-
-#~ msgid "w"
-#~ msgstr "14"
 
 #~ msgid "Missing Retawq web browser..."
 #~ msgstr "...گم شده است retawq مرورگر"

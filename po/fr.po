@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 22:40+0100\n"
+"POT-Creation-Date: 2015-12-30 23:44+0200\n"
 "PO-Revision-Date: 2015-12-29 23:15+0100\n"
 "Last-Translator: Lucas Levrel <llevrel@yahoo.fr>\n"
 "Language-Team: French\n"
@@ -45,6 +45,10 @@ msgstr "Echec"
 #: rootfs/lib/libtaz.sh:148
 msgid "You must be root to execute:"
 msgstr "Vous devez être root pour exécuter:"
+
+#: rootfs/lib/libtaz.sh:222
+msgid "w"
+msgstr "9"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
@@ -115,9 +119,6 @@ msgstr ""
 #: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "Pas de manuel disponible pour %s"
-
-#~ msgid "w"
-#~ msgstr "9"
 
 #~ msgid "Missing Retawq web browser..."
 #~ msgstr "Navigateur web Retawq manquant..."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 22:40+0100\n"
+"POT-Creation-Date: 2015-12-30 23:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,10 @@ msgstr ""
 
 #: rootfs/lib/libtaz.sh:148
 msgid "You must be root to execute:"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:222
+msgid "w"
 msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32

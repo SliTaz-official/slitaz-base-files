@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 22:40+0100\n"
-"PO-Revision-Date: 2014-05-26 14:22+0300\n"
+"POT-Creation-Date: 2015-12-30 23:44+0200\n"
+"PO-Revision-Date: 2015-12-31 00:00+0200\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: rootfs/lib/libtaz.sh:16
@@ -46,6 +46,10 @@ msgstr "Ошибка"
 #: rootfs/lib/libtaz.sh:148
 msgid "You must be root to execute:"
 msgstr "Вы должны обладать правами root для запуска:"
+
+#: rootfs/lib/libtaz.sh:222
+msgid "w"
+msgstr "10"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
@@ -100,22 +104,20 @@ msgstr "в разделе %s"
 
 #: rootfs/usr/bin/man:123
 msgid "Found local manpage %s but no tool to display it."
-msgstr ""
+msgstr "Найдено локальное руководство по %s, но его нечем показать."
 
 #: rootfs/usr/bin/man:124
 msgid "Consider installing groff by running: %s"
-msgstr ""
+msgstr "Рассмотрите возможность установки Groff, выполнив команду «%s»"
 
 #: rootfs/usr/bin/man:137
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
 msgstr ""
+"Руководство по %s найдено в следующих разделах:\\n%s\\nВыберите раздел: "
 
 #: rootfs/usr/bin/man:145
 msgid "No manual entry for %s"
 msgstr "Руководство по %s отсутствует"
-
-#~ msgid "w"
-#~ msgstr "10"
 
 #~ msgid "Missing Retawq web browser..."
 #~ msgstr "Отсутствует браузер Retawq…"

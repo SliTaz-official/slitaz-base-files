@@ -14,7 +14,7 @@ help:
 
 pot:
 	xgettext -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz" -k -klgettext \
+		--copyright-holder="SliTaz" -k -k_ -klgettext \
 		./rootfs/lib/libtaz.sh
 	xgettext -j -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
 		--copyright-holder="SliTaz" -k_ -k_n \
@@ -78,4 +78,6 @@ install: install-msg
 
 clean:
 	rm -rf po/mo
+	rm -f po/*~
+	rm -f po/*.mo
 	rm -f po/*~ $(PACKAGE)*.tar.gz $(PACKAGE)*.md5
