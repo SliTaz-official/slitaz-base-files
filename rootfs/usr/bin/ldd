@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Tiny ldd fake.
-# Copyright (C) 2010-2015 SliTaz GNU/Linux.
+# Copyright (C) 2010-2016 SliTaz GNU/Linux.
 #
 
 echo
@@ -12,6 +12,6 @@ for file do
 		*) [ -f "./$file" ] && file="./$file"
 	esac
 	which "$file" | sed 's%^./%%;s%$%:%'
-	LD_TRACE_LOADED_OBJECTS=1 "$file"
+	LD_TRACE_LOADED_OBJECTS=1 /lib/ld-linux* "$file"
 	echo
 done
