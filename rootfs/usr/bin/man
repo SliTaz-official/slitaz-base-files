@@ -134,9 +134,13 @@ if [ "$SECTION" == 'all' ]; then
 	SECTIONS=$(wget -q -O - http://linux.die.net/man/$LETTER.html | \
 		sed -n -r "s%.*href=\"(.)/$TOPIC\".*%\1%p")
 	[ -n "$SECTIONS" ] || { _ 'No manual entry for %s' "$TOPIC"; exit 0;}
-	_n '%s found in the following sections:\n%s\nPlease choose one: ' "$TOPIC" \
-		"$SECTIONS"
-	read SECTION
+	if [ $(printf '%s\n' "$SECTIONS"|wc -l) -eq 1 ]; then
+		SECTION=$SECTIONS
+	else
+		_n '%s found in the following sections:\n%s\nPlease choose one: ' \
+			"$TOPIC" "$SECTIONS"
+		read SECTION
+	fi
 fi
 
 MANURL="http://linux.die.net/man/$SECTION/$TOPIC"
