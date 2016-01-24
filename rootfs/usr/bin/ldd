@@ -7,11 +7,8 @@
 echo
 file="$@"
 for file do
-	case "$file" in
-		*/*) ;;
-		*) [ -f "./$file" ] && file="./$file"
-	esac
-	which "$file" | sed 's%^./%%;s%$%:%'
+	file="$(which "$file")"
+	echo "$file" | sed 's%^./%%;s%$%:%'
 	LD_TRACE_LOADED_OBJECTS=1 /lib/ld-linux* "$file"
 	echo
 done
