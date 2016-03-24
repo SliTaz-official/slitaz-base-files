@@ -52,6 +52,18 @@ case "$TERM" in
 	xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip \007";;
 esac
 
+
+# User preferred applications
+
+[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
+if [ -s "$XDG_CONFIG_HOME/slitaz/applications.conf" ]; then
+	. "$XDG_CONFIG_HOME/slitaz/applications.conf"
+elif [ -s '/etc/slitaz/applications.conf' ]; then
+	. '/etc/slitaz/applications.conf'
+fi
+export FILE_MANAGER BROWSER EDITOR TERMINAL WINDOW_MANAGER
+
+
 # Bash compatibility
 
 dirs() {
