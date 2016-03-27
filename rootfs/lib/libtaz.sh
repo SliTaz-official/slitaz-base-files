@@ -219,7 +219,7 @@ action() {
 	saved_action="$1"
 	[ -n "$quiet" -a -z "$2" ] && return
 	local w c scol msg chars
-	# Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+	# Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 	w=$(_ 'w'); w=${w/w/10}
 	c=$(get_cols)
 	scol=$(( $c - $w ))

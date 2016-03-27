@@ -49,7 +49,7 @@ msgstr "Niepowodzenie"
 msgid "You must be root to execute:"
 msgstr "Musisz być administratorem (root) aby wykonać:"
 
-#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:223
 msgid "w"
 msgstr "17"

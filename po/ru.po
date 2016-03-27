@@ -47,7 +47,7 @@ msgstr "Ошибка"
 msgid "You must be root to execute:"
 msgstr "Вы должны обладать правами root для запуска:"
 
-#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:223
 msgid "w"
 msgstr "10"

@@ -40,7 +40,7 @@ msgfmt:
 
 install-libtaz:
 	install -m 0744 rootfs/lib/libtaz.sh $(DESTDIR)/lib
-	# Strip comments addressed translators
+	# Strip comments addressed to translators
 	sed -i '/# Translators:/d' $(DESTDIR)/lib/libtaz.sh
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	install -m 0644 doc/libtaz.txt $(DESTDIR)/usr/share/doc/slitaz
