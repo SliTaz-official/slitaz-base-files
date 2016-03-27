@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 23:44+0200\n"
+"POT-Creation-Date: 2016-03-27 11:49+0300\n"
 "PO-Revision-Date: 2012-06-04 19:00+0800\n"
 "Last-Translator: lunglungyu <lunglungyu2004@gmail.com>\n"
 "Language-Team: Traditional Chinese\n"
@@ -44,7 +44,8 @@ msgstr "失敗"
 msgid "You must be root to execute:"
 msgstr "你需要以root權限運行"
 
-#: rootfs/lib/libtaz.sh:222
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+#: rootfs/lib/libtaz.sh:223
 msgid "w"
 msgstr "8"
 
@@ -105,11 +106,11 @@ msgstr ""
 msgid "Consider installing groff by running: %s"
 msgstr ""
 
-#: rootfs/usr/bin/man:137
+#: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
 msgstr ""
 
-#: rootfs/usr/bin/man:145
+#: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
 msgstr "沒有 %s 項"
 

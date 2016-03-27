@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 23:44+0200\n"
+"POT-Creation-Date: 2016-03-27 11:49+0300\n"
 "PO-Revision-Date: 2012-06-09 21:15+0200\n"
 "Last-Translator: Douros Dimitris <dourosdimitris@gmail.com>\n"
 "Language-Team: \n"
@@ -46,7 +46,8 @@ msgstr "Απέτυχε"
 msgid "You must be root to execute:"
 msgstr "Χρειάζεστε δικαιώματα διαχειριστή για να συνεχίσετε:"
 
-#: rootfs/lib/libtaz.sh:222
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+#: rootfs/lib/libtaz.sh:223
 msgid "w"
 msgstr "16"
 
@@ -110,11 +111,11 @@ msgstr ""
 msgid "Consider installing groff by running: %s"
 msgstr ""
 
-#: rootfs/usr/bin/man:137
+#: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
 msgstr ""
 
-#: rootfs/usr/bin/man:145
+#: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
 msgstr "Δεν υπάρχει καταχώρηση στο εγχειρίδιο για το %s"
 

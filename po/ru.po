@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-30 23:44+0200\n"
+"POT-Creation-Date: 2016-03-27 11:49+0300\n"
 "PO-Revision-Date: 2015-12-31 00:00+0200\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -47,7 +47,8 @@ msgstr "Ошибка"
 msgid "You must be root to execute:"
 msgstr "Вы должны обладать правами root для запуска:"
 
-#: rootfs/lib/libtaz.sh:222
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') take in terminal; place here the number
+#: rootfs/lib/libtaz.sh:223
 msgid "w"
 msgstr "10"
 
@@ -110,12 +111,12 @@ msgstr "Найдено локальное руководство по %s, но �
 msgid "Consider installing groff by running: %s"
 msgstr "Рассмотрите возможность установки Groff, выполнив команду «%s»"
 
-#: rootfs/usr/bin/man:137
+#: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
 msgstr ""
 "Руководство по %s найдено в следующих разделах:\\n%s\\nВыберите раздел: "
 
-#: rootfs/usr/bin/man:145
+#: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
 msgstr "Руководство по %s отсутствует"
 

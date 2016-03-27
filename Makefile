@@ -14,10 +14,10 @@ help:
 
 pot:
 	xgettext -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz" -k -k_ -klgettext \
+		--copyright-holder="SliTaz" -k -k_ -klgettext -cTranslators \
 		./rootfs/lib/libtaz.sh
 	xgettext -j -o po/$(PACKAGE).pot -L Shell --package-name="SliTaz Base" \
-		--copyright-holder="SliTaz" -k_ -k_n \
+		--copyright-holder="SliTaz" -k_ -k_n -cTranslators \
 		./rootfs/usr/lib/slitaz/libpkg.sh \
 		./rootfs/var/www/cgi-bin/cgi-env.sh \
 		./rootfs/var/www/cgi-bin/index.cgi \
@@ -40,6 +40,8 @@ msgfmt:
 
 install-libtaz:
 	install -m 0744 rootfs/lib/libtaz.sh $(DESTDIR)/lib
+	# Strip comments addressed translators
+	sed -i '/# Translators:/d' $(DESTDIR)/lib/libtaz.sh
 	install -m 0755 -d $(DESTDIR)/usr/share/doc/slitaz
 	install -m 0644 doc/libtaz.txt $(DESTDIR)/usr/share/doc/slitaz
 
