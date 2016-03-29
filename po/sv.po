@@ -76,7 +76,7 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Välkommen till Slitaz web server CGI Shell environment. Låt kraften av SHell "
+"Välkommen till SliTaz web server CGI Shell environment. Låt kraften av SHell "
 "skript möta webben! Här kan du kolla HTTP info och pröva några kommandon."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
