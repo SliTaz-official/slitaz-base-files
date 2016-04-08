@@ -13,7 +13,7 @@ case "$1" in
 		echo -e "\nExecute a command as root"
 		echo -e "Usage: $(basename $0) [command]\n" ;;
 	*)
-		if [ -f "$conf" ]; then
+		if [ -s "$conf" ]; then
 			# Saved root password
 			cat "$conf" | su -c "cd $pwd; $cmd"
 		else
