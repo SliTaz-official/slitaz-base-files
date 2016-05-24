@@ -47,7 +47,7 @@ fi
 
 # Update X Terminal window title
 #
-ip=$(ifconfig $(route -n|sed '$!d;s/.* //')|sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
+ip=$(ifconfig $(route -n 2>/dev/null | sed '$!d;s/.* //') 2>/dev/null | sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
 case "$TERM" in
 	xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip \007";;
 esac
