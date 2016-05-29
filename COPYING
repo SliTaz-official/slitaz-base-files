@@ -5,40 +5,71 @@ slitaz-base-files Copyright License
 Copyright (c)  2007-2016  SliTaz GNU/Linux
 
 
-Fran�ais
+Français
 --------
 
-Les slitaz-base-files des scripts libre�; vous pouvez les redistribuer et/ou
-les modifier conform�ment aux dispositions de la Licence Publique G�n�rale GNU,
-telle que publi�e par la Free Software Foundation�; version 3 de la
-licence, ou encore (� votre choix) toute version ult�rieure.
+Les slitaz-base-files des scripts libre ; vous pouvez les redistribuer et/ou
+les modifier conformément aux dispositions de la Licence Publique Générale GNU,
+telle que publiée par la Free Software Foundation ; version 3 de la licence,
+ou encore (à votre choix) toute version ultérieure.
 
-Les slitaz-base-files sont distribu�s dans l'espoir qu'il sera utile, mais
-SANS AUCUNE GARANTIE�; sans m�me la garantie implicite de COMMERCIALISATION ou
-D'ADAPTATION � UN OBJET PARTICULIER. Pour plus de d�tails, voir la Licence
-Publique G�n�rale GNU.
+Les slitaz-base-files sont distribués dans l'espoir qu'il sera utile, mais
+SANS AUCUNE GARANTIE ; sans même la garantie implicite de COMMERCIALISATION ou
+D'ADAPTATION À UN OBJET PARTICULIER. Pour plus de détails, voir la Licence
+Publique Générale GNU.
 
-Un exemplaire de la Licence Publique G�n�rale GNU doit �tre fourni avec
-slitaz-base-files si ce n'est pas le cas, �crivez � la Free Software
-Foundation Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+Un exemplaire de la Licence Publique Générale GNU doit être fourni avec
+slitaz-base-files. Si non, voir <http://www.gnu.org/licenses/>.
 
 
 English
 -------
 
-Slitaz-base-files is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
+Slitaz-base-files is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3 of the License, or (at your option) any
+later version.
 
 Slitaz-base-files is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
 more details.
 
-You should have received a copy of the GNU General Public License
-along with slitaz-base-files; if not, write to the Free Software Foundation,
-Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+You should have received a copy of the GNU General Public License along with
+slitaz-base-files. If not, see <http://www.gnu.org/licenses/>.
+
+
+По-русски
+---------
+
+Slitaz-base-files — свободное программное обеспечение; вы можете распространять
+и/или изменять его в соответствии с условиями GNU General Public License,
+опубликованной Фондом свободного программного обеспечения, либо версии 3, либо
+(по вашему выбору) любой более поздней версии.
+
+Slitaz-base-files распространяется в надежде, что он будет полезной, но
+БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемых гарантий КОММЕРЧЕСКОЙ ЦЕННОСТИ
+или ПРИГОДНОСТИ ДЛЯ КОНКРЕТНЫХ ЦЕЛЕЙ. Смотрите GNU General Public License для
+более подробной информации.
+
+Вы должны были получить копию GNU General Public License вместе с
+slitaz-base-files. Если нет, смотрите <http://www.gnu.org/licenses/>.
+
+
+Português
+---------
+
+Slitaz-base-files é um software livre: você pode redistribuí-lo e/ou modificá-lo
+sob os termos da GNU General Public License que é publicada pela Free Software
+Foundation, tanto na versão 3, ou (a seu critério) qualquer versão posterior.
+
+Slitaz-base-files é distribuído na esperança que possa ser útil, mas
+SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de COMERCIALIZAÇÃO ou
+ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Veja a GNU General Public License para
+mais detalhes.
+
+Você deve ter recebido uma cópia da GNU General Public License junto com o
+slitaz-base-files. Se não, veja <http://www.gnu.org/licenses/>.
 
 
 ===============================================================================
