@@ -81,8 +81,8 @@ td, th {
 }
 
 .year:after {
-	/* content: "2007-2015"; */
-	content: "2015";
+	/* content: "2007-2016"; */
+	content: "2016";
 }
 
 fieldset {
