@@ -157,17 +157,24 @@ debug() {
 
 # Confirmation
 confirm() {
-	if [ -n "$yes" ]; then
-		true
+	local answer=''
+	# Check auto-answer, if any
+	[ -n "$yes" ] && answer='y'
+	[ -n "$noconfirm" ] && answer='n'
+	# Print question
+	if [ -n "$1" ]; then
+		echo -n "$1 "
 	else
-		if [ -n "$1" ]; then
-			echo -n "$1 "
-		else
-			echo -n " ($(translate_query y)/$(translate_query N)) ? "
-		fi
-		read answer
-		[ "$answer" == "$(translate_query y)" ]
+		echo -n " ($(translate_query y)/$(translate_query N)) ? "
 	fi
+	# Is it auto-answer?
+	if [ -z "$answer" ]; then
+		read answer
+	else
+		translate_query "$answer"; echo ' (auto)'
+	fi
+	# Return true/false to use in conditions
+	[ "$answer" == "$(translate_query y)" ]
 }
 
 # Log activities
