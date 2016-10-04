@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR SliTaz
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-27 11:49+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;\n"
+"Language-Team: LANGUAGE &lt;LL@li.org&gt;\n"
+"Language: Vietnam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: rootfs/lib/libtaz.sh:16
+msgid "y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:17
+msgid "Y"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:18
+msgid "n"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:19
+msgid "N"
+msgstr ""
+
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "Hoàn thành"
+
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "Thất bại"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "Bạn phải có quyền root để thực hiện:"
+
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
+#: rootfs/lib/libtaz.sh:223
+msgid "w"
+msgstr ""
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
+msgid "Mirror is unreachable"
+msgstr "Bản sao không thể truy cập"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
+msgid "Mirror is up-to-date"
+msgstr "Bản sao đã cập nhật"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
+msgid "Missing receipt: %s"
+msgstr "Thiếu: %s"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "Tệp %s không phải tazpkg. Đang thoát"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:12
+msgid "CGI SHell Environment"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:31
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+"Chào mừng bạn đến SliTaz máy chủ web môi trường CGI Shell. Mang sức mạnh của "
+"lệnh SHell cho web! Để bạn có thể kiểm tra thông tin HTTP và thử một số "
+"yêu cầu."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
+msgstr "Bao gồm %s trong lệnh của bạn để bạn có thể dùng dạng PHP như: %s"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:38
+msgid "QUERY_STRING test:"
+msgstr ""
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:43
+msgid "HTTP Info"
+msgstr "Thông tin HTTP"
+
+#: rootfs/usr/bin/man:58
+msgid "&lt;b&gt;Usage:&lt;/b&gt; man [section] command"
+msgstr ""
+
+#: rootfs/usr/bin/man:70
+msgid "in section %s"
+msgstr "trong phần %s"
+
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr "Tìm thấy trang quản lý %s nhưng không có công cụ để hiển thị nó."
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr "Hãy xem xét cài đặt groff bằng cách chạy: %s"
+
+#: rootfs/usr/bin/man:140
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr "%s tìm thấy trong:\\n%s\\nChọn một: "
+
+#: rootfs/usr/bin/man:149
+msgid "No manual entry for %s"
+msgstr "Không có mục hướng dẫn cho %s"
