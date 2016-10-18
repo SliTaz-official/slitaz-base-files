@@ -1,0 +1,119 @@
+# German translations for SliTaz Base package.
+# Copyright (C) 2016 SliTaz
+# This file is distributed under the same license as the SliTaz Base package.
+# Hans-Günter Theisgen, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Base\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-27 11:49+0300\n"
+"PO-Revision-Date: 2016-10-16 15:11+0100\n"
+"Last-Translator: Hans-Günter Theisgen\n"
+"Language-Team: German \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: rootfs/lib/libtaz.sh:16
+msgid "y"
+msgstr "j"
+
+#: rootfs/lib/libtaz.sh:17
+msgid "Y"
+msgstr "J"
+
+#: rootfs/lib/libtaz.sh:18
+msgid "n"
+msgstr "n"
+
+#: rootfs/lib/libtaz.sh:19
+msgid "N"
+msgstr "N"
+
+#: rootfs/lib/libtaz.sh:24
+msgid "Done"
+msgstr "Fertig"
+
+#: rootfs/lib/libtaz.sh:25
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: rootfs/lib/libtaz.sh:148
+msgid "You must be root to execute:"
+msgstr "Kann nur mit 'root'-Berechtigung ausgeführt werden:"
+
+#. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
+#: rootfs/lib/libtaz.sh:223
+msgid "w"
+msgstr "14"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:32
+msgid "Mirror is unreachable"
+msgstr "Depot ist nicht erreichbar"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:36
+msgid "Mirror is up-to-date"
+msgstr "Depot ist aktuell"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:45
+msgid "Missing receipt: %s"
+msgstr "Rezept %s fehlt"
+
+#: rootfs/usr/lib/slitaz/libpkg.sh:65
+msgid "File %s is not a tazpkg. Exiting"
+msgstr "Die Datei %s hat nicht das tazpkg-Format. Abbruch"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:12
+msgid "CGI SHell Environment"
+msgstr "CGI-Kommandointerpreter"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:31
+msgid ""
+"Welcome to the SliTaz web server CGI Shell environment. Let the power of "
+"SHell script meet the web! Here you can check HTTP info and try some "
+"requests."
+msgstr ""
+"Willkommen beim Kommandointerpreter des SliTaz-Webserver. Hier treffen die Stärken von "
+"Kommandoprozeduren sich mit dem 'web'! Hier können Sie HTTP-Informationen prüfen und gewisse "
+"Anfragen stellen."
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:35
+msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
+msgstr ""
+"Wenn Sie %s in Ihre Kommandoprozeduren einfügen, können Sie PHP-ähnliche "
+"Syntax wie %s verwenden"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:38
+msgid "QUERY_STRING test:"
+msgstr "Test der Zeichenfolge:"
+
+#: rootfs/var/www/cgi-bin/cgi-env.sh:43
+msgid "HTTP Info"
+msgstr "HTTP-Information"
+
+#: rootfs/usr/bin/man:58
+msgid "<b>Usage:</b> man [section] command"
+msgstr "<b>Anwendung:</b> man [section] command"
+
+#: rootfs/usr/bin/man:70
+msgid "in section %s"
+msgstr "im Abschnitt %s"
+
+#: rootfs/usr/bin/man:123
+msgid "Found local manpage %s but no tool to display it."
+msgstr "Informationsdatei %s gefunden, aber kein Programm zur Anzeige."
+
+#: rootfs/usr/bin/man:124
+msgid "Consider installing groff by running: %s"
+msgstr "Sie sollten in Betracht ziehen, groff zu installieren mit: %s"
+
+#: rootfs/usr/bin/man:140
+msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
+msgstr "%s wurde in den folgenden Abschnitten gefunden:\\n%s\\nBitte wählen Sie eine aus: "
+
+#: rootfs/usr/bin/man:149
+msgid "No manual entry for %s"
+msgstr "Kein Anwendungshilfe für %s"
