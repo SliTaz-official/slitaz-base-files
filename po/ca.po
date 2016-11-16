@@ -48,7 +48,7 @@ msgstr "Heu de ser superusuari per executar:"
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:223
 msgid "w"
-msgstr "9"
+msgstr "25"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
@@ -114,7 +114,7 @@ msgstr "Considereu instal·lar groff executant: %s"
 #: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
 msgstr ""
-"%s trobats en les següents seccions:\\n%s\\nPSi us plau, escolliu una: "
+"%s trobats en les següents seccions:\\n%s\\nSi us plau, escolliu una: "
 
 #: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"

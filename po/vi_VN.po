@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
@@ -48,7 +47,7 @@ msgstr "Bạn phải có quyền root để thực hiện:"
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:223
 msgid "w"
-msgstr ""
+msgstr "14"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"

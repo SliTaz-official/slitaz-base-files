@@ -48,7 +48,7 @@ msgstr "Kann nur mit 'root'-Berechtigung ausgeführt werden:"
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:223
 msgid "w"
-msgstr "14"
+msgstr "18"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
