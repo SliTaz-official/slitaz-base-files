@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 11:49+0300\n"
+"POT-Creation-Date: 2016-11-19 23:51+0200\n"
 "PO-Revision-Date: 2012-06-04 19:00+0800\n"
 "Last-Translator: lunglungyu <lunglungyu2004@gmail.com>\n"
 "Language-Team: Traditional Chinese\n"
@@ -45,7 +45,7 @@ msgid "You must be root to execute:"
 msgstr "你需要以root權限運行"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:223
+#: rootfs/lib/libtaz.sh:230
 msgid "w"
 msgstr "8"
 

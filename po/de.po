@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 11:49+0300\n"
+"POT-Creation-Date: 2016-11-19 23:51+0200\n"
 "PO-Revision-Date: 2016-10-16 15:11+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German \n"
@@ -46,7 +46,7 @@ msgid "You must be root to execute:"
 msgstr "Kann nur mit 'root'-Berechtigung ausgeführt werden:"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:223
+#: rootfs/lib/libtaz.sh:230
 msgid "w"
 msgstr "18"
 
@@ -76,9 +76,9 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Willkommen beim Kommandointerpreter des SliTaz-Webserver. Hier treffen die Stärken von "
-"Kommandoprozeduren sich mit dem 'web'! Hier können Sie HTTP-Informationen prüfen und gewisse "
-"Anfragen stellen."
+"Willkommen beim Kommandointerpreter des SliTaz-Webserver. Hier treffen die "
+"Stärken von Kommandoprozeduren sich mit dem 'web'! Hier können Sie HTTP-"
+"Informationen prüfen und gewisse Anfragen stellen."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
@@ -112,7 +112,9 @@ msgstr "Sie sollten in Betracht ziehen, groff zu installieren mit: %s"
 
 #: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
-msgstr "%s wurde in den folgenden Abschnitten gefunden:\\n%s\\nBitte wählen Sie eine aus: "
+msgstr ""
+"%s wurde in den folgenden Abschnitten gefunden:\\n%s\\nBitte wählen Sie eine "
+"aus: "
 
 #: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"

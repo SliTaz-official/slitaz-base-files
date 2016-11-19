@@ -1,16 +1,16 @@
-# Spanish translations for SliTaz Base package.
-# Copyright (C) 2013 SliTaz Association
+# Catalan translations for SliTaz Base package.
+# Copyright (C) 2016 SliTaz Association
 # This file is distributed under the same license as the SliTaz Base package.
-# René Rivero <arca2@hotmail.com>, 2013.
+# Catalanoic <catalanoic@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 11:49+0300\n"
+"POT-Creation-Date: 2016-11-19 23:51+0200\n"
 "PO-Revision-Date: 2016-11-14 21:54+0100\n"
-"Last-Translator: René Rivero <arca2@hotmail.com>\n"
-"Language-Team: Catalanoic <catalanoic@gmail.com>\n"
+"Last-Translator: Catalanoic <catalanoic@gmail.com>\n"
+"Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgid "You must be root to execute:"
 msgstr "Heu de ser superusuari per executar:"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:223
+#: rootfs/lib/libtaz.sh:230
 msgid "w"
 msgstr "25"
 
@@ -113,8 +113,7 @@ msgstr "Considereu instal·lar groff executant: %s"
 
 #: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
-msgstr ""
-"%s trobats en les següents seccions:\\n%s\\nSi us plau, escolliu una: "
+msgstr "%s trobats en les següents seccions:\\n%s\\nSi us plau, escolliu una: "
 
 #: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
