@@ -43,8 +43,8 @@ done
 
 
 # i18n functions
-_()  { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; echo; }
-_n() { local T="$1"; shift; printf "$(eval_gettext "$T")" "$@"; }
+_()  { local T="$1"; shift; printf "$(gettext "$T")" "$@"; echo; }
+_n() { local T="$1"; shift; printf "$(gettext "$T")" "$@"; }
 _p() { local S="$1" P="$2" N="$3"; shift 3; printf "$(ngettext "$S" "$P" "$N")" "$@"; }
 
 # Get terminal columns
@@ -155,26 +155,37 @@ debug() {
 	[ -n "$debug" ] && echo "$(colorize $decolor 'DEBUG:') $1"
 }
 
+# Report error and finish work
+die() { longline "$(_ "$@")" >&2; exit 1; }
+
+# Interactive mode
+im() { tty -s; }
+
 # Confirmation
 confirm() {
-	local answer=''
+	local answer='' defanswer='n'
 	# Check auto-answer, if any
 	[ -n "$yes" ] && answer='y'
 	[ -n "$noconfirm" ] && answer='n'
 	# Print question
 	if [ -n "$1" ]; then
-		echo -n "$1 "
+		case "$2" in
+			'')  echo -n "$1 ";;
+			y|Y) echo -n "$1 [$(translate_query Y)/$(translate_query n)] "; defanswer='y';;
+			*)   echo -n "$1 [$(translate_query y)/$(translate_query N)] ";;
+		esac
 	else
-		echo -n " ($(translate_query y)/$(translate_query N)) ? "
+		echo -n " [$(translate_query y)/$(translate_query N)] ? "
 	fi
 	# Is it auto-answer?
 	if [ -z "$answer" ]; then
-		read answer
+		im && read -t ${timeout:-30} answer
+		[ -z "$answer" ] && answer="$(translate_query "$defanswer")"
 	else
 		translate_query "$answer"; echo ' (auto)'
 	fi
 	# Return true/false to use in conditions
-	[ "$answer" == "$(translate_query y)" ]
+	[ "$answer" == "$(translate_query y)" -o "$answer" == "$(translate_query Y)" ]
 }
 
 # Log activities

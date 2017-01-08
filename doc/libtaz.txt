@@ -25,6 +25,8 @@ FUNCTIONS
 	emsg <string>         Output mark up messages
 	check_root            Check if user is logged as root
 	debug <string>        Display a DEBUG message when --debug is used
+	die <string>          Report error and finish work
+	im                    Returns true if you're in the interactive mode
 	confirm               Read answer to confirm an action
 	log <string>          Log activity, $activity must be set
 	optlist <lines>       Prints two-column list (of options, or functions, etc.)
@@ -66,8 +68,34 @@ EXAMPLES
 
 	debug "A='$A'"
 
-	echo -n "The question"; confirm
-	confirm "The question (y/N)?"
+	die 'Config %s absent. Exit' $config
+
+
+	Using confirm()
+	Use global options for auto-answering: '--yes' or '--noconfirm'.
+	Use global option '--timeout' to define the wait time (default is 30 s).
+	The letters "y", "Y", "n" and "N", used in the response, are localized.
+	1. Outdated syntax. No options. Displays translated " [y/N] ? " and waits
+	   for your input.
+	   Answer formula is "[y/N]": to answer "yes" you need to enter "y" (or "Y"),
+	   while to answer "no" you may enter "n" or "N" or any other letter, or
+	   even just press Enter.
+
+	   echo -n "The question"; confirm && echo "Confirmed"
+
+	2. New syntax. Option is the string displayed. Answer formula the same.
+
+	   confirm "The question [y/N]?" && echo "Confirmed"
+
+	3. Modern syntax. Two options: the question and the preferred answer.
+	   Displays the question and then translated answer formula as "[Y/n]" or
+	   "[y/N]" depending on the preferred answer.
+
+	   confirm "The question?" y && echo "Confirmed"
+
+	In all cases, it returns "true" if you answer "yes", while returns "false"
+	otherwise.
+
 
 	activity='/var/log/my.log'
 	log "Message"
