@@ -1,14 +1,14 @@
 #!/bin/sh
 #
 # Tiny ldd fake.
-# Copyright (C) 2010-2016 SliTaz GNU/Linux.
+# Copyright (C) 2010-2017 SliTaz GNU/Linux.
 #
-
 echo
 file="$@"
 for file do
 	file="$(which "$file")"
+	ld="$(sed '/\/lib.*\/ld/!dq' "$file")"
 	echo "$file" | sed 's%^./%%;s%$%:%'
-	LD_TRACE_LOADED_OBJECTS=1 /lib/ld-linux* "$file"
+	LD_TRACE_LOADED_OBJECTS=1 "$ld" "$file"
 	echo
 done
