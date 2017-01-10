@@ -11,15 +11,15 @@ case "$QUERY_STRING" in
 	..*) echo "Security exit" && exit 1 ;;
 esac
 
-# Html5 head
-cat << EOT
+# HTML5 head
+cat <<EOT
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="UTF-8">
 	<title>Index of /$QUERY_STRING</title>
-	<link rel="stylesheet" type="text/css" href="/style.css" />
-	<style type="text/css">
+	<link rel="stylesheet" href="/style.css">
+	<style>
 		#header h1 { width: auto; }
 		ul { line-height: 1.5em; } li { color: #666; }
 	</style>
