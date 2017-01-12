@@ -9,6 +9,6 @@ for file do
 	file="$(which "$file")"
 	ld="$(sed '/\/lib.*\/ld/!dq' "$file")"
 	echo "$file" | sed 's%^./%%;s%$%:%'
-	LD_TRACE_LOADED_OBJECTS=1 "$ld" "$file"
+	LD_TRACE_LOADED_OBJECTS=1 "${ld:-/lib/ld-linux*}" "$file"
 	echo
 done
