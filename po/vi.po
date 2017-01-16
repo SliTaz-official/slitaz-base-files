@@ -1,36 +1,37 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR SliTaz
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Vietnamese translations for the slitaz-base-files package.
+# Copyright (C) 2017 SliTaz
+# This file is distributed under the same license as the slitaz-base-files package.
+# Anh Bình <tuananh88c25@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 23:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: Vietnam\n"
+"PO-Revision-Date: 2017-01-16 11:18+0700\n"
+"Language: vi_VN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Anh Bình <tuananh88c25@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: rootfs/lib/libtaz.sh:16
 msgid "y"
-msgstr ""
+msgstr "y"
 
 #: rootfs/lib/libtaz.sh:17
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: rootfs/lib/libtaz.sh:18
 msgid "n"
-msgstr ""
+msgstr "n"
 
 #: rootfs/lib/libtaz.sh:19
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: rootfs/lib/libtaz.sh:24
 msgid "Done"
@@ -67,7 +68,7 @@ msgstr "Tệp %s không phải tazpkg. Đang thoát"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
-msgstr ""
+msgstr "Môi trường dòng lệnh CGI"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:31
 msgid ""
@@ -85,7 +86,7 @@ msgstr "Bao gồm %s trong lệnh của bạn để bạn có thể dùng dạng
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
-msgstr ""
+msgstr "Kiểm tra TỪ_TRUY_VẤN:"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:43
 msgid "HTTP Info"
@@ -93,7 +94,7 @@ msgstr "Thông tin HTTP"
 
 #: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
-msgstr ""
+msgstr "<b>Sử dụng:</b> man [phần] lệnh"
 
 #: rootfs/usr/bin/man:70
 msgid "in section %s"
