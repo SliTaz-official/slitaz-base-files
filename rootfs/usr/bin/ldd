@@ -7,8 +7,9 @@ echo
 file="$@"
 for file do
 	file="$(which "$file")"
+	[ ! -f "$file" ] && exit
 	ld="$(sed '/\/lib.*\/ld/!dq' "$file")"
 	echo "$file" | sed 's%^./%%;s%$%:%'
-	LD_TRACE_LOADED_OBJECTS=1 "$(realpath ${ld:-/lib/ld-linux*})" "$file"
+	LD_TRACE_LOADED_OBJECTS=1 "$(realpath ${ld:-/lib/ld-linux*})" "$file" 2>/dev/null
 	echo
 done
