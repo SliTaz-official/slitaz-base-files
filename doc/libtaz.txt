@@ -26,7 +26,7 @@ FUNCTIONS
 	check_root            Check if user is logged as root
 	debug <string>        Display a DEBUG message when --debug is used
 	die <string>          Report error and finish work
-	im                    Returns true if you're in the interactive mode
+	im                    Returns true if you're in interactive mode
 	confirm               Read answer to confirm an action
 	log <string>          Log activity, $activity must be set
 	optlist <lines>       Prints two-column list (of options, or functions, etc.)
