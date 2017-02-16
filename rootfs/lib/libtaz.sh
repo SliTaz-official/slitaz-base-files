@@ -63,7 +63,10 @@ status() {
 	case $output in
 		raw|gtk) echo " $msg";;
 		html) echo " <span class=\"float-right color$color\">$msg</span>";;
-		*) echo -e "[ \\033[1;${color}m$msg\\033[0;39m ]";;
+		*)
+			local cols=$(get_cols)
+			local scol=$((${cols:-80} - 10))
+			echo -e "\\033[${scol}G[ \\033[1;${color}m$msg\\033[0;39m ]";;
 	esac
 }
 
