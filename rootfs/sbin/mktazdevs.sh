@@ -3,10 +3,10 @@
 # mktazdevs.sh: Make device files for SliTaz GNU/Linux
 # 2007/10/02 - 2015 <pankso@slitaz.org>
 #
-# As of SliTaz 5.0 we have a radicaly minimal /dev tree for ARM and we
+# As of SliTaz 5.0 we have a radically minimal /dev tree for ARM and we
 # use mdev to create devices nodes on the fly. On i486 we use udev and
 # mount a devtmpfs on /dev, minimal tree for udev is in: /lib/udev/devices
-# This script yet be usefull to rescue a broken system but may be removed.
+# This script could yet be useful to rescue a broken system but may be removed.
 #
 . /lib/libtaz.sh
 
