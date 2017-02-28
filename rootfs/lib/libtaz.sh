@@ -39,16 +39,18 @@ for opt in "$@"; do
 done
 [ "$HTTP_REFERER" ] && output='html'
 
-
-
-
 # i18n functions
 _()  { local T="$1"; shift; printf "$(gettext "$T")" "$@"; echo; }
 _n() { local T="$1"; shift; printf "$(gettext "$T")" "$@"; }
 _p() { local S="$1" P="$2" N="$3"; shift 3; printf "$(ngettext "$S" "$P" "$N")" "$@"; }
 
 # Get terminal columns
-get_cols() { stty size 2>/dev/null | awk -vc=$cols 'END{print c?c:($2 && $2<80)?$2:80}'; }
+get_cols() { 
+	#stty size 2>/dev/null | awk -vc=$cols 'END{print c?c:($2 && $2<80)?$2:80}';
+	if ! stty size | cut -d " " -f 2; then
+		echo 80
+	fi
+}
 
 # Last command status
 status() {
