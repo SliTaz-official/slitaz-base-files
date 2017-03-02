@@ -67,6 +67,19 @@ status() {
 	esac
 }
 
+# Print info a la status way: info [color] [content]
+info() {
+	local info="$2"
+	case "$output" in
+		raw|gtk) echo "$info" ;;
+		html) echo " <span class=\"float-right color${1}\">$info</span>";;
+		*)
+			local char="$(echo $info | wc -L)"
+			local in=$((7 + ${char}))
+			indent $(($(get_cols) - ${in})) "[ $(colorize $1 $info) ]" ;;
+	esac
+}
+
 # Line separator
 separator() {
 	[ -n "$quiet" ] && return
