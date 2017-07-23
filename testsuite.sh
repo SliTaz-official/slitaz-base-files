@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-. rootfs/lib/libtaz.sh
+. ./rootfs/lib/libtaz.sh
 
 check_libtaz() {
 	newline; longline "This package provides the base system files and \

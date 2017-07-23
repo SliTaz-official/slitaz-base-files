@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-. rootfs/lib/libtaz.sh
+. ./rootfs/lib/libtaz.sh
 
 [ $# -eq 0 ] && title 'Check variables import using libtaz.sh'
 
