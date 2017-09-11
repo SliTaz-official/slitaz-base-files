@@ -5,15 +5,24 @@
 . /lib/libtaz.sh
 
 # Check daemon with pidfile: usage check_pidfile $PIDFILE $DAEMON
-active_pidfile()
-{
+active_pidfile() {
 	if [ ! -e $1 ]; then
 		return 1
 	elif grep -qs "Name:.$(basename $2)$" \
-			/proc/$(sed 's/[^0-9]//g' < $1 | head -n 1)/status ; then
+			/proc/$(sed 's/[^0-9]//g;q' $1)/status; then
 		return 0
 	else
 		rm -f $1
 		return 2
 	fi
+}
+
+# Get specified cmdline option value
+cmdline_option() {
+	local opt
+	for opt in $(cat /proc/cmdline); do
+		case $opt in
+			$1=*) echo ${opt#$1=};;
+		esac
+	done
 }
