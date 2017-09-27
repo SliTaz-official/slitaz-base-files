@@ -16,7 +16,7 @@ fi
 
 # Max 64M for programs (prevent memory leak crashes)
 #
-# ulimit -d 65536	# commented out because lzma required at least 94 MB of RAM to compress files.
+# ulimit -d 65536	# commented out because lzma requires at least 94 MB of RAM to compress files.
 ulimit -m 65536
 
 # Screen display for X and encoding for GTK+ apps
