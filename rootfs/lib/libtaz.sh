@@ -6,6 +6,8 @@
 # Copyright (C) 2012-2015 SliTaz GNU/Linux - BSD License
 #
 
+[ -z "$TZ" ] && [ -s /etc/TZ ] && export TZ="$(cat /etc/TZ)"
+
 . /usr/bin/gettext.sh
 alias sed="busybox sed"
 
