@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 23:51+0200\n"
+"POT-Creation-Date: 2018-01-30 11:05+0200\n"
 "PO-Revision-Date: 2012-06-04 19:00+0800\n"
 "Last-Translator: lunglungyu <lunglungyu2004@gmail.com>\n"
 "Language-Team: Traditional Chinese\n"
@@ -16,36 +16,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rootfs/lib/libtaz.sh:16
+#: rootfs/lib/libtaz.sh:18
 msgid "y"
 msgstr "是"
 
-#: rootfs/lib/libtaz.sh:17
+#: rootfs/lib/libtaz.sh:19
 msgid "Y"
 msgstr "是"
 
-#: rootfs/lib/libtaz.sh:18
+#: rootfs/lib/libtaz.sh:20
 msgid "n"
 msgstr "否"
 
-#: rootfs/lib/libtaz.sh:19
+#: rootfs/lib/libtaz.sh:21
 msgid "N"
 msgstr "否"
 
-#: rootfs/lib/libtaz.sh:24
+#: rootfs/lib/libtaz.sh:26
 msgid "Done"
 msgstr "完成"
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:27
 msgid "Failed"
 msgstr "失敗"
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:163
 msgid "You must be root to execute:"
 msgstr "你需要以root權限運行"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:230
+#: rootfs/lib/libtaz.sh:256
 msgid "w"
 msgstr "8"
 

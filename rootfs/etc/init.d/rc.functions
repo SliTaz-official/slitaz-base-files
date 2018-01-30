@@ -23,6 +23,7 @@ cmdline_option() {
 	for opt in $(cat /proc/cmdline); do
 		case $opt in
 			$1=*) echo ${opt#$1=};;
+			$1)   echo yes;;
 		esac
 	done
 }

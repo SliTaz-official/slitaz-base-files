@@ -1,75 +1,76 @@
-# Brazilian Portuguese translation for SliTaz Base package..
-# Copyright (C) 2013 SliTaz Association
+# Italian translations for SliTaz Base package.
+# Copyright (C) 2018 SliTaz
 # This file is distributed under the same license as the SliTaz Base package.
-# Claudinei Pereira <claudinei@slitaz.org>, 2013.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 11:05+0200\n"
-"PO-Revision-Date: 2016-03-27 02:07-0300\n"
-"Last-Translator: Leonardo Laporte <hackdorte@sapo.pt>\n"
-"Language-Team: Brazilian Portuguese <i18n@slitaz.org>\n"
-"Language: pt_BR\n"
+"POT-Creation-Date: 2018-01-30 11:09+0200\n"
+"PO-Revision-Date: 2018-01-30 11:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: rootfs/lib/libtaz.sh:18
 msgid "y"
-msgstr "y"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:19
 msgid "Y"
-msgstr "Y"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:20
 msgid "n"
-msgstr "n"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:21
 msgid "N"
-msgstr "N"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:26
 msgid "Done"
-msgstr "Terminado"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:27
 msgid "Failed"
-msgstr "Falhou"
+msgstr ""
 
 #: rootfs/lib/libtaz.sh:163
 msgid "You must be root to execute:"
-msgstr "Você deve ser usuário root para executar"
+msgstr ""
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 #: rootfs/lib/libtaz.sh:256
 msgid "w"
-msgstr "13"
+msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
-msgstr "Mirror indisponível"
+msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
-msgstr "Mirror está atualizado"
+msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
-msgstr "Arquivo receipt não encontrado: %s"
+msgstr ""
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
-msgstr "%s não é um tazpkg. Abortando"
+msgstr ""
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
-msgstr "Ambiente SHell CGI"
+msgstr ""
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:31
 msgid ""
@@ -77,56 +78,39 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
-"Bem-vindo ao servidor em Ambiente CGI SHell do SliTaz. Deixe o poder do "
-"script SHell dominar a rede! Aqui você pode checar informações HTTP e tentar "
-"algumas requisições."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
-"Incluindo o arquivo %s em seus scripts permite a você utilizar sintaxe PHP "
-"como: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
-msgstr "Teste QUERY_STRING:"
+msgstr ""
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:43
 msgid "HTTP Info"
-msgstr "Informação HTTP"
+msgstr ""
 
 #: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
-msgstr "<b>Utilização:</b> man [seção] comando"
+msgstr ""
 
 #: rootfs/usr/bin/man:70
 msgid "in section %s"
-msgstr "Na seção %s"
+msgstr ""
 
 #: rootfs/usr/bin/man:123
 msgid "Found local manpage %s but no tool to display it."
-msgstr "Página principal %s, mas não existe uma ferramenta para exibi-la."
+msgstr ""
 
 #: rootfs/usr/bin/man:124
 msgid "Consider installing groff by running: %s"
-msgstr "Considere instalar groff executando: %s"
+msgstr ""
 
 #: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
-msgstr "%s encontrados nas seções:\\n%s\\nPor favor faça uma escolha: "
+msgstr ""
 
 #: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
-msgstr "Nenhuma entrada para %s"
-
-#~ msgid "Missing Retawq web browser..."
-#~ msgstr "Navegador Retawq não instalado..."
-
-#~ msgid "Please run: %s"
-#~ msgstr "Por favor execute: %s"
-
-#~ msgid "Index of %s"
-#~ msgstr "Índice do %s"
-
-#~ msgid "HTTP Helper"
-#~ msgstr "Auxiliar HTTP"
+msgstr ""

@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR SliTaz
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the SliTaz Base package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 23:51+0200\n"
+"POT-Creation-Date: 2018-01-30 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rootfs/lib/libtaz.sh:16
+#: rootfs/lib/libtaz.sh:18
 msgid "y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:17
+#: rootfs/lib/libtaz.sh:19
 msgid "Y"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:18
+#: rootfs/lib/libtaz.sh:20
 msgid "n"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:19
+#: rootfs/lib/libtaz.sh:21
 msgid "N"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:24
+#: rootfs/lib/libtaz.sh:26
 msgid "Done"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:27
 msgid "Failed"
 msgstr ""
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:163
 msgid "You must be root to execute:"
 msgstr ""
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:230
+#: rootfs/lib/libtaz.sh:256
 msgid "w"
 msgstr ""
 

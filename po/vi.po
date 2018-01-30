@@ -7,46 +7,46 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 23:51+0200\n"
+"POT-Creation-Date: 2018-01-30 11:05+0200\n"
 "PO-Revision-Date: 2017-01-16 11:18+0700\n"
+"Last-Translator: Anh Bình <tuananh88c25@gmail.com>\n"
+"Language-Team: \n"
 "Language: vi_VN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Anh Bình <tuananh88c25@gmail.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: rootfs/lib/libtaz.sh:16
+#: rootfs/lib/libtaz.sh:18
 msgid "y"
 msgstr "y"
 
-#: rootfs/lib/libtaz.sh:17
+#: rootfs/lib/libtaz.sh:19
 msgid "Y"
 msgstr "Y"
 
-#: rootfs/lib/libtaz.sh:18
+#: rootfs/lib/libtaz.sh:20
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:19
+#: rootfs/lib/libtaz.sh:21
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:24
+#: rootfs/lib/libtaz.sh:26
 msgid "Done"
 msgstr "Hoàn thành"
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:27
 msgid "Failed"
 msgstr "Thất bại"
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:163
 msgid "You must be root to execute:"
 msgstr "Bạn phải có quyền root để thực hiện:"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:230
+#: rootfs/lib/libtaz.sh:256
 msgid "w"
 msgstr "14"
 

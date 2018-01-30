@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 23:51+0200\n"
+"POT-Creation-Date: 2018-01-30 11:05+0200\n"
 "PO-Revision-Date: 2013-07-23 12:34+0100\n"
 "Last-Translator: Paweł Pyrczak <tkr.tkr.pl@gmail.com>\n"
 "Language-Team: \n"
@@ -21,36 +21,36 @@ msgstr ""
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: rootfs/lib/libtaz.sh:16
+#: rootfs/lib/libtaz.sh:18
 msgid "y"
 msgstr "t"
 
-#: rootfs/lib/libtaz.sh:17
+#: rootfs/lib/libtaz.sh:19
 msgid "Y"
 msgstr "T"
 
-#: rootfs/lib/libtaz.sh:18
+#: rootfs/lib/libtaz.sh:20
 msgid "n"
 msgstr "n"
 
-#: rootfs/lib/libtaz.sh:19
+#: rootfs/lib/libtaz.sh:21
 msgid "N"
 msgstr "N"
 
-#: rootfs/lib/libtaz.sh:24
+#: rootfs/lib/libtaz.sh:26
 msgid "Done"
 msgstr "Zakończono"
 
-#: rootfs/lib/libtaz.sh:25
+#: rootfs/lib/libtaz.sh:27
 msgid "Failed"
 msgstr "Niepowodzenie"
 
-#: rootfs/lib/libtaz.sh:148
+#: rootfs/lib/libtaz.sh:163
 msgid "You must be root to execute:"
 msgstr "Musisz być administratorem (root) aby wykonać:"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:230
+#: rootfs/lib/libtaz.sh:256
 msgid "w"
 msgstr "17"
 
