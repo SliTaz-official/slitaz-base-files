@@ -1,76 +1,75 @@
 # Italian translations for SliTaz Base package.
 # Copyright (C) 2018 SliTaz
 # This file is distributed under the same license as the SliTaz Base package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Christian Michelini <christian@alklibri.com>, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 11:09+0200\n"
-"PO-Revision-Date: 2018-01-30 11:06+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-01-27 01:35+0100\n"
+"PO-Revision-Date: 2018-02-05 17:32+0100\n"
 "Language-Team: \n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: Christian Michelini <christian@alklibri.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Language: it\n"
+
+#: rootfs/lib/libtaz.sh:16
+msgid "y"
+msgstr "s"
+
+#: rootfs/lib/libtaz.sh:17
+msgid "Y"
+msgstr "S"
 
 #: rootfs/lib/libtaz.sh:18
-msgid "y"
-msgstr ""
+msgid "n"
+msgstr "n"
 
 #: rootfs/lib/libtaz.sh:19
-msgid "Y"
-msgstr ""
-
-#: rootfs/lib/libtaz.sh:20
-msgid "n"
-msgstr ""
-
-#: rootfs/lib/libtaz.sh:21
 msgid "N"
-msgstr ""
+msgstr "N"
 
-#: rootfs/lib/libtaz.sh:26
+#: rootfs/lib/libtaz.sh:24
 msgid "Done"
-msgstr ""
+msgstr "Fatto"
 
-#: rootfs/lib/libtaz.sh:27
+#: rootfs/lib/libtaz.sh:25
 msgid "Failed"
-msgstr ""
+msgstr "Errore"
 
-#: rootfs/lib/libtaz.sh:163
+#: rootfs/lib/libtaz.sh:148
 msgid "You must be root to execute:"
-msgstr ""
+msgstr "Devi essere root per eseguire:"
 
 #. Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
-#: rootfs/lib/libtaz.sh:256
+#: rootfs/lib/libtaz.sh:230
 msgid "w"
-msgstr ""
+msgstr "6"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:32
 msgid "Mirror is unreachable"
-msgstr ""
+msgstr "L'archivio in linea è irraggiungibile"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:36
 msgid "Mirror is up-to-date"
-msgstr ""
+msgstr "L'archivio in linea è aggiornato"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:45
 msgid "Missing receipt: %s"
-msgstr ""
+msgstr "Nessuna ricezione: %s"
 
 #: rootfs/usr/lib/slitaz/libpkg.sh:65
 msgid "File %s is not a tazpkg. Exiting"
-msgstr ""
+msgstr "Il file %s non è un tazpkg. Uscita."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:12
 msgid "CGI SHell Environment"
-msgstr ""
+msgstr "Ambiente a riga di comando CGI"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:31
 msgid ""
@@ -78,39 +77,45 @@ msgid ""
 "SHell script meet the web! Here you can check HTTP info and try some "
 "requests."
 msgstr ""
+"Benvenuto nel server web con estensioni a riga di comando CGI di SliTaz. "
+"Lascia che il potere degli script della SHell incontrino il web. Qui puoi "
+"controllare le informazioni HTTP e provare qualche richiesta."
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:35
 msgid "Including %s in your scripts lets you use PHP-like syntax such as: %s"
 msgstr ""
+"Includendo %s nei tuoi script utilizza una sintassi simile al PHP, ad "
+"esempio: %s"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:38
 msgid "QUERY_STRING test:"
-msgstr ""
+msgstr "Test delle QUERY_STRING:"
 
 #: rootfs/var/www/cgi-bin/cgi-env.sh:43
 msgid "HTTP Info"
-msgstr ""
+msgstr "Informazioni HTTP"
 
 #: rootfs/usr/bin/man:58
 msgid "<b>Usage:</b> man [section] command"
-msgstr ""
+msgstr "<b>Uso:</b> man [sezione] comando"
 
 #: rootfs/usr/bin/man:70
 msgid "in section %s"
-msgstr ""
+msgstr "nella sezione %s"
 
 #: rootfs/usr/bin/man:123
 msgid "Found local manpage %s but no tool to display it."
 msgstr ""
+"Ho trovato una pagina man locale %s ma non ci sono strumenti per mostrarla."
 
 #: rootfs/usr/bin/man:124
 msgid "Consider installing groff by running: %s"
-msgstr ""
+msgstr "Valuta di installare groff eseguendo: %s"
 
 #: rootfs/usr/bin/man:140
 msgid "%s found in the following sections:\\n%s\\nPlease choose one: "
-msgstr ""
+msgstr "%s trovato nella seguente sezione:\\n%s\\nPer favore scegline una: "
 
 #: rootfs/usr/bin/man:149
 msgid "No manual entry for %s"
-msgstr ""
+msgstr "Nessuna voce del manuale per %s"
