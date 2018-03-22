@@ -53,7 +53,7 @@ get_cols() { stty size 2>/dev/null | awk -vc=$cols 'END{print c?c:$2?$2:80}'; }
 status() {
 	local ret_code=$?
 	[ -n "$quiet" -a "$ret_code" -eq 0 ] && return
-	[ -n "$quiet" ] && action "$saved_action" no-quiet
+	[ -n "$quiet" ] && quiet='once' action "$saved_action"
 
 	case $ret_code in
 		0) local msg="$okmsg" color="$okcolor";;
@@ -249,8 +249,8 @@ footer() {
 # Print current action
 saved_action=''
 action() {
-	saved_action="$1"
-	[ -n "$quiet" -a -z "$2" ] && return
+	saved_action="$(_n "$@")"
+	[ "$quiet" == 'yes' ] && return
 	local w c scol msg chars
 	# Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 	w=$(_ 'w'); w=${w/w/10}
@@ -264,6 +264,7 @@ action() {
 		raw|gtk|html) echo -n "$msg";;
 		*) echo -ne "\033[0;33m$msg\033[0m";;
 	esac
+	quiet=${quiet/once/yes}
 }
 
 # Print long line as list item
