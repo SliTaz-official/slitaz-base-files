@@ -47,7 +47,7 @@ fi
 
 # Update X Terminal window title
 #
-ip=$(ifconfig $(route -n 2>/dev/null | sed '$!d;s/.* //') 2>/dev/null | sed '/t a/!d;s/.*:\(.*\) B.*/\1/')
+ip=$(ifconfig $(route -n 2>/dev/null | sed '/^0\.0\.0\.0/!d;s/.* //') 2>/dev/null | sed '/t a/!d;s/.*r:\([^ ]*\).*/\1/')
 case "$TERM" in
 	xterm*|rxvt*) echo -ne "\033]0;$(hostname) $(cat /etc/slitaz-release) $ip \007";;
 esac
@@ -76,4 +76,9 @@ pushd() {
 
 popd() {
 	[ -n "$_dirs" ] && _dirs="${_dirs#* }" && cd ${_dirs%% *} && dirs
+}
+
+command_not_found_handle() {
+	[ -x /bin/command_not_found ] && /bin/command_not_found "$@" ||
+		echo "$SHELL: $1: not found"
 }
