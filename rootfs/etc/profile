@@ -80,5 +80,5 @@ popd() {
 
 command_not_found_handle() {
 	[ -x /bin/command_not_found ] && /bin/command_not_found "$@" ||
-		echo "$SHELL: $1: not found"
+		echo "${SHELL##*/}: $1: not found"
 }
