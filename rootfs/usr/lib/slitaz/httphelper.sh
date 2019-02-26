@@ -157,8 +157,8 @@ ddcut() {
 }
 
 
-[ "$1" == "--skip-post" ] ||
-if [ "$REQUEST_METHOD$POST__NAMES" == "POST" ]; then
+[ "$1" = "--skip-post" ] ||
+if [ "$REQUEST_METHOD$POST__NAMES" = "POST" ]; then
 	prefix=/tmp/httpd_post
 	mkdir $prefix$$
 	now=$(stat -c %Y $prefix$$)

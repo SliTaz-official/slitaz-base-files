@@ -4,7 +4,7 @@
 #
 . /etc/network.conf
 
-if [ "$WIFI" == "yes" ]; then
+if [ "$WIFI" = "yes" ]; then
 	iface="$WIFI_INTERFACE"
 else
 	iface="$INTERFACE"

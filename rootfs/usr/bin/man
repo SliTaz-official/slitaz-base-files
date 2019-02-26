@@ -108,7 +108,7 @@ if [ -n "$MANPAGE" ]; then
 	# Use nroff if available; it outputs control chars, which busybox less
 	# cannot handle: use "more" instead (or GNU less)
 	if [ -x /usr/bin/nroff ]; then
-		if [ x$(readlink $(which less)) == x/bin/busybox ]; then
+		if [ x$(readlink $(which less)) = x/bin/busybox ]; then
 			VIEW_CMD="more"
 		else
 			VIEW_CMD="less -rM"
@@ -127,10 +127,10 @@ if [ -n "$MANPAGE" ]; then
 	fi
 fi
 
-if [ "$SECTION" == 'all' ]; then
+if [ "$SECTION" = 'all' ]; then
 	#search alphabetically
 	LETTER=$(printf "${TOPIC::1}" | tr 'A-Z[:punct:][:digit:]' a-z00)
-	if [ $LETTER == '0' ]; then LETTER=other; fi
+	if [ $LETTER = '0' ]; then LETTER=other; fi
 	SECTIONS=$(wget -q -O - http://linux.die.net/man/$LETTER.html | \
 		sed -n -r "s%.*href=\"(.)/$TOPIC\".*%\1%p")
 	[ -n "$SECTIONS" ] || { _ 'No manual entry for %s' "$TOPIC"; exit 0;}

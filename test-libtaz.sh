@@ -4,7 +4,7 @@
 
 [ $# -eq 0 ] && title 'Check variables import using libtaz.sh'
 
-if [ "$1" == 'test' ]; then env; exit 0; fi
+if [ "$1" = 'test' ]; then env; exit 0; fi
 
 ME=$(realpath $0); n=/tmp/n; echo 1 > $n; tests=18
 

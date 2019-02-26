@@ -200,7 +200,7 @@ confirm() {
 		translate_query "$answer"; echo ' (auto)'
 	fi
 	# Return true/false to use in conditions
-	[ "$answer" == "$(translate_query y)" -o "$answer" == "$(translate_query Y)" ]
+	[ "$answer" = "$(translate_query y)" -o "$answer" = "$(translate_query Y)" ]
 }
 
 # Log activities
@@ -250,7 +250,7 @@ footer() {
 saved_action=''
 action() {
 	saved_action="$(_n "$@")"
-	[ "$quiet" == 'yes' ] && return
+	[ "$quiet" = 'yes' ] && return
 	local w c scol msg chars
 	# Translators: 'w' is the width the wider translated message ('[ Done ]' or '[ Failed ]') takes in a terminal; place here the number
 	w=$(_ 'w'); w=${w/w/10}

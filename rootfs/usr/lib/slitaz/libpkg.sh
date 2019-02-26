@@ -32,7 +32,7 @@ check_mirror_id() {
 		_n 'Mirror is unreachable'
 		false; status; return 1
 	fi
-	if [ "$(cat ID)" == "$(cat ID.bak)" ]; then
+	if [ "$(cat ID)" = "$(cat ID.bak)" ]; then
 		_n 'Mirror is up-to-date'
 		true; status; return 1
 	fi
