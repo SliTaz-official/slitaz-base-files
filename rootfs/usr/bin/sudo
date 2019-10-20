@@ -15,7 +15,7 @@ case "$1" in
 	*)
 		if [ -s "$conf" ]; then
 			# Saved root password
-			cat "$conf" | su -c "cd $pwd; $cmd"
+			su -c "cd $pwd; $cmd" < "$conf"
 		else
 			su -c "cd $pwd; $cmd"
 		fi ;;
