@@ -10,6 +10,6 @@ else
 	iface="$INTERFACE"
 fi
 
-ifconfig ${iface} | awk '/inet addr/{print substr($1,6)}'
+ifconfig ${iface} | awk '/inet addr/{print substr($2,6)}'
 
 exit 0
